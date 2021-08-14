@@ -1,0 +1,16 @@
+```
+templates/password.json:
+  sections: can't be blank
+  order: can't be blank
+templates/cart.json:
+  sections: can't be blank
+  order: can't be blank
+templates/search.json:
+  sections: can't be blank
+  order: can't be blank
+templates/article.json:
+  sections: can't be blank
+  order: can't be blank
+templates/blog.json:
+  sections: can't be blank
+```
