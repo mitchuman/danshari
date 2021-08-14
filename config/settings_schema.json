@@ -65,7 +65,7 @@
       {
         "type": "range",
         "id": "container_width",
-        "min": 400,
+        "min": 600,
         "max": 1600,
         "step": 50,
         "unit": "px",
