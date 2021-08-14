@@ -1,18 +1,26 @@
-{{ settings.font_header | font_face: font_display: 'swap' }}
+{{ settings.font_heading | font_face: font_display: 'swap' }}
 {{ settings.font_body | font_face: font_display: 'swap' }}
 
 {% style %}
 :root {
-  --color: {{ settings.text_color }};
+  --text:        {{ settings.text }};
+  --text-dark:   {{ settings.text_dark }};
+  --text-light:  {{ settings.text_light }};
 
-  --bg: {{ settings.bg }};
+  --bg:       {{ settings.bg }};
+  --bg-dark:  {{ settings.bg_dark }};
+
+  --border:       {{ settings.border }};
+  --border-dark:  {{ settings.border_dark }};
 
   --accent-1: {{ settings.accent_1 }};
 
-  --font-heading: {{ settings.font_header.family }}, {{ settings.font_header.fallback_families }};
+  --font-heading: {{ settings.font_heading.family }}, {{ settings.font_heading.fallback_families }};
   --font-body: {{ settings.font_body.family }}, {{ settings.font_body.fallback_families }};
 
   --container-width: {{ settings.container_width }}px;
   --container-sm-width: {{ settings.container_sm_width }}px;
+
+  --section-padding: {{ settings.section_padding }}rem;
 }
 {% endstyle %}

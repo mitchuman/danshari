@@ -6,7 +6,15 @@ html {
 
 body {
   font-family: var(--font-body);
-  color: var(--color);
+  color: var(--text);
+}
+
+em, i { font-style: italic; }
+
+strong, b { font-weight: bold; }
+
+img {
+  max-width: 100%;
 }
 
 /* layout */
@@ -20,7 +28,7 @@ body {
   margin-inline: auto;
 }
 
-.section-padding { padding-block: 2rem; }
+.section-padding { padding-block: var(--section-padding); }
 
 .side-padding { padding-inline: clamp(1rem, 3vw, 2rem); }
 
@@ -34,7 +42,18 @@ body {
   font-family: var(--font-heading);
 }
 
+.h0 { font-size: 4rem; }
+.h1 { font-size: 2.5rem; }
+.h2 { font-size: 2rem; }
+.h3 { font-size: 1.5rem; }
+
 /* colors */
+
+.text-dark { color: var(--text-dark); }
+.text-light { color: var(--text-light); }
+
+.bg { background-color: var(--bg); }
+.bg-dark { background-color: var(--bg-dark); }
 
 /* actions */
 
@@ -60,6 +79,19 @@ body {
 
 .richtext {
   line-height: 1.3;
+}
+
+.richtext > * + * {
+  margin-top: 1rem;
+}
+
+.richtext > :is(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--font-heading);
+}
+
+.richtext > :is(h1, h2, h3, h4, h5, h6):not(:first-child),
+.richtext > :is(.h1, .h2, .h3, .h4, .h5, .h6):not(:first-child) {
+  margin-top: 2em;
 }
 
 .richtext > ul {

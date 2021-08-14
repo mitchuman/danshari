@@ -1,0 +1,22 @@
+{%- comment -%}
+  image
+  width?
+{%- endcomment -%}
+
+{%- liquid
+  assign width = width | default: image.width
+  assign height = width | divided_by: image.aspect_ratio | floor
+-%}
+
+{%- capture srcset -%}
+  {%- if width >= 150 -%}{{ image | img_url: '150x' }} 150w{%- endif -%}
+  {%- if width >= 300 -%},{{ image | img_url: '300x' }} 300w{%- endif -%}
+  {%- if width >= 600 -%},{{ image | img_url: '600x' }} 600w{%- endif -%}
+  {%- if width >= 900 -%},{{ image | img_url: '900x' }} 900w{%- endif -%}
+  {%- if width >= 1200 -%},{{ image | img_url: '1200x' }} 1200w{%- endif -%}
+  {%- if width >= 1500 -%},{{ image | img_url: '1500x' }} 1500w{%- endif -%}
+{%- endcapture -%}
+
+srcset="{{ srcset }}"
+src="{{ image | img_url: 'large' }}"
+width="{{ width }}" height="{{ height }}"

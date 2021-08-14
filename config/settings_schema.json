@@ -16,9 +16,21 @@
       },
       {
         "type": "color",
-        "id": "text_color",
+        "id": "text",
         "label": "Text color",
         "default": "#000"
+      },
+      {
+        "type": "color",
+        "id": "text_dark",
+        "label": "Text color (dark)",
+        "default": "#666"
+      },
+      {
+        "type": "color",
+        "id": "text_light",
+        "label": "Text color (light)",
+        "default": "#aaa"
       },
       {
         "type": "header",
@@ -29,6 +41,28 @@
         "id": "bg",
         "label": "Background color",
         "default": "#ddd"
+      },
+      {
+        "type": "color",
+        "id": "bg_dark",
+        "label": "Background color (dark)",
+        "default": "#999"
+      },
+      {
+        "type": "header",
+        "content": "Element colors"
+      },
+      {
+        "type": "color",
+        "id": "border",
+        "label": "Border color",
+        "default": "#ccc"
+      },
+      {
+        "type": "color",
+        "id": "border_dark",
+        "label": "Border color (dark)",
+        "default": "#aaa"
       },
       {
         "type": "header",
@@ -63,13 +97,17 @@
     "name": "Layout",
     "settings": [
       {
+        "type": "header",
+        "content": "Content width"
+      },
+      {
         "type": "range",
         "id": "container_width",
         "min": 600,
         "max": 1600,
         "step": 50,
         "unit": "px",
-        "label": "Container width",
+        "label": "Default container",
         "default": 1000
       },
       {
@@ -79,8 +117,23 @@
         "max": 1600,
         "step": 50,
         "unit": "px",
-        "label": "Container (small) width",
+        "label": "Container (small)",
         "default": 800
+      },
+      {
+        "type": "header",
+        "content": "Spacing"
+      },
+      {
+        "type": "range",
+        "id": "section_padding",
+        "min": 0.5,
+        "max": 6,
+        "step": 0.5,
+        "unit": "rem",
+        "label": "Section padding",
+        "default": 2,
+        "info": "Vertical spacing between blocks"
       }
     ]
   }
