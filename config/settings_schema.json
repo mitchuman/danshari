@@ -11,10 +11,76 @@
     "name": "Colors",
     "settings": [
       {
+        "type": "header",
+        "content": "Text colors"
+      },
+      {
         "type": "color",
         "id": "text_color",
         "label": "Text color",
         "default": "#000"
+      },
+      {
+        "type": "header",
+        "content": "Background colors"
+      },
+      {
+        "type": "color",
+        "id": "bg",
+        "label": "Background color",
+        "default": "#ddd"
+      },
+      {
+        "type": "header",
+        "content": "Accent colors"
+      },
+      {
+        "type": "color",
+        "id": "accent_1",
+        "label": "Accent 1",
+        "default": "#95bf47"
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "font_picker",
+        "id": "font_heading",
+        "label": "Heading font",
+        "default": "serif"
+      },
+      {
+        "type": "font_picker",
+        "id": "font_body",
+        "label": "Body font",
+        "default": "sans-serif"
+      }
+    ]
+  },
+  {
+    "name": "Layout",
+    "settings": [
+      {
+        "type": "range",
+        "id": "container_width",
+        "min": 400,
+        "max": 1600,
+        "step": 50,
+        "unit": "px",
+        "label": "Container width",
+        "default": 1000
+      },
+      {
+        "type": "range",
+        "id": "container_sm_width",
+        "min": 400,
+        "max": 1600,
+        "step": 50,
+        "unit": "px",
+        "label": "Container (small) width",
+        "default": 800
       }
     ]
   }

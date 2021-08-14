@@ -1,9 +1,18 @@
+{{ settings.font_header | font_face: font_display: 'swap' }}
+{{ settings.font_body | font_face: font_display: 'swap' }}
+
 {% style %}
 :root {
-  --color: {{ settings.text_color }}
-}
+  --color: {{ settings.text_color }};
 
-body {
-  color: var(--color);
+  --bg: {{ settings.bg }};
+
+  --accent-1: {{ settings.accent_1 }};
+
+  --font-heading: {{ settings.font_header.family }}, {{ settings.font_header.fallback_families }};
+  --font-body: {{ settings.font_body.family }}, {{ settings.font_body.fallback_families }};
+
+  --container-width: {{ settings.container_width }};
+  --container-sm-width: {{ settings.container_sm_width }};
 }
 {% endstyle %}

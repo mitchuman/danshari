@@ -1,4 +1,11 @@
 {
-  "sections": {},
-  "order": []
+  "sections": {
+    "collection": {
+      "type": "collection",
+      "settings": {}
+    }
+  },
+  "order": [
+    "collection"
+  ]
 }

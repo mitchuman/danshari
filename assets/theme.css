@@ -1,0 +1,59 @@
+/* root */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color);
+}
+
+/* layout */
+
+.container {
+  max-width: var(--container-width);
+  margin-inline: auto;
+}
+.container-sm {
+  max-width: var(--container-sm-width);
+  margin-inline: auto;
+}
+
+/* typography */
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.h0, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: var(--font-heading);
+}
+
+/* colors */
+
+/* actions */
+
+.link {
+  color: var(--accent-1);
+}
+
+.button {
+  cursor: pointer;
+  border: 1px solid currentColor;
+  background-color: #fff;
+  color: var(--accent-1);
+}
+
+.action {
+  cursor: pointer;
+  border: 1px solid var(--accent-1);
+  background-color: var(--accent-1);
+  color: #fff;
+}
+
+/* richtext */
+
+.richtext {
+  line-height: 1.3;
+}

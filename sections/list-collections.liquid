@@ -1,0 +1,21 @@
+<h1>All Collections</h1>
+
+<ul>
+  {% for collection in collections %}
+    <li>
+      <a href="{{ collection.url }}">
+        {{ collection.title }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>
+
+{% schema %}
+{
+  "name": "All Collections",
+  "tag": "article",
+  "settings": [
+
+  ]
+}
+{% endschema %}
