@@ -1,0 +1,19 @@
+{%- comment -%}
+  product
+{%- endcomment -%}
+
+<article class="product-item">
+  <a href="{{ product.url }}" class="product-item-img">
+    <img
+      {% render 'srcset', image: product.featured_image, width: 300 %}
+      alt="{{ product.featured_image.alt | default: product.title }}"
+      loading="eager"
+    />
+  </a>
+
+  <div>
+    <a href="{{ product.url }}" class="link">
+      {{ product.title }}
+    </a>
+  </div>
+</article>

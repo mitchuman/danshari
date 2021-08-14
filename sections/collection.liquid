@@ -1,11 +1,12 @@
-<h1>{{ collection.name }}</h1>
+{{ 'section-collection.css' | asset_url | stylesheet_tag }}
+{{ 'product-item.css' | asset_url | stylesheet_tag }}
 
-<ul>
+<h1>{{ collection.title }}</h1>
+
+<ul class="product-list">
   {% for product in collection.products %}
     <li>
-      <a href="{{ product.url }}">
-        {{ product.title }}
-      </a>
+      {% render 'product-item', product: product %}
     </li>
   {% endfor %}
 </ul>
@@ -14,6 +15,7 @@
 {
   "name": "Collection",
   "tag": "article",
+  "class": "container section-padding side-padding",
   "settings": [
 
   ]
