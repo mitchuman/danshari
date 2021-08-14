@@ -8,13 +8,19 @@
 
   <title>{{ shop.name }}</title>
 
-  {{ content_for_header }}
+  {% render 'root-css' %}
 
-  {% render 'theme-css' %}
+  {{ content_for_header }}
 </head>
 
 <body>
-  {{ content_for_layout }}
+  {% section 'header' %}
+
+  <main>
+    {{ content_for_layout }}
+  </main>
+
+  {% section 'footer' %}
 </body>
 
 </html>
