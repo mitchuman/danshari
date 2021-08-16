@@ -37,6 +37,12 @@
         "id": "accent_1",
         "label": "Accent 1",
         "default": "#95bf47"
+      },
+      {
+        "type": "color",
+        "id": "error",
+        "label": "Error",
+        "default": "#f00"
       }
     ]
   },

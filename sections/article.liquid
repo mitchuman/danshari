@@ -1,0 +1,25 @@
+{{ 'section-article.css' | asset_url | stylesheet_tag }}
+
+<div class="richtext">
+  <h1 class="h1">{{ article.title }}</h1>
+
+  {{ article.content
+    | replace: '<h1>', '<h1 class="h1">'
+    | replace: '<h2>', '<h2 class="h2">'
+    | replace: '<h3>', '<h3 class="h3">'
+    | replace: '<h4>', '<h4 class="h4">'
+    | replace: '<h5>', '<h5 class="h5">'
+    | replace: '<h6>', '<h6 class="h6">'
+  }}
+</div>
+
+{% schema %}
+{
+  "name": "Article",
+  "tag": "article",
+  "class": "section-article container-sm section-padding side-padding",
+  "settings": [
+
+  ]
+}
+{% endschema %}

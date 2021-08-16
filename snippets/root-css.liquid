@@ -1,5 +1,5 @@
-{{ settings.font_heading | font_face: font_display: 'swap' }}
-{{ settings.font_body | font_face: font_display: 'swap' }}
+{{- settings.font_heading | font_face: font_display: 'swap' }}
+{{- settings.font_body | font_face: font_display: 'swap' }}
 
 {% style %}
 :root {
@@ -16,6 +16,8 @@
   --accent-1:       {{ settings.accent_1 }};
   --accent-1-alpha:  {{ settings.accent_1 | color_modify: 'alpha', 0.5 }};
   --accent-1-dark:  {{ settings.accent_1 | color_darken: 10 }};
+
+  --error:        {{ settings.error }};
 
   --font-heading: {{ settings.font_heading.family }}, {{ settings.font_heading.fallback_families }};
   --font-body: {{ settings.font_body.family }}, {{ settings.font_body.fallback_families }};
