@@ -23,6 +23,10 @@ img {
   height: auto;
 }
 
+::placeholder {
+  color: var(--text-light);
+}
+
 /* layout */
 
 .container {
@@ -126,12 +130,18 @@ img {
   color: var(--accent-1-dark);
 }
 
+/* forms */
+
 .input {
   -webkit-appearance: none;
   appearance: none;
   outline: none;
   border: 1px solid var(--border);
   font: inherit;
+}
+
+.input:hover {
+  border-color: var(--border-dark);
 }
 
 .input:focus {

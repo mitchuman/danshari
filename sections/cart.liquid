@@ -29,9 +29,8 @@
     <p>{{ cart.total_price | money }}</p>
 
     <p>
-      <button class="action" form="cart" name="checkout" type="submit" {%- if cart == empty -%}disabled{%- endif -%}>
-        Checkout
-      </button>
+      <button class="action-alt" form="cart">Update</button>
+      <button class="action" form="cart" name="checkout" type="submit">Checkout</button>
     </p>
 
     {% if additional_checkout_buttons %}

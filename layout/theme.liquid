@@ -6,7 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>{{ shop.name }}</title>
+  <title>
+    {%- if page_title != shop.name -%}
+      {{- page_title }} | {{ shop.name -}}
+    {%- else -%}
+      {{- shop.name -}}
+    {%- endif -%}
+  </title>
 
   {% render 'root-css' %}
   {{ 'reset.css' | asset_url | stylesheet_tag }}

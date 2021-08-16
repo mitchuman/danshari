@@ -1,0 +1,33 @@
+<h1 class="h1">
+  Search
+  {%- if search.performed %} for "{{ search.terms }}"{%- endif -%}
+</h1>
+
+{%- if search.performed -%}
+  <ul>
+    {%- for result in search.results -%}
+      {%- case result.object_type -%}
+        {%- else -%}
+          <li>
+            <a href="{{ result.url }}" class="link">
+              {{ result.title | highlight: search.terms }}
+              ({{ result.object_type | capitalize }})
+            </a>
+          </li>
+      {%- endcase -%}
+    {%- endfor -%}
+  </ul>
+{%- endif -%}
+
+{% render 'search-form' %}
+
+{% schema %}
+{
+  "name": "Search",
+  "tag": "section",
+  "class": "section-search container section-padding side-padding",
+  "settings": [
+
+  ]
+}
+{% endschema %}
