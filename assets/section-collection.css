@@ -1,11 +1,1 @@
-.product-list {
-  display: grid;
-  gap: 2rem;
-}
-
-/* desktop-and-up */
-@media screen and (min-width: 769px) {
-  .product-list {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  }
-}
+.product-list {}

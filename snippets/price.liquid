@@ -1,0 +1,17 @@
+{%- comment -%}
+  product
+{%- endcomment -%}
+
+<div>
+{%- if product.available -%}
+  {{ product.price | money }}
+
+  {%- if product.compare_at_price > product.price -%}
+    <s>{{ product.compare_at_price | money }}</s>
+  {%- endif -%}
+
+{%- else -%}
+  Product unavailable
+
+{%- endif -%}
+</div>

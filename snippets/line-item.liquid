@@ -1,0 +1,39 @@
+{%- comment -%}
+  line_item
+{%- endcomment -%}
+
+{%- comment -%}
+{%- if line_item.image -%}
+  <a href="{{ line_item.url }}">
+    <img
+      {% render 'srcset', image: line_item.image, width: 100 %}
+      alt="{{ line_item.image.alt | default: line_item.title | escape }}"
+    />
+  </a>
+{%- endif -%}
+{%- endcomment -%}
+
+<a href="{{ line_item.url }}" class="link">{{ line_item.title }}</a>
+
+<label for="qty-{{ line_item.index }}">
+  Quantity:
+
+  <input type="number"
+    class="input"
+    id="qty-{{ line_item.index }}"
+    name="updates[]"
+    min="0"
+    value="{{ line_item.quantity }}"
+  />
+</label>
+
+<span>
+  {%- if line_item.original_price != line_item.final_price -%}
+    {{ line_item.final_price | money }}
+    <s>{{ line_item.original_price | money }}</s>
+  {%- else -%}
+    {{ line_item.original_price | money }}
+  {%- endif -%}
+</span>
+
+<a href="{{ line_item.url_to_remove }}" class="link">Remove</a>

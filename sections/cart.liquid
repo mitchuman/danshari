@@ -1,0 +1,28 @@
+<h1 class="h1">Cart</h1>
+
+{%- if cart.item_count > 0 -%}
+  <form action="{{ routes.cart_url }}" method="post" id="cart">
+    <ul>
+      {%- for line_item in cart.items -%}
+        <li>
+          {% render 'line-item', line_item: line_item %}
+        </li>
+      {%- endfor -%}
+    </ul>
+  </form>
+
+
+{%- else -%}
+  <p>Cart is empty</p>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Cart",
+  "tag": "section",
+  "class": "container section-padding side-padding",
+  "settings": [
+
+  ]
+}
+{% endschema %}

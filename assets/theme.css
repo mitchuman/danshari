@@ -1,6 +1,11 @@
 /* root */
 
+::selection {
+  background-color: var(--accent-1-alpha);
+}
+
 html {
+  accent-color: var(--accent-1);
   scroll-behavior: smooth;
 }
 
@@ -15,6 +20,7 @@ strong, b { font-weight: bold; }
 
 img {
   max-width: 100%;
+  height: auto;
 }
 
 /* layout */
@@ -61,18 +67,73 @@ img {
   color: var(--accent-1);
 }
 
-.button {
+.link:hover {
+  text-decoration-thickness: 2px;
+}
+
+.link:active {
+  color: var(--accent-1-dark);
+}
+
+.button,
+.action,
+.action-alt {
+  -webkit-appearance: none;
+  appearance: none;
   cursor: pointer;
-  border: 1px solid currentColor;
-  background-color: #fff;
+  display: inline-block;
+  padding: var(--button-padding);
+  border: 1px solid;
+  outline: none;
+  text-decoration: none;
+  text-align: center;
+  font: inherit;
+}
+
+:is(.button, .action, .action-alt):focus {
+  border-color: var(--accent-1-dark);
+  box-shadow: var(--outline);
+}
+
+.button {
+  border-color: var(--border);
+  color: inherit;
+}
+
+:is(.action, .action-alt).lg { padding: var(--button-padding-lg); }
+:is(.action, .action-alt).full { width: 100%; }
+
+.action {
+  border-color: var(--accent-1);
+  background-color: var(--accent-1);
+  color: #fff;
+}
+
+.action:hover {
+  border-color: var(--accent-1-dark);
+  background-color: var(--accent-1-dark);
+}
+
+.action-alt {
+  border-color: currentColor;
   color: var(--accent-1);
 }
 
-.action {
-  cursor: pointer;
-  border: 1px solid var(--accent-1);
-  background-color: var(--accent-1);
-  color: #fff;
+.action-alt:hover {
+  color: var(--accent-1-dark);
+}
+
+.input {
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  border: 1px solid var(--border);
+  font: inherit;
+}
+
+.input:focus {
+  border-color: var(--accent-1-dark);
+  box-shadow: var(--outline);
 }
 
 /* richtext */
@@ -103,3 +164,21 @@ img {
   list-style-type: decimal;
   padding-left: 2em;
 }
+
+/* utils */
+
+.sticky {
+  position: sticky;
+  top: calc(var(--header-height));
+}
+
+/* header */
+
+.header {
+  position: relative;
+  z-index: 10;
+}
+
+/* footer */
+
+.footer {}

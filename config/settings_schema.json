@@ -11,30 +11,10 @@
     "name": "Colors",
     "settings": [
       {
-        "type": "header",
-        "content": "Text colors"
-      },
-      {
         "type": "color",
         "id": "text",
         "label": "Text color",
         "default": "#000"
-      },
-      {
-        "type": "color",
-        "id": "text_dark",
-        "label": "Text color (dark)",
-        "default": "#666"
-      },
-      {
-        "type": "color",
-        "id": "text_light",
-        "label": "Text color (light)",
-        "default": "#aaa"
-      },
-      {
-        "type": "header",
-        "content": "Background colors"
       },
       {
         "type": "color",
@@ -44,25 +24,9 @@
       },
       {
         "type": "color",
-        "id": "bg_dark",
-        "label": "Background color (dark)",
-        "default": "#999"
-      },
-      {
-        "type": "header",
-        "content": "Element colors"
-      },
-      {
-        "type": "color",
         "id": "border",
         "label": "Border color",
         "default": "#ccc"
-      },
-      {
-        "type": "color",
-        "id": "border_dark",
-        "label": "Border color (dark)",
-        "default": "#aaa"
       },
       {
         "type": "header",

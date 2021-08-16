@@ -6,6 +6,8 @@
 {%- liquid
   assign width = width | default: image.width
   assign height = width | divided_by: image.aspect_ratio | floor
+
+  assign src = width | append: 'x'
 -%}
 
 {%- capture srcset -%}
@@ -18,5 +20,5 @@
 {%- endcapture -%}
 
 srcset="{{ srcset }}"
-src="{{ image | img_url: 'large' }}"
+src="{{ image | img_url: src }}"
 width="{{ width }}" height="{{ height }}"

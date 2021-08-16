@@ -3,17 +3,17 @@
 {%- endcomment -%}
 
 <article class="product-item">
-  <a href="{{ product.url }}" class="product-item-img">
+  {%- comment -%}
+  <a href="{{ product.url }}">
     <img
-      {% render 'srcset', image: product.featured_image, width: 300 %}
-      alt="{{ product.featured_image.alt | default: product.title }}"
-      loading="eager"
+      {% render 'srcset', image: product.featured_image, width: 100 %}
+      alt="{{ product.featured_image.alt | default: product.title | escape }}"
+      loading="lazy"
     />
   </a>
+  {%- endcomment -%}
 
-  <div>
-    <a href="{{ product.url }}" class="link">
-      {{ product.title }}
-    </a>
-  </div>
+  <a href="{{ product.url }}" class="link">
+    {{ product.title }}
+  </a>
 </article>

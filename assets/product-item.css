@@ -1,11 +1,1 @@
-.product-item {
-  border: 1px solid var(--border);
-}
-
-.product-item-img {
-  display: block;
-}
-
-.product-item-img img {
-  width: 100%;
-}
+.product-item {}

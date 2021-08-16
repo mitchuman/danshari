@@ -1,14 +1,14 @@
 {{ 'section-collection.css' | asset_url | stylesheet_tag }}
 {{ 'product-item.css' | asset_url | stylesheet_tag }}
 
-<h1>{{ collection.title }}</h1>
+<h1 class="h1">{{ collection.title }}</h1>
 
 <ul class="product-list">
-  {% for product in collection.products %}
+  {%- for product in collection.products -%}
     <li>
       {% render 'product-item', product: product %}
     </li>
-  {% endfor %}
+  {%- endfor -%}
 </ul>
 
 {% schema %}

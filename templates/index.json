@@ -1,4 +1,13 @@
 {
-  "sections": {},
-  "order": []
+  "sections": {
+    "index_default": {
+      "type": "index-default",
+      "settings": {
+
+      }
+    }
+  },
+  "order": [
+    "index_default"
+  ]
 }

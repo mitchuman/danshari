@@ -1,23 +1,37 @@
 {{ 'section-product.css' | asset_url | stylesheet_tag }}
 
-<figure>
-  {{ product.images | json }}
-</figure>
+<h1 class="h1">{{ product.title }}</h1>
 
-<div>
-  <h1>{{ product.title }}</h1>
-  <div class="richtext">
-    {{ product.description }}
-  </div>
-</div>
+{%- if product.description -%}
+  <div>{{ product.description }}</div>
+{%- endif -%}
+
+{% render 'price', product: product %}
+{% render 'product-form', product: product %}
+
+<figure>
+  {%- for image in product.images -%}
+    <img
+      {% render 'srcset', image: image, width: 100 %}
+      alt="{{ image.alt | default: product.title | escape }}"
+      loading="{%- if forloop.first -%}eager{%- else -%}lazy{%- endif -%}"
+    />
+  {%- endfor -%}
+</figure>
 
 {% schema %}
 {
   "name": "Product",
   "tag": "article",
-  "class": "product-template container section-padding side-padding",
+  "class": "section-product container section-padding side-padding",
   "settings": [
-
+    {
+      "type": "checkbox",
+      "id": "show_dynamic_checkout",
+      "label": "Show dynamic checkout buttons",
+      "default": false,
+      "info": "[More info](https://help.shopify.com/en/manual/online-store/dynamic-checkout?shpxid=504f73d0-655A-4E82-8958-225D920D5247)"
+    }
   ]
 }
 {% endschema %}

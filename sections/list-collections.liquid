@@ -1,9 +1,9 @@
-<h1>All Collections</h1>
+<h1 class="h1">All Collections</h1>
 
 <ul>
   {% for collection in collections %}
     <li>
-      <a href="{{ collection.url }}">
+      <a href="{{ collection.url }}" class="link">
         {{ collection.title }}
       </a>
     </li>
@@ -14,7 +14,7 @@
 {
   "name": "All Collections",
   "tag": "article",
-  "class": "richtext",
+  "class": "container section-padding side-padding",
   "settings": [
 
   ]
