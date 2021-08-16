@@ -85,13 +85,13 @@ img {
   padding: var(--button-padding);
   border: 1px solid;
   outline: none;
+  background-color: #fff;
   text-decoration: none;
   text-align: center;
   font: inherit;
 }
 
 :is(.button, .action, .action-alt):focus {
-  border-color: var(--accent-1-dark);
   box-shadow: var(--outline);
 }
 
@@ -99,6 +99,9 @@ img {
   border-color: var(--border);
   color: inherit;
 }
+
+.button:hover { border-color: var(--border-dark); }
+.button:hover:focus { border-color: var(--accent-1-dark); }
 
 :is(.action, .action-alt).lg { padding: var(--button-padding-lg); }
 :is(.action, .action-alt).full { width: 100%; }

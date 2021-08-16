@@ -3,7 +3,7 @@
 
 <h1 class="h1">{{ collection.title }}</h1>
 
-<ul class="product-list">
+<ul>
   {%- for product in collection.products -%}
     <li>
       {% render 'product-item', product: product %}
@@ -15,7 +15,7 @@
 {
   "name": "Collection",
   "tag": "article",
-  "class": "container section-padding side-padding",
+  "class": "section-collection container section-padding side-padding",
   "settings": [
 
   ]

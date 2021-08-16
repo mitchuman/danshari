@@ -1,26 +1,51 @@
+{{ 'section-cart.css' | asset_url | stylesheet_tag }}
+
 <h1 class="h1">Cart</h1>
 
-{%- if cart.item_count > 0 -%}
-  <form action="{{ routes.cart_url }}" method="post" id="cart">
-    <ul>
-      {%- for line_item in cart.items -%}
-        <li>
-          {% render 'line-item', line_item: line_item %}
-        </li>
-      {%- endfor -%}
-    </ul>
-  </form>
+{%- unless cart == empty -%}
+  <section>
+    <form action="{{ routes.cart_url }}" method="post" id="cart">
+      <ul>
+        {%- for line_item in cart.items -%}
+          <li>
+            {% render 'line-item', line_item: line_item %}
+          </li>
+        {%- endfor -%}
+      </ul>
+    </form>
+  </section>
 
+  <section>
+    {%- unless cart.cart_level_discount_applications == empty -%}
+      <h2 class="h2">Discounts</h2>
+      <ul>
+        {%- for discount in cart.cart_level_discount_applications -%}
+          <li>{{ discount.title }} (-{{ discount.total_allocated_amount | money }})</li>
+        {%- endfor -%}
+      </ul>
+    {%- endunless -%}
 
+    <h2 class="h2">Total</h2>
+    <p>{{ cart.total_price | money }}</p>
+
+    <p>
+      <button class="action" form="cart" name="checkout" type="submit" {%- if cart == empty -%}disabled{%- endif -%}>
+        Checkout
+      </button>
+    </p>
+
+    {% if additional_checkout_buttons %}
+      <div>{{ content_for_additional_checkout_buttons }}</div>
+    {% endif %}
+  </section>
 {%- else -%}
   <p>Cart is empty</p>
-{%- endif -%}
+{%- endunless -%}
 
 {% schema %}
 {
-  "name": "Cart",
-  "tag": "section",
-  "class": "container section-padding side-padding",
+  "name": "Cart line items",
+  "class": "section-cart container section-padding side-padding",
   "settings": [
 
   ]
