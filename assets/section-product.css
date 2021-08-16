@@ -1,0 +1,11 @@
+.product-template {
+  display: grid;
+  gap: 2rem;
+}
+
+/* desktop-and-up */
+@media screen and (min-width: 769px) {
+  .product-template {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

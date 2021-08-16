@@ -1,15 +1,21 @@
 {{ 'section-product.css' | asset_url | stylesheet_tag }}
 
-<h1>{{ product.title }}</h1>
-<div class="richtext">
-  {{ product.description }}
+<figure>
+  {{ product.images | json }}
+</figure>
+
+<div>
+  <h1>{{ product.title }}</h1>
+  <div class="richtext">
+    {{ product.description }}
+  </div>
 </div>
 
 {% schema %}
 {
   "name": "Product",
   "tag": "article",
-  "class": "container section-padding side-padding",
+  "class": "product-template container section-padding side-padding",
   "settings": [
 
   ]

@@ -1,11 +1,26 @@
 <a href="{{ routes.root_url }}">{{ shop.name }}</a>
 
+{%- if section.settings.sticky -%}
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+  }
+</style>
+{%- endif -%}
+
 {% schema %}
 {
   "name": "Header",
   "tag": "header",
+  "class": "header",
   "settings": [
-
+    {
+      "type": "checkbox",
+      "id": "sticky",
+      "label": "Sticky",
+      "default": true
+    }
   ]
 }
 {% endschema %}
