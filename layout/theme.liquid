@@ -14,9 +14,9 @@
     {%- endif -%}
   </title>
 
-  {% if page_description -%}
-    <meta name="description" content="{{ page_description | escape }}">
-  {%- endif %}
+  <meta name="description" content="{{ page_description | escape }}">
+
+  {%- render 'meta-tags' -%}
 
   <link rel="canonical" href="{{ canonical_url }}">
 

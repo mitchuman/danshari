@@ -88,7 +88,7 @@
         "step": 50,
         "unit": "px",
         "label": "Container (small)",
-        "default": 800
+        "default": 750
       },
       {
         "type": "header",

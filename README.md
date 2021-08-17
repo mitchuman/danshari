@@ -3,7 +3,12 @@
 > **_Danshari / <ruby>断捨離<rt>だんしゃり</rt></ruby>_**<br>
 > _n._ Decluttering, clearing out past accumulation, minimalism.
 
-## [Demo](https://human-dev.myshopify.com/)
+## Demo
+- [Demo site](https://human-dev.myshopify.com/)
+- CSS utility classes
+  - `sections/css-demo.liquid`
+- Richtext
+  - `sections/css-richtext.liquid`
 
 ## Theme settings
 - `config/settings_schema.json`
