@@ -4,3 +4,7 @@
 > _n._ Decluttering, clearing out past accumulation, minimalism.
 
 ## [Demo](https://human-dev.myshopify.com/)
+
+## Theme settings
+- `config/settings_schema.json`
+- `assets/root.css.liquid` (as CSS custom properties)

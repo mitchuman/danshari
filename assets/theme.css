@@ -53,14 +53,13 @@ img {
 .h2 { font-size: 2rem; }
 .h3 { font-size: 1.5rem; }
 
-.text-center {
-  text-align: center;
-}
-
 /* colors */
 
 .text-dark { color: var(--text-dark); }
 .text-light { color: var(--text-light); }
+.text-error { color: var(--error); }
+
+.text-center { text-align: center; }
 
 .bg { background-color: var(--bg); }
 .bg-dark { background-color: var(--bg-dark); }
@@ -108,7 +107,10 @@ img {
 .button:hover:focus { border-color: var(--accent-1-dark); }
 
 :is(.action, .action-alt).lg { padding: var(--button-padding-lg); }
-:is(.action, .action-alt).full { width: 100%; }
+:is(.action, .action-alt).full {
+  box-sizing: border-box;
+  width: 100%;
+}
 
 .action {
   border-color: var(--accent-1);

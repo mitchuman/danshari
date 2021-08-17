@@ -1,0 +1,49 @@
+<p class="h0">.h0</p>
+<p class="h1">.h1</p>
+<p class="h2">.h2</p>
+<p class="h3">.h3</p>
+<p class="h4">.h4</p>
+<p class="h5">.h5</p>
+<p class="h6">.h6</p>
+<p class="font-heading">.font-heading</p>
+<br>
+<p class="text-dark">.text-dark</p>
+<p class="text-light">.text-light</p>
+<p class="text-error">.text-error</p>
+<p class="text-center">.text-center</p>
+<p class="bg">.bg</p>
+<p class="bg-dark">.bg-dark</p>
+<br>
+<div class="container bordered">.container</div>
+<div class="container-sm bordered">.container-sm</div>
+<div class="section-padding bordered">.section-padding</div>
+<div class="side-padding bordered">.side-padding</div>
+<br>
+<p><a href="#" class="link">.link</a></p>
+<p><span class="button">.button</span></p>
+<p><span class="action">.action</span></p>
+<p><span class="action lg">.action.lg</span></p>
+<p><span class="action full">.action.full</span></p>
+<p><span class="action-alt">.action-alt</span></p>
+<p><input class="input" placeholder=".input" /></p>
+
+{% style %}
+  .section-css-demo > * + * {
+    margin-top: 0.25rem;
+  }
+
+  .bordered {
+    border: 1px dashed var(--border);
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "CSS Demo",
+  "tag": "section",
+  "class": "section-css-demo container section-padding side-padding",
+  "settings": [
+
+  ]
+}
+{% endschema %}

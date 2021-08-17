@@ -8,6 +8,7 @@
     <img
       {% render 'srcset', image: line_item.image, width: 100 %}
       alt="{{ line_item.image.alt | default: line_item.title | escape }}"
+      loading="lazy"
     />
   </a>
 {%- endif -%}
