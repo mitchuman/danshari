@@ -13,3 +13,15 @@
 ## Theme settings
 - `config/settings_schema.json`
 - `assets/root.css.liquid` (as CSS custom properties)
+
+## Media Queries
+Snippets defined in `.vscode/danshari.code-snippets`
+
+| Snippet | Breakpoint |
+| - | - |
+| `media mobile` | ≤ 428px |
+| `media tablet-and-up` | ≥ 429px |
+| `media desktop` | ≤ 768px |
+| `media desktop-and-up` | ≥ 769px |
+| `media desktop` | ≤ 1280px |
+| `media large` | ≥ 1281px |
