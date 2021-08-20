@@ -35,6 +35,10 @@
   </main>
 
   {% section 'footer' %}
+
+  {%- if settings.predictive_search -%}
+    {% render 'predictive-search' %}
+  {%- endif -%}
 </body>
 
 </html>

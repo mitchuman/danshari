@@ -26,7 +26,7 @@
         "type": "color",
         "id": "border",
         "label": "Border color",
-        "default": "#ccc"
+        "default": "#bbb"
       },
       {
         "type": "header",
@@ -104,6 +104,18 @@
         "label": "Section padding",
         "default": 2,
         "info": "Vertical spacing between blocks"
+      }
+    ]
+  },
+  {
+    "name": "Miscellaneous",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "predictive_search",
+        "label": "Predictive search",
+        "default": false,
+        "info": "Show suggestions as you type in the search field. Adds additional JavaScript. [More info](https://shopify.dev/api/ajax/reference/predictive-search)"
       }
     ]
   }

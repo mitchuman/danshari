@@ -1,0 +1,21 @@
+{{ 'predictive-search.css' | asset_url | stylesheet_tag }}
+
+<template id="suggestion-group-template">
+  <li class="suggestion-group">
+    <div class="suggestion-group-title"></div>
+    <ul class="suggestion-group-list"></ul>
+  </li>
+</template>
+
+<template id="suggestion-item-template">
+  <li class="suggestion-item">
+    <a href="" class="suggestion-item-url">
+      <figure class="suggestion-item-img">
+        <img alt="" loading="false">
+      </figure>
+      <div class="suggestion-item-title"></div>
+    </a>
+  </li>
+</template>
+
+<script src="{{ 'predictive-search.min.js' | asset_url }}" defer></script>

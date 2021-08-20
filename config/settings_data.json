@@ -1,5 +1,6 @@
 {
   "current": {
+    "predictive_search": true,
     "sections": {
       "header": {
         "type": "header",
@@ -11,6 +12,7 @@
       "footer": {
         "type": "footer",
         "settings": {
+          "navigation": "footer"
         }
       }
     },
