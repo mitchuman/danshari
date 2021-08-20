@@ -1,0 +1,27 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "shopify switch",
+      "type": "shell",
+      "command": "shopify switch --store=human-dev.myshopify.com",
+      "presentation": {
+        "close": true,
+        "reveal": "never",
+      },
+      "runOptions": {
+        "runOn": "folderOpen"
+      },
+      "problemMatcher": []
+    },
+
+    {
+      "label": "minify current JS file",
+      "type": "shell",
+      "command": "npx esbuild --minify ${relativeFile} --outfile=${relativeFileDirname}/${fileBasenameNoExtension}.min.js",
+      "problemMatcher": []
+    },
+  ]
+}

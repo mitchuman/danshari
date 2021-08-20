@@ -10,12 +10,17 @@
 - Richtext
   - `sections/css-richtext.liquid`
 
-## Theme settings
-- `config/settings_schema.json`
-- `assets/root.css.liquid` (as CSS custom properties)
+## Theme Schema / Settings
+Configured in `config/settings_schema.json` and defined as CSS custom properties in `assets/root.css.liquid`.
+
+- Colors
+- Typography
+- Layout
+- Miscellaneous
+  - [Predictive Search](https://shopify.dev/api/ajax/reference/predictive-search) feature available
 
 ## Media Queries
-Snippets defined in `.vscode/danshari.code-snippets`
+VS Code snippets defined in `.vscode/danshari.code-snippets`
 
 | Snippet | Breakpoint |
 | - | - |
