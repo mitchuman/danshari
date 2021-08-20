@@ -2,7 +2,7 @@
   {
     "name": "theme_info",
     "theme_name": "Danshari",
-    "theme_version": "0.2.1",
+    "theme_version": "0.2.2",
     "theme_author": "mitchuman",
     "theme_documentation_url": "https:\/\/github.com\/mitchuman\/danshari",
     "theme_support_url": "https:\/\/github.com\/mitchuman\/danshari"
@@ -111,11 +111,29 @@
     "name": "Miscellaneous",
     "settings": [
       {
+        "type": "header",
+        "content": "Predictive Search"
+      },
+      {
         "type": "checkbox",
-        "id": "predictive_search",
-        "label": "Predictive search",
-        "default": false,
+        "id": "predictive_search_enabled",
+        "label": "Enable",
+        "default": true,
         "info": "Show suggestions as you type in the search field. Adds additional JavaScript. [More info](https://shopify.dev/api/ajax/reference/predictive-search)"
+      },
+      {
+        "type": "text",
+        "id": "predictive_search_types",
+        "label": "Suggestion types",
+        "default": "product,collection,page,article",
+        "placeholder": "product,collection,page,article",
+        "info": "Allowed: product, collection, page, article. Separated by commas."
+      },
+      {
+        "type": "number",
+        "id": "predictive_search_limit",
+        "label": "Suggestion limit per type",
+        "default": 10
       }
     ]
   }

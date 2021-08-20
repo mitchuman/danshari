@@ -1,10 +1,6 @@
-let predictiveSearchOptions = {
-  resources: {
-    type: 'product,collection,page,article',
-    limit: 10,
-  },
-  keyUpDelay: 300, // milliseconds
-}
+/*
+  predictiveSearchOptions defined in `predictive-search.liquid`
+*/
 
 let searchForms = document.querySelectorAll('form.search-form')
 
@@ -46,14 +42,14 @@ for (let searchForm of searchForms) {
         searchSuggestions.appendChild(suggestionGroup)
       }
     }
-  }, predictiveSearchOptions.keyUpDelay))
+  }, window.predictiveSearchOptions.keyUpDelay))
 }
 
 async function getSuggestions(query) {
   // search suggestion options
   let params = new URLSearchParams()
 
-  const { resources } = predictiveSearchOptions
+  const { resources } = window.predictiveSearchOptions
 
   params.set('q', query)
   params.set('resources[type]', resources.type)

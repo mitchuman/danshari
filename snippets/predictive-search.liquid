@@ -18,4 +18,14 @@
   </li>
 </template>
 
+<script defer>
+  window.predictiveSearchOptions = {
+    resources: {
+      type: '{{ settings.predictive_search_types }}',
+      limit: {{ settings.predictive_search_limit }},
+    },
+    keyUpDelay: 300, // milliseconds
+  }
+</script>
+
 <script src="{{ 'predictive-search.min.js' | asset_url }}" defer></script>
