@@ -143,6 +143,9 @@ img {
   appearance: none;
   outline: none;
   border: 1px solid var(--border);
+  border-radius: 0;
+  background-color: inherit;
+  color: inherit;
   font: inherit;
 }
 

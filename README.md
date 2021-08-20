@@ -4,10 +4,10 @@
 > _n._ Decluttering, clearing out past accumulation, minimalism.
 
 ## Demo
-- [Demo site](https://human-dev.myshopify.com/)
-- CSS utility classes
+- [Live demo](https://human-dev.myshopify.com/)
+- CSS utility classes demo
   - `sections/css-demo.liquid`
-- Richtext
+- Richtext demo
   - `sections/css-richtext.liquid`
 
 ## Theme Schema / Settings
