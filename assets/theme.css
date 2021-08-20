@@ -157,7 +157,6 @@ img {
 
 .input:invalid {
   border-color: var(--error);
-  color: var(--error);
 }
 
 /* utils */

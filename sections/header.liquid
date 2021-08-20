@@ -6,6 +6,16 @@
   Cart ({{ cart.item_count }})
 </a>
 
+{%- if section.settings.navigation.links != blank -%}
+  <ul>
+    {%- for link in section.settings.navigation.links -%}
+      <li>
+        <a href="{{ link.url }}" class="link">{{ link.title }}</a>
+      </li>
+    {%- endfor -%}
+  </ul>
+{%- endif -%}
+
 <style>
   {%- if section.settings.sticky -%}
     .header { position: sticky; top: 0; }
@@ -31,6 +41,12 @@
       "id": "sticky",
       "label": "Sticky",
       "default": true
+    },
+    {
+      "type": "link_list",
+      "id": "navigation",
+      "label": "Navigation",
+      "default": "main-menu"
     }
   ]
 }
