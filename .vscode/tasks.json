@@ -4,16 +4,16 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "shopify switch",
+      "label": "shopify switch human-dev",
       "type": "shell",
       "command": "shopify switch --store=human-dev.myshopify.com",
       "presentation": {
         "close": true,
         "reveal": "never",
       },
-      "runOptions": {
-        "runOn": "folderOpen"
-      },
+      // "runOptions": {
+      //   "runOn": "folderOpen"
+      // },
       "problemMatcher": []
     },
 
