@@ -26,7 +26,7 @@ VS Code snippets defined in `.vscode/danshari.code-snippets`
 | - | - |
 | `media mobile` | ≤ 428px |
 | `media tablet-and-up` | ≥ 429px |
-| `media desktop` | ≤ 768px |
+| `media tablet` | ≤ 768px |
 | `media desktop-and-up` | ≥ 769px |
 | `media desktop` | ≤ 1280px |
 | `media large` | ≥ 1281px |
