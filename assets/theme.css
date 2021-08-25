@@ -68,13 +68,23 @@ img {
 
 .link {
   color: var(--accent-1);
+  text-decoration: none;
 }
 
 .link:hover {
+  text-decoration: underline;
+}
+
+.link-underline {
+  color: var(--accent-1);
+  text-decoration: underline;
+}
+
+.link-underline:hover {
   text-decoration-thickness: 2px;
 }
 
-.link:active {
+:is(.link, .link-underline):active {
   color: var(--accent-1-dark);
 }
 
