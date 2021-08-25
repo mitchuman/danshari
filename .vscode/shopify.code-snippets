@@ -40,9 +40,9 @@
 
 	"≤ 768px": {
 		"scope": "css,postcss",
-		"prefix": "media desktop",
+		"prefix": "media tablet",
 		"body": [
-			"/* desktop */",
+			"/* tablet */",
 			"@media screen and (max-width: 768px) {",
 			"\t$1",
 			"}",
