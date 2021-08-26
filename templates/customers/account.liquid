@@ -1,0 +1,36 @@
+<div class="container">
+  <h1 class="h1">Welcome, {{ customer.first_name }}</h1>
+  <a href="{{ routes.account_logout_url }}" class="link-underline">Logout</a>
+
+  <section>
+    {%- paginate customer.orders by 10 -%}
+      {%- for order in customer.orders -%}
+        <div>{{ order | json }}</div>
+      {%- endfor -%}
+
+      {{ paginate | default_pagination }}
+    {%- endpaginate -%}
+  </section>
+
+  <section>
+    {% if customer.default_address %}
+      <address>
+        <p>
+          {{- customer.default_address.address1 -}}
+          {%- if customer.default_address.address2 -%}
+            <br>{{ customer.default_address.address2 }}
+          {%- endif -%}
+        </p>
+        <p>
+          {{ customer.default_address.city }},
+          {% if customer.default_address.province_code %}{{ customer.default_address.province_code }},{% endif %}
+          {{ customer.default_address.country_code }}
+        </p>
+        <p>{{ customer.default_address.zip_code }}</p>
+        <p>{{ customer.default_address.phone }}</p>
+      </address>
+    {% endif %}
+
+    <a href="{{ routes.account_addresses_url }}" class="link">View addresses</a>
+  </section>
+</div>
