@@ -1,0 +1,23 @@
+<div class="container">
+  {% form 'create_customer' %}
+    {{ form_errors | default_errors }}
+
+    <label>
+      <input class="input" name="customer[first_name]" type="text" placeholder="First name">
+    </label>
+
+    <label>
+      <input class="input" name="customer[last_name]" type="text" placeholder="Last name">
+    </label>
+
+    <label>
+      <input class="input" name="customer[email]" type="email" placeholder="Email">
+    </label>
+
+    <label>
+      <input class="input" name="customer[password]" type="password" placeholder="Password">
+    </label>
+
+    <button class="action">Register</button>
+  {% endform %}
+</div>
