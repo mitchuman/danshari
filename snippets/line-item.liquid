@@ -28,12 +28,13 @@
 <label for="qty-{{ line_item.index }}">
   Quantity:
 
-  <input type="number"
-    class="input"
+  <input
     id="qty-{{ line_item.index }}"
+    class="input"
     name="updates[]"
-    min="0"
     value="{{ line_item.quantity }}"
+    type="number"
+    min="0"
     size="2"
   />
 </label>

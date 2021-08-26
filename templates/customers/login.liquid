@@ -1,0 +1,47 @@
+<div class="container">
+  <section id="forgot">
+    {% form 'recover_customer_password' %}
+      {{ form_errors | default_errors }}
+
+      <label>
+        <input class="input" name="email" type="email" placeholder="Email" />
+      </label>
+
+      <button class="action">Submit</button>
+    {% endform %}
+
+    <a href="#login" class="link">Cancel</a>
+  </section>
+
+  <section id="login">
+    {% form 'customer_login', return_to: routes.root_url %}
+      {{ form_errors | default_errors }}
+      <label>
+        <input class="input" name="customer[email]" type="email" placeholder="Email" />
+      </label>
+
+      <label>
+        <input class="input" name="customer[password]" type="password" placeholder="Password">
+      </label>
+
+      <button class="action">Login</button>
+
+      <a href="{{ routes.account_register_url }}" class="link">Create an account</a>
+    {% endform %}
+
+    <a href="#forgot" class="link">Forgot your password?</a>
+  </section>
+
+  {%- if shop.checkout.guest_login -%}
+    {% form 'guest_login' %}
+      <button class="link-underline">Continue as guest</button>
+    {% endform '' %}
+  {%- endif -%}
+</div>
+
+<style>
+  #forgot:not(:target),
+  #forgot:target ~ #login {
+    display: none;
+  }
+</style>

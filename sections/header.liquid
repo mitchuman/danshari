@@ -1,10 +1,19 @@
-<a href="{{ routes.root_url }}" class="link">
+<a href="{{ routes.root_url }}" class="link-underline">
   {{- shop.name -}}
 </a>
 
-<a href="{{ routes.account_url }}" class="link">
-  Account
-</a>
+{%- if shop.customer_accounts_enabled -%}
+  {%- if customer -%}
+    <a href="{{ routes.account_url }}" class="link">Account</a>
+  {%- else -%}
+    <a href="{{ routes.account_login_url }}" class="link">Login</a>
+
+    {%- if shop.customer_accounts_optional -%}
+      {{ ' / ' }}
+      <a href="{{ routes.account_register_url }}" class="link">Register</a>
+    {%- endif -%}
+  {%- endif -%}
+{%- endif -%}
 
 <a href="{{ routes.cart_url }}" class="link">
   Cart ({{ cart.item_count }})

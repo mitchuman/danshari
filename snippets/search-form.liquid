@@ -1,14 +1,11 @@
 <form class="search-form" action="{{ routes.search_url }}">
   <label>
-    <input type="search"
+    <input
       class="input"
       name="q"
+      value="{% if search.performed -%}{{ search.terms | escape }}{%- endif %}"
+      type="search"
       placeholder="Search"
-      {% if search.performed -%}
-        value={{ search.terms | escape }}
-      {%- else -%}
-        value=""
-      {%- endif %}
     />
   </label>
 
