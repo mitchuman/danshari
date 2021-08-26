@@ -36,6 +36,7 @@
 
   {% section 'footer' %}
 
+  <script src="{{ 'theme.min.js' | asset_url }}" defer></script>
   {%- if settings.predictive_search_enabled -%}
     {% render 'predictive-search' %}
   {%- endif -%}
