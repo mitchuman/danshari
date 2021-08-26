@@ -2,6 +2,10 @@
   {{- shop.name -}}
 </a>
 
+<a href="{{ routes.account_url }}" class="link">
+  Account
+</a>
+
 <a href="{{ routes.cart_url }}" class="link">
   Cart ({{ cart.item_count }})
 </a>
@@ -16,19 +20,11 @@
   </ul>
 {%- endif -%}
 
-<style>
-  {%- if section.settings.sticky -%}
+{%- if section.settings.sticky -%}
+  <style>
     .header { position: sticky; top: 0; }
-  {%- endif -%}
-</style>
-
-<script defer>
-  // set var(--header-height)
-  let root = document.documentElement
-  let headerHeight = document.querySelector('.header').offsetHeight
-
-  root.style.setProperty('--header-height', `${ headerHeight }px`)
-</script>
+  </style>
+{%- endif -%}
 
 {% schema %}
 {
