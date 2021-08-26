@@ -1,0 +1,88 @@
+<div class="container">
+  <h1 class="h1">Addresses</h1>
+  <a href="{{ routes.account_url }}" class="link">Back to Account</a>
+
+  <ul>
+    {%- for address in customer.addresses -%}
+      <li data-address-id="{{ address.id }}">
+        {% render 'address', address: address %}
+
+        <div id="edit-{{ address.id }}">
+          {% form 'customer_address', address %}
+            {% render 'address-inputs', address: address %}
+            <button class="action">Update</button>
+            <a href="#" class="button">Cancel</a>
+          {% endform %}
+        </div>
+        <a href="#edit-{{ address.id }}" class="button">Edit</a>
+
+        <form method="post" action="/account/addresses/{{ address.id }}">
+          <input name="_method" value="delete" type="hidden">
+          <button onclick="return confirm('Are you sure you want to delete this address?')" class="button">Delete</button>
+        </form>
+      </li>
+    {%- endfor -%}
+  </ul>
+
+  <div id="add">
+    {% form 'customer_address', customer.new_address %}
+      {% render 'address-inputs', address: form %}
+      <button class="action">Add</button>
+      <a href="#" class="button">Cancel</a>
+    {% endform %}
+  </div>
+  <a href="#add" class="button">Add address</a>
+</div>
+
+<style>
+  :is([id*="edit-"], [id="add"]):not(:target),
+  [id*="edit-"]:target ~ [href*="#edit-"],
+  [id="add"]:target ~ [href="#add"] {
+    display: none;
+  }
+</style>
+
+<script defer>
+  let addressForms = document.querySelectorAll('form[id*="address_form"]')
+  for (let form of addressForms) {
+    let countrySelect = form.querySelector('select[name="address[country]"')
+    let provinceSelect = form.querySelector('select[name="address[province]"')
+
+    for (let option of countrySelect.options) {
+      if (option.value === countrySelect.dataset.defaultValue) {
+        option.selected = true
+      }
+    }
+
+    populateProvinces(countrySelect, provinceSelect)
+    countrySelect.addEventListener('change', () => {
+      populateProvinces(countrySelect, provinceSelect)
+    })
+  }
+
+  function populateProvinces(countrySelect, provinceSelect) {
+    provinceSelect.innerHTML = ''
+
+    let disabledOption = document.createElement('option')
+    disabledOption.disabled = true
+    disabledOption.selected = true
+    disabledOption.hidden = true
+    disabledOption.text = 'State/Province'
+    provinceSelect.appendChild(disabledOption)
+
+    let provinces = JSON.parse(countrySelect.options[countrySelect.selectedIndex].dataset.provinces)
+    provinces.forEach(([value, label]) => {
+      let option = document.createElement('option')
+      option.value = value
+      option.text = label
+
+      if (option.value === provinceSelect.dataset.defaultValue) {
+        option.selected = true
+      }
+
+      provinceSelect.appendChild(option)
+    })
+
+    provinceSelect.disabled = !provinces.length
+  }
+</script>

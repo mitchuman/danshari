@@ -14,23 +14,9 @@
 
   <section>
     {% if customer.default_address %}
-      <address>
-        <p>
-          {{- customer.default_address.address1 -}}
-          {%- if customer.default_address.address2 -%}
-            <br>{{ customer.default_address.address2 }}
-          {%- endif -%}
-        </p>
-        <p>
-          {{ customer.default_address.city }},
-          {% if customer.default_address.province_code %}{{ customer.default_address.province_code }},{% endif %}
-          {{ customer.default_address.country_code }}
-        </p>
-        <p>{{ customer.default_address.zip_code }}</p>
-        <p>{{ customer.default_address.phone }}</p>
-      </address>
+      {% render 'address', address: customer.default_address %}
     {% endif %}
 
-    <a href="{{ routes.account_addresses_url }}" class="link">View addresses</a>
+    <a href="{{ routes.account_addresses_url }}" class="link">View addresses ({{ customer.addresses.size }})</a>
   </section>
 </div>

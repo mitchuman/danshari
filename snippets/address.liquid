@@ -1,0 +1,20 @@
+{%- comment -%}
+  address
+{%- endcomment -%}
+
+<p>{{ address.first_name }} {{ address.last_name }}</p>
+
+{%- if address.company != blank -%}
+  <p>{{ address.company }}</p>
+{%- endif -%}
+
+<address>
+  <p>{{ address.street }}</p>
+  <p>
+    {{ address.city }},
+    {% if address.province_code != blank %}{{ address.province_code }},{% endif %}
+    {{ address.country_code }}
+    {{ address.zip }}
+  </p>
+  <p>{{ address.phone }}</p>
+</address>

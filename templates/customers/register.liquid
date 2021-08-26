@@ -3,19 +3,19 @@
     {{ form_errors | default_errors }}
 
     <label>
-      <input class="input" name="customer[first_name]" type="text" placeholder="First name">
+      <input class="input" name="customer[first_name]" autocomplete="given-name" type="text" placeholder="First name">
     </label>
 
     <label>
-      <input class="input" name="customer[last_name]" type="text" placeholder="Last name">
+      <input class="input" name="customer[last_name]" autocomplete="family-name" type="text" placeholder="Last name">
     </label>
 
     <label>
-      <input class="input" name="customer[email]" type="email" placeholder="Email">
+      <input class="input" name="customer[email]" autocomplete="email" type="email" placeholder="Email">
     </label>
 
     <label>
-      <input class="input" name="customer[password]" type="password" placeholder="Password">
+      <input class="input" name="customer[password]" autocomplete="new-password" type="password" placeholder="Password">
     </label>
 
     <button class="action">Register</button>
