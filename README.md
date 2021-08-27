@@ -30,3 +30,6 @@ VS Code snippets defined in `.vscode/danshari.code-snippets`
 | `media desktop-and-up` | ≥ 769px |
 | `media desktop` | ≤ 1280px |
 | `media large` | ≥ 1281px |
+
+## Default Styles
+Login and account related pages (`templates/customers/*`) are applied default styles. Styles are defined in `assets/customers-*.css` stylesheets.
