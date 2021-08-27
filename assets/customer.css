@@ -1,7 +1,27 @@
+#forgot:not(:target),
+#forgot:target ~ #login,
 [id*="address_form"]:not(:target),
 [id*="address_form"]:target ~ .hide-on-target {
   display: none;
 }
+
+/* inputs */
+
+.col-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+.col-2 + .col-2 {
+  margin-top: 1rem;
+}
+
+.col-2 .input {
+  width: 100%;
+}
+
+.colspan { grid-column: 1 / -1; }
 
 /* addresses */
 
@@ -49,30 +69,6 @@
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-top: 0.5rem;
-}
-
-/* inputs */
-
-.address-inputs {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.5rem;
-}
-
-.colspan {
-  grid-column: 1 / -1;
-}
-
-.address-inputs .input {
-  width: 100%;
-  height: 100%;
-}
-
-.action-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.5rem;
-  margin-top: 1rem;
 }
 
 .delete-address {

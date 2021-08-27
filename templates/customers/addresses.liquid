@@ -1,4 +1,4 @@
-{{ 'customer-addresses.css' | asset_url | stylesheet_tag }}
+{{ 'customer.css' | asset_url | stylesheet_tag }}
 
 <div class="container side-padding">
   <header class="section-padding richtext">
@@ -11,9 +11,10 @@
       <li class="address-item" data-address-id="{{ address.id }}">
         {% form 'customer_address', address %}
           {% render 'address-inputs', address: address %}
-          <div class="action-list">
+
+          <div class="col-2">
+            <a href="#" class="action-alt">Cancel</a>
             <button class="action">Update</button>
-            <a href="#" class="button">Cancel</a>
           </div>
         {% endform %}
 
@@ -38,11 +39,13 @@
       <h2 class="h3">Add new address</h2>
 
       {% render 'address-inputs', address: form %}
-      <div class="action-list">
+
+      <div class="col-2">
+        <a href="#" class="action-alt">Cancel</a>
         <button class="action">Add</button>
-        <a href="#" class="button">Cancel</a>
       </div>
     {% endform %}
+
     <a href="#address_form_new" class="action hide-on-target">Add new address</a>
   </div>
 </div>

@@ -1,4 +1,4 @@
-{{ 'customer-login.css' | asset_url | stylesheet_tag }}
+{{ 'customer.css' | asset_url | stylesheet_tag }}
 
 <section class="container-half section-padding side-padding richtext text-center">
   <h1 class="h1">Register</h2>
@@ -6,25 +6,24 @@
   {% form 'create_customer' %}
     {{ form_errors | default_errors }}
 
-    <fieldset class="input-list">
-      <label>
+    <fieldset class="col-2">
+      <label class="colspan">
         <input class="input" name="customer[first_name]" value="" autocomplete="given-name" type="text" placeholder="First name" required />
       </label>
 
-      <label>
+      <label class="colspan">
         <input class="input" name="customer[last_name]" value="" autocomplete="family-name" type="text" placeholder="Last name" required />
       </label>
 
-      <label>
+      <label class="colspan">
         <input class="input" name="customer[email]" value="" autocomplete="email" type="email" placeholder="Email" required />
       </label>
 
-      <label>
+      <label class="colspan">
         <input class="input" name="customer[password]" value="" autocomplete="new-password" type="password" placeholder="Password" required />
       </label>
 
-      <button class="action">Register</button>
-
+      <button class="action colspan">Register</button>
     </fieldset>
   {% endform %}
 

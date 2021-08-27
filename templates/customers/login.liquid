@@ -1,4 +1,4 @@
-{{ 'customer-login.css' | asset_url | stylesheet_tag }}
+{{ 'customer.css' | asset_url | stylesheet_tag }}
 
 <div class="container-half section-padding side-padding text-center">
   <section id="forgot" class="richtext">
@@ -7,12 +7,12 @@
     {% form 'recover_customer_password' %}
       {{ form_errors | default_errors }}
 
-      <fieldset class="input-list">
-        <label>
+      <fieldset class="col-2">
+        <label class="colspan">
           <input class="input" name="email" value="" autocomplete="email" type="email" placeholder="Email" required />
         </label>
 
-        <button class="action">Retrieve password</button>
+        <button class="action colspan">Retrieve password</button>
       </fieldset>
     {% endform %}
 
@@ -27,12 +27,12 @@
     {% form 'customer_login', return_to: routes.root_url %}
       {{ form_errors | default_errors }}
 
-      <fieldset class="input-list">
-        <label>
+      <fieldset class="col-2">
+        <label class="colspan">
           <input class="input" name="customer[email]" value="" autocomplete="email" type="email" placeholder="Email" required />
         </label>
 
-        <div>
+        <div class="colspan">
           <label>
             <input class="input" name="customer[password]" value="" autocomplete="current-password" type="password" placeholder="Password" required />
           </label>
@@ -41,7 +41,7 @@
           </div>
         </div>
 
-        <button class="action">Login</button>
+        <button class="action colspan">Login</button>
       </fieldset>
     {% endform %}
 
@@ -53,6 +53,6 @@
   {%- if shop.checkout.guest_login -%}
     {% form 'guest_login' %}
       <button class="link-underline">Continue as guest</button>
-    {% endform '' %}
+    {% endform %}
   {%- endif -%}
 </div>

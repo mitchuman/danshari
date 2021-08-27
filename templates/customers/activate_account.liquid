@@ -1,0 +1,24 @@
+{{ 'customer.css' | asset_url | stylesheet_tag }}
+
+<section class="container-half section-padding side-padding richtext text-center">
+  <h1 class="h1">Activate account</h2>
+
+  {% form 'activate_customer_password' %}
+    {{ form_errors | default_errors }}
+
+    <fieldset class="col-2">
+      <label class="colspan">
+        <input class="input" name="customer[password]" value="" autocomplete="new-password" type="password" placeholder="Password" required />
+      </label>
+
+      <label class="colspan">
+        <input class="input" name="customer[password_confirmation]" value="" autocomplete="new-password" type="password" placeholder="Confirm password" required />
+      </label>
+    </fieldset>
+
+    <div class="col-2">
+      <button name="decline" class="action-alt">Decline invitation</button>
+      <button class="action">Activate account</button>
+    </div>
+  {% endform %}
+</section>

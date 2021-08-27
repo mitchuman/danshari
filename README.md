@@ -1,4 +1,6 @@
-# _Danshari_ — A blank Shopify 2.0 theme
+# _Danshari_
+
+ A blank slate theme for Shopify 2.0
 
 > **_Danshari / <ruby>断捨離<rt>だんしゃり</rt></ruby>_**<br>
 > _n._ Decluttering, clearing out past accumulation, minimalism.
@@ -32,4 +34,4 @@ VS Code snippets defined in `.vscode/danshari.code-snippets`
 | `media large` | ≥ 1281px |
 
 ## Default Styles
-Login and account related pages (`templates/customers/*`) are applied default styles. Styles are defined in `assets/customers-*.css` stylesheets.
+Login and account related pages (`templates/customers/*`) are applied default styles. Styles are defined in `assets/customers.css`.
