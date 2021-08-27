@@ -2,14 +2,13 @@
   address
 {%- endcomment -%}
 
-<p>{{ address.first_name }} {{ address.last_name }}</p>
-
-{%- if address.company != blank -%}
-  <p>{{ address.company }}</p>
-{%- endif -%}
+<p><b>{{ address.first_name }} {{ address.last_name }}</b></p>
 
 <address>
-  <p>{{ address.street }}</p>
+  <p>
+    {% if address.company != blank %}{{ address.company }}<br>{% endif %}
+    {{ address.street }}
+  </p>
   <p>
     {{ address.city }},
     {% if address.province_code != blank %}{{ address.province_code }},{% endif %}

@@ -1,6 +1,0 @@
-development:
-  password: shptka_5cb0f922bcb476e966a496396ce32588
-  theme_id: 125901799588
-  store: human-dev.myshopify.com
-  ignore_files:
-    - config/settings_data.json

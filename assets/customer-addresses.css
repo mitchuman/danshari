@@ -1,0 +1,86 @@
+[id*="address_form"]:not(:target),
+[id*="address_form"]:target ~ .hide-on-target {
+  display: none;
+}
+
+/* addresses */
+
+.address-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.address-list:empty::before {
+  content: 'No addresses';
+  color: var(--text-light);
+}
+
+.address-item {
+  position: relative;
+  padding: 1rem;
+  border: 1px solid var(--border);
+}
+
+.address-item:first-of-type::before {
+  content: 'Default';
+  position: absolute;
+  left: 1rem; top: 0;
+  transform: translateY(-50%);
+  background-color: #fff;
+  box-shadow:
+    -0.5ch 0 0 #fff,
+    0.5ch 0 0 #fff;
+  color: var(--text-light);
+}
+
+.address-item * {
+  line-height: 1.3;
+}
+
+/* desktop-and-up */
+@media screen and (min-width: 769px) {
+  .address-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.edit-delete {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+/* inputs */
+
+.address-inputs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+.colspan {
+  grid-column: 1 / -1;
+}
+
+.address-inputs .input {
+  width: 100%;
+  height: 100%;
+}
+
+.action-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.delete-address {
+  display: inline-block;
+}
+
+/* add new */
+
+#address_form_new h2 {
+  margin-bottom: 1rem;
+}

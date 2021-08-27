@@ -1,9 +1,5 @@
 /* root */
 
-::selection {
-  background-color: var(--accent-1-alpha);
-}
-
 html {
   accent-color: var(--accent-1);
   scroll-behavior: smooth;
@@ -27,6 +23,20 @@ img {
 
 [disabled] { cursor: not-allowed; }
 
+::selection {
+  background-color: var(--accent-1-alpha);
+}
+
+:target {
+  scroll-margin-top: var(--header-height);
+}
+
+.appearance-reset {
+  -webkit-appearance: none;
+  appearance: none;
+  all: unset;
+}
+
 /* layout */
 
 .container {
@@ -35,6 +45,10 @@ img {
 }
 .container-sm {
   max-width: var(--container-sm-width);
+  margin-inline: auto;
+}
+.container-half {
+  max-width: calc(var(--container-width) / 2);
   margin-inline: auto;
 }
 
@@ -71,6 +85,7 @@ img {
 /* actions */
 
 .link {
+  cursor: pointer;
   color: var(--accent-1);
   text-decoration: none;
 }
@@ -80,6 +95,7 @@ img {
 }
 
 .link-underline {
+  cursor: pointer;
   color: var(--accent-1);
   text-decoration: underline;
 }
@@ -155,6 +171,8 @@ img {
 .input {
   -webkit-appearance: none;
   appearance: none;
+  box-sizing: border-box;
+  padding: 0.25em 0.5em;
   outline: none;
   border: 1px solid var(--border);
   border-radius: 0;

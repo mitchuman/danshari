@@ -1,48 +1,59 @@
-<div class="container section-padding side-padding">
-  <h1 class="h1">Addresses</h1>
-  <a href="{{ routes.account_url }}" class="link">Back to Account</a>
+{{ 'customer-addresses.css' | asset_url | stylesheet_tag }}
 
-  <ul>
+<div class="container side-padding">
+  <header class="section-padding richtext">
+    <h1 class="h1">Addresses</h1>
+    <a href="{{ routes.account_url }}" class="link">Back to Account</a>
+  </header>
+
+  <ul class="address-list section-padding">
     {%- for address in customer.addresses -%}
-      <li data-address-id="{{ address.id }}">
-        {% render 'address', address: address %}
-
-        <div id="edit-{{ address.id }}">
-          {% form 'customer_address', address %}
-            {% render 'address-inputs', address: address %}
+      <li class="address-item" data-address-id="{{ address.id }}">
+        {% form 'customer_address', address %}
+          {% render 'address-inputs', address: address %}
+          <div class="action-list">
             <button class="action">Update</button>
             <a href="#" class="button">Cancel</a>
-          {% endform %}
-        </div>
-        <a href="#edit-{{ address.id }}" class="button">Edit</a>
+          </div>
+        {% endform %}
 
-        <form method="post" action="/account/addresses/{{ address.id }}">
-          <input name="_method" value="delete" type="hidden">
-          <button onclick="return confirm('Are you sure you want to delete this address?')" class="button">Delete</button>
-        </form>
+        <div class="hide-on-target">
+          {% render 'address', address: address %}
+
+          <div class="edit-delete">
+            <a href="#address_form_{{ address.id }}" class="link-underline">Edit</a>
+
+            <form class="delete-address" method="post" action="/account/addresses/{{ address.id }}">
+              <input name="_method" value="delete" type="hidden">
+              <button onclick="return confirmDelete()" class="link-underline appearance-reset">Delete</button>
+            </form>
+          </div>
+        </div>
       </li>
     {%- endfor -%}
   </ul>
 
-  <div id="add">
+  <div class="container-half section-padding text-center">
     {% form 'customer_address', customer.new_address %}
+      <h2 class="h3">Add new address</h2>
+
       {% render 'address-inputs', address: form %}
-      <button class="action">Add</button>
-      <a href="#" class="button">Cancel</a>
+      <div class="action-list">
+        <button class="action">Add</button>
+        <a href="#" class="button">Cancel</a>
+      </div>
     {% endform %}
+    <a href="#address_form_new" class="action hide-on-target">Add new address</a>
   </div>
-  <a href="#add" class="button">Add address</a>
 </div>
 
-<style>
-  :is([id*="edit-"], [id="add"]):not(:target),
-  [id*="edit-"]:target ~ [href*="#edit-"],
-  [id="add"]:target ~ [href="#add"] {
-    display: none;
-  }
-</style>
-
 <script defer>
+  /* confirm delete */
+  function confirmDelete() {
+    return confirm('Are you sure you want to delete this address?')
+  }
+
+  /* populate address inputs */
   let addressForms = document.querySelectorAll('form[id*="address_form"]')
   for (let form of addressForms) {
     let countrySelect = form.querySelector('select[name="address[country]"')
