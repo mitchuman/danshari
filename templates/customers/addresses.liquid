@@ -19,7 +19,7 @@
         {% endform %}
 
         <div class="hide-on-target">
-          {% render 'address', address: address %}
+          <address>{{ address | format_address }}</address>
 
           <div class="edit-delete">
             <a href="#address_form_{{ address.id }}" class="link-underline">Edit</a>

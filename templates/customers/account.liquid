@@ -1,3 +1,5 @@
+{{ 'customer.css' | asset_url | stylesheet_tag }}
+
 <div class="container side-padding">
   <header class="section-padding richtext">
     <h1 class="h1">Welcome, {{ customer.first_name }}</h1>
@@ -8,19 +10,58 @@
     <h2 class="h2">Order history</h2>
 
     {%- paginate customer.orders by 10 -%}
-      {%- for order in customer.orders -%}
-        <div>{{ order | json }}</div>
-      {%- endfor -%}
+      <div style="overflow-x: auto;">
+        <table class="order-table">
+          <thead>
+            <tr>
+              <th>Order #</th>
+              <th>Date</th>
+              <th>Payment status</th>
+              <th>Fulfillment status</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            {%- for order in customer.orders -%}
+              <tr>
+                <td><a href="{{ order.customer_url }}" class="link-underline">{{ order.name }}</a></td>
+                <td>{{ order.created_at | time_tag: format: 'date' }}</td>
+                <td>{{ order.financial_status_label }}</td>
+                <td>{{ order.fulfillment_status_label }}</td>
+                <td>{{ order.total_price | money }}</td>
+              </tr>
+            {%- endfor -%}
+          </tbody>
+        </table>
+      </div>
 
-      {{ paginate | default_pagination }}
+      {%- if paginate.pages > 1 and paginate.parts.size > 0 -%}
+        <nav>
+          {%- if paginate.previous -%}
+            <a href="{{ paginate.previous.url }}" class="link">Prev</a>
+          {%- endif -%}
+
+          {%- for part in pageinate.parts -%}
+            {%- if part.is_link -%}
+              <a href="{{ part.url }}" class="link">{{ part.title }}</a>
+            {%- else -%}
+              <span>{{ part.title }}</span>
+            {%- endif -%}
+          {%- endfor -%}
+
+          {%- if paginate.next -%}
+            <a href="{{ paginate.next.url }}" class="link">Next</a>
+          {%- endif -%}
+        </nav>
+      {%- endif -%}
     {%- endpaginate -%}
   </section>
 
   <section class="section-padding richtext">
-    <h2 class="h2">Account details</h2>
+    <h2 class="h2">Addresses</h2>
 
     {% if customer.default_address %}
-      {% render 'address', address: customer.default_address %}
+      <address>{{ customer.default_address | format_address }}</address>
     {% endif %}
 
     <div>
