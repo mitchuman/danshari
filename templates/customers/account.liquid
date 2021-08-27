@@ -1,8 +1,12 @@
-<div class="container section-padding side-padding">
-  <h1 class="h1">Welcome, {{ customer.first_name }}</h1>
-  <a href="{{ routes.account_logout_url }}" class="link-underline">Logout</a>
+<div class="container side-padding">
+  <header class="section-padding richtext">
+    <h1 class="h1">Welcome, {{ customer.first_name }}</h1>
+    <a href="{{ routes.account_logout_url }}" class="link-underline">Logout</a>
+  </header>
 
-  <section>
+  <section class="section-padding richtext">
+    <h2 class="h2">Order history</h2>
+
     {%- paginate customer.orders by 10 -%}
       {%- for order in customer.orders -%}
         <div>{{ order | json }}</div>
@@ -12,11 +16,15 @@
     {%- endpaginate -%}
   </section>
 
-  <section>
+  <section class="section-padding richtext">
+    <h2 class="h2">Account details</h2>
+
     {% if customer.default_address %}
       {% render 'address', address: customer.default_address %}
     {% endif %}
 
-    <a href="{{ routes.account_addresses_url }}" class="link">View addresses ({{ customer.addresses.size }})</a>
+    <div>
+      <a href="{{ routes.account_addresses_url }}" class="link">Manage addresses ({{ customer.addresses.size }})</a>
+    </div>
   </section>
 </div>

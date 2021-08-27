@@ -1,0 +1,13 @@
+#forgot:not(:target),
+#forgot:target ~ #login {
+  display: none;
+}
+
+.input-list {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.input-list .input {
+  width: 100%;
+}

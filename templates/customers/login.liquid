@@ -1,35 +1,53 @@
-<div class="container section-padding side-padding">
-  <section id="forgot">
+{{ 'customer-login.css' | asset_url | stylesheet_tag }}
+
+<div class="container-half section-padding side-padding text-center">
+  <section id="forgot" class="richtext">
+    <h2 class="h1">Forgot your password?</h2>
+
     {% form 'recover_customer_password' %}
       {{ form_errors | default_errors }}
 
-      <label>
-        <input class="input" name="email" autocomplete="email" type="email" placeholder="Email" />
-      </label>
+      <fieldset class="input-list">
+        <label>
+          <input class="input" name="email" value="" autocomplete="email" type="email" placeholder="Email" required />
+        </label>
 
-      <button class="action">Submit</button>
+        <button class="action">Retrieve password</button>
+      </fieldset>
     {% endform %}
 
-    <a href="#login" class="link">Cancel</a>
+    <div>
+      <a href="#login" class="link">Cancel</a>
+    </div>
   </section>
 
-  <section id="login">
+  <section id="login" class="richtext">
+    <h1 class="h1">Login</h2>
+
     {% form 'customer_login', return_to: routes.root_url %}
       {{ form_errors | default_errors }}
-      <label>
-        <input class="input" name="customer[email]" autocomplete="email" type="email" placeholder="Email" />
-      </label>
 
-      <label>
-        <input class="input" name="customer[password]" autocomplete="current-password" type="password" placeholder="Password">
-      </label>
+      <fieldset class="input-list">
+        <label>
+          <input class="input" name="customer[email]" value="" autocomplete="email" type="email" placeholder="Email" required />
+        </label>
 
-      <button class="action">Login</button>
+        <div>
+          <label>
+            <input class="input" name="customer[password]" value="" autocomplete="current-password" type="password" placeholder="Password" required />
+          </label>
+          <div style="text-align: left;">
+            <a href="#forgot" class="link"><small>Forgot your password?</small></a>
+          </div>
+        </div>
 
-      <a href="{{ routes.account_register_url }}" class="link">Create an account</a>
+        <button class="action">Login</button>
+      </fieldset>
     {% endform %}
 
-    <a href="#forgot" class="link">Forgot your password?</a>
+    <div>
+      <a href="{{ routes.account_register_url }}" class="link">Create an account</a>
+    </div>
   </section>
 
   {%- if shop.checkout.guest_login -%}
@@ -38,10 +56,3 @@
     {% endform '' %}
   {%- endif -%}
 </div>
-
-<style>
-  #forgot:not(:target),
-  #forgot:target ~ #login {
-    display: none;
-  }
-</style>

@@ -1,23 +1,34 @@
-<div class="container section-padding side-padding">
+{{ 'customer-login.css' | asset_url | stylesheet_tag }}
+
+<section class="container-half section-padding side-padding richtext text-center">
+  <h1 class="h1">Register</h2>
+
   {% form 'create_customer' %}
     {{ form_errors | default_errors }}
 
-    <label>
-      <input class="input" name="customer[first_name]" autocomplete="given-name" type="text" placeholder="First name">
-    </label>
+    <fieldset class="input-list">
+      <label>
+        <input class="input" name="customer[first_name]" value="" autocomplete="given-name" type="text" placeholder="First name" required />
+      </label>
 
-    <label>
-      <input class="input" name="customer[last_name]" autocomplete="family-name" type="text" placeholder="Last name">
-    </label>
+      <label>
+        <input class="input" name="customer[last_name]" value="" autocomplete="family-name" type="text" placeholder="Last name" required />
+      </label>
 
-    <label>
-      <input class="input" name="customer[email]" autocomplete="email" type="email" placeholder="Email">
-    </label>
+      <label>
+        <input class="input" name="customer[email]" value="" autocomplete="email" type="email" placeholder="Email" required />
+      </label>
 
-    <label>
-      <input class="input" name="customer[password]" autocomplete="new-password" type="password" placeholder="Password">
-    </label>
+      <label>
+        <input class="input" name="customer[password]" value="" autocomplete="new-password" type="password" placeholder="Password" required />
+      </label>
 
-    <button class="action">Register</button>
+      <button class="action">Register</button>
+
+    </fieldset>
   {% endform %}
-</div>
+
+  <div>
+    <a href="{{ routes.account_login_url }}" class="link">Already have an account?</a>
+  </div>
+</section>

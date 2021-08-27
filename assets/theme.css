@@ -14,6 +14,8 @@ em, i { font-style: italic; }
 
 strong, b { font-weight: bold; }
 
+small { font-size: smaller; }
+
 img {
   max-width: 100%;
   height: auto;
