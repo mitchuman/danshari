@@ -3,16 +3,16 @@
     "index_default": {
       "type": "index-default"
     },
-    "css_demo": {
-      "type": "css-demo"
+    "demo_css": {
+      "type": "demo-css"
     },
-    "css_richtext": {
-      "type": "css-richtext"
+    "richtext_demo": {
+      "type": "demo-richtext"
     }
   },
   "order": [
     "index_default",
-    "css_demo",
-    "css_richtext"
+    "demo_css",
+    "richtext_demo"
   ]
 }
