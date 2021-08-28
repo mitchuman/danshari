@@ -1,0 +1,47 @@
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name": {{ shop.name | json }},
+    {% if section.settings.logo %}
+      "logo": {{ settings.logo | img_url | prepend: 'https:' | json }},
+    {% endif %}
+    "url": {{ shop.url | append: page.url | json }}
+  }
+</script>
+
+{%- if request.page_type == 'index' -%}
+  {% assign potential_action_target = shop.url | append: routes.search_url | append: '?q={search_term_string}' %}
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": {{ shop.name | json }},
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {{ potential_action_target | json }},
+      "query-input": "required name=search_term_string"
+    },
+    "url": {{ shop.url | append: page.url | json }}
+  }
+  </script>
+{%- endif -%}
+
+{%- if request.page_type == 'product' -%}
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Product",
+    "name": {{ product.title | json }},
+    "url": {{ shop.url | append: product.url | json }},
+    "image": {{ shop.url | append: product.featured_image | json }},
+    "description": {{ page_description | json }},
+    "offers": {
+      "@type": "Offer",
+      "price": {{ product.price | money_without_currency | json }},
+      "priceCurrency": {{ shop.currency | json }},
+      "availability": "http://schema.org/{% if product.available %}InStock{% else %}SoldOut{% endif %}"
+    }
+  }
+  </script>
+{%- endif -%}

@@ -13,12 +13,11 @@
       {{- shop.name -}}
     {%- endif -%}
   </title>
-
   <meta name="description" content="{{ page_description | escape }}">
-
   {%- render 'meta-tags' -%}
 
   <link rel="canonical" href="{{ canonical_url }}">
+  <link rel="icon" href="{{ settings.favicon | img_url: '32x32' }}">
 
   {%- render 'root.css' %}
   {{ 'reset.css' | asset_url | stylesheet_tag }}
@@ -35,6 +34,8 @@
   </main>
 
   {% section 'footer' %}
+
+  {% render 'schema' %}
 
   <script src="{{ 'theme.min.js' | asset_url }}" defer></script>
   {%- if settings.predictive_search_enabled -%}

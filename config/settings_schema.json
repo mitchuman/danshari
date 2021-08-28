@@ -2,7 +2,7 @@
   {
     "name": "theme_info",
     "theme_name": "Danshari",
-    "theme_version": "0.3.1",
+    "theme_version": "0.3.2",
     "theme_author": "mitchuman",
     "theme_documentation_url": "https:\/\/github.com\/mitchuman\/danshari",
     "theme_support_url": "https:\/\/github.com\/mitchuman\/danshari"
@@ -110,6 +110,20 @@
   {
     "name": "Miscellaneous",
     "settings": [
+      {
+        "type": "header",
+        "content": "Logos"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo"
+      },
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon"
+      },
       {
         "type": "header",
         "content": "Predictive Search"

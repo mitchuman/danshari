@@ -1,5 +1,9 @@
 <a href="{{ routes.root_url }}" class="link-underline">
-  {{- shop.name -}}
+  {%- if settings.logo -%}
+    <img {% render 'srcset', image: settings.logo, width: 100 %} alt="{{ settings.logo.alt | default: shop.name }}">
+  {%- else -%}
+    {{- shop.name -}}
+  {%- endif -%}
 </a>
 
 {%- if shop.customer_accounts_enabled -%}
