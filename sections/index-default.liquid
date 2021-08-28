@@ -1,7 +1,7 @@
 <ul>
   <li><a href="{{ routes.collections_url }}" class="link">All Collections</a></li>
   <li><a href="{{ routes.all_products_collection_url }}" class="link">All Products</a></li>
-  <li><a href="/blogs/news" class="link">Blog (/news)</a></li>
+  <li><a href="{{ blogs['news'].url }}" class="link">Blog: {{ blogs['news'].title }}</a></li>
   <li>
     <a href="{{ routes.search_url }}" class="link">Search</a>
     {% render 'search-form' %}

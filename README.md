@@ -7,22 +7,25 @@
 
 ## Demo
 - [Live demo](https://human-dev.myshopify.com/)
-- CSS utility classes demo
-  - `sections/css-demo.liquid`
-- Richtext demo
-  - `sections/css-richtext.liquid`
+- CSS utility classes demo (`sections/demo-css.liquid`)
+- Richtext demo (`sections/css-richtext.liquid`)
 
-## Theme Schema / Settings
+## Global Settings
 Configured in `config/settings_schema.json` and defined as CSS custom properties in `assets/root.css.liquid`.
 
-- Colors
-- Typography
-- Layout
-- Miscellaneous
-  - [Predictive Search](https://shopify.dev/api/ajax/reference/predictive-search) feature available
+- **Colors**
+- **Typography**
+- **Layout**
+  - Container widths and spacing
+- **Miscellaneous**
+  - Logos & Favicon
+  - [Predictive Search](https://shopify.dev/api/ajax/reference/predictive-search) feature enabled by default
+
+## Default Styles
+Danshari is a blank, minimally styled theme. However, **login/register and account related pages are applied default styles**. Styles are defined in `assets/customers.css` and can be modified.
 
 ## Media Queries
-VS Code snippets defined in `.vscode/danshari.code-snippets`
+VS Code snippets (defined in `.vscode/danshari.code-snippets`) included for improved developer experience.
 
 | Snippet | Breakpoint |
 | - | - |
@@ -33,5 +36,18 @@ VS Code snippets defined in `.vscode/danshari.code-snippets`
 | `media desktop` | ≤ 1280px |
 | `media large` | ≥ 1281px |
 
-## Default Styles
-Login and account related pages (`templates/customers/*`) are applied default styles. Styles are defined in `assets/customers.css`.
+## `srcset` snippet
+Use the following snippet to automatically generate `srcset`, `src`, `width` and `height` attributes for `<img>` tags.
+
+Example usage:
+```liquid
+<img
+  {% render 'srcset', image: section.settings.image, width: 1000 %}
+  alt="..." loading="false"
+/>
+```
+
+| Props | Description |
+| - | - |
+| `image` | Shopify image object. **Required** |
+| `width`? | Max width of the image to display. |

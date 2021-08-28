@@ -2,18 +2,6 @@
   line_item
 {%- endcomment -%}
 
-{%- comment -%}
-{%- if line_item.image -%}
-  <a href="{{ line_item.url }}">
-    <img
-      {% render 'srcset', image: line_item.image, width: 100 %}
-      alt="{{ line_item.image.alt | default: line_item.title | escape }}"
-      loading="lazy"
-    />
-  </a>
-{%- endif -%}
-{%- endcomment -%}
-
 <a href="{{ line_item.url }}" class="link">{{ line_item.title }}</a>
 
 <span>

@@ -17,13 +17,17 @@ strong, b { font-weight: bold; }
 small { font-size: smaller; }
 
 img {
-  max-width: 100%;
+  width: auto;
   height: auto;
+  max-width: 100%;
 }
 
-[hidden] { display: none !important; }
+[hidden] { display: none; }
 
-[disabled] { cursor: not-allowed; }
+[disabled] {
+  cursor: not-allowed;
+  filter: grayscale(1);
+}
 
 ::selection {
   background-color: var(--accent-1-alpha);
@@ -77,6 +81,7 @@ img {
 
 .text-dark { color: var(--text-dark); }
 .text-light { color: var(--text-light); }
+.text-accent { color: var(--accent-1); }
 .text-error { color: var(--error); }
 
 .text-center { text-align: center; }
@@ -168,6 +173,7 @@ img {
 
 ::placeholder {
   color: var(--text-light);
+  opacity: 1;
 }
 
 .input {

@@ -6,7 +6,7 @@
   assign available = product.selected_or_first_available_variant.available
 -%}
 
-{%- form 'product', product -%}
+{% form 'product', product %}
   <label>
     <input class="input" name="quantity" value="1" type="number" min="1" max="10" size="2" />
   </label>
@@ -35,4 +35,4 @@
       {{ form | payment_button }}
     {%- endif -%}
   </div>
-{%- endform -%}
+{% endform %}
