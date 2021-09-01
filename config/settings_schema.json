@@ -40,6 +40,18 @@
       },
       {
         "type": "color",
+        "id": "accent_2",
+        "label": "Accent 2",
+        "default": "#95bf47"
+      },
+      {
+        "type": "color",
+        "id": "accent_3",
+        "label": "Accent 3",
+        "default": "#95bf47"
+      },
+      {
+        "type": "color",
         "id": "error",
         "label": "Error",
         "default": "#f00"

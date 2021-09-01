@@ -17,7 +17,6 @@ strong, b { font-weight: bold; }
 small { font-size: smaller; }
 
 img {
-  width: auto;
   height: auto;
   max-width: 100%;
 }
@@ -88,6 +87,8 @@ hr {
 .text-dark { color: var(--text-dark); }
 .text-light { color: var(--text-light); }
 .text-accent { color: var(--accent-1); }
+.text-accent-2 { color: var(--accent-2); }
+.text-accent-3 { color: var(--accent-3); }
 .text-error { color: var(--error); }
 
 .text-center { text-align: center; }
@@ -97,9 +98,18 @@ hr {
 
 /* actions */
 
+.accent-2 {
+  --accent: var(--accent-2);
+  --accent-dark: var(--accent-2-dark);
+}
+.accent-3 {
+  --accent: var(--accent-3);
+  --accent-dark: var(--accent-3-dark);
+}
+
 .link {
   cursor: pointer;
-  color: var(--accent-1);
+  color: var(--accent, var(--accent-1));
   text-decoration: none;
 }
 
@@ -109,7 +119,7 @@ hr {
 
 .link-underline {
   cursor: pointer;
-  color: var(--accent-1);
+  color: var(--accent, var(--accent-1));
   text-decoration: underline;
 }
 
@@ -118,7 +128,7 @@ hr {
 }
 
 :is(.link, .link-underline):active {
-  color: var(--accent-1-dark);
+  color: var(--accent-dark, var(--accent-1-dark));
 }
 
 .button,
@@ -156,23 +166,25 @@ hr {
 }
 
 .action {
-  border-color: var(--accent-1);
-  background-color: var(--accent-1);
+  border-radius: 4em;
+  border-color: var(--accent, var(--accent-1));
+  background-color: var(--accent, var(--accent-1));
   color: #fff;
 }
 
 .action:hover {
-  border-color: var(--accent-1-dark);
-  background-color: var(--accent-1-dark);
+  border-color: var(--accent-dark, var(--accent-1-dark));
+  background-color: var(--accent-dark, var(--accent-1-dark));
 }
 
 .action-alt {
+  border-radius: 4em;
   border-color: currentColor;
-  color: var(--accent-1);
+  color: var(--accent, var(--accent-1));
 }
 
 .action-alt:hover {
-  color: var(--accent-1-dark);
+  color: var(--accent-dark, var(--accent-1-dark));
 }
 
 /* forms */
