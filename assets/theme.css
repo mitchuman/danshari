@@ -17,7 +17,6 @@ strong, b { font-weight: bold; }
 small { font-size: smaller; }
 
 img {
-  width: auto;
   height: auto;
   max-width: 100%;
 }
@@ -217,14 +216,14 @@ img {
 
 /* header */
 
-.header {
+#shopify-section-header {
   position: relative;
   z-index: 10;
 }
 
 /* footer */
 
-.footer {}
+#shopify-section-footer {}
 
 /* richtext */
 

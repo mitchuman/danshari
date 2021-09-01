@@ -1,6 +1,15 @@
+.search-form {
+  position: relative;
+}
+
 .search-suggestions {
+  position: absolute;
+  left: 0; top: 100%;
+  width: 100%;
   padding-inline: 1rem;
+  box-sizing: border-box;
   border: 1px solid var(--border);
+  background-color: #fff;
   max-height: max(200px, 50vh);
   overflow-y: auto;
 }
