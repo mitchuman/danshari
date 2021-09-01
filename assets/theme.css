@@ -243,6 +243,11 @@ hr {
 #shopify-section-header {
   position: relative;
   z-index: 10;
+}
+
+.header {
+  position: relative;
+  z-index: 10;
   display: grid;
   grid-template-columns: auto 1fr auto auto;
   grid-template-areas: 'logo search menu actions';
@@ -264,13 +269,18 @@ hr {
   grid-area: actions;
 }
 
+.header-trigger {
+  grid-area: trigger;
+  cursor: pointer;
+}
+
 .header-menu {
   grid-area: menu;
 }
 
 /* tablet */
 @media screen and (max-width: 768px) {
-  #shopify-section-header {
+  .header {
     grid-template-columns: repeat(3, auto);
     grid-template-areas:
       'logo     logo    actions'
@@ -280,6 +290,22 @@ hr {
 
   .header-logo {
     width: 120px;
+  }
+
+  .header-menu {
+    position: absolute;
+    left: 0; top: 100%;
+    width: 100%;
+    background-color: inherit;
+    transition:
+      opacity var(--t),
+      transform var(--t);
+  }
+
+  #header-menu-state:not(:checked) ~ .header-menu {
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(-1rem);
   }
 }
 
