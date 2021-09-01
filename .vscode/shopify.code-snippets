@@ -60,23 +60,23 @@
 		]
 	},
 
-	"≤ 1280px": {
+	"≤ 1549px": {
 		"scope": "css,postcss",
 		"prefix": "media desktop",
 		"body": [
 			"/* desktop */",
-			"@media screen and (max-width: 1280px) {",
+			"@media screen and (max-width: 1549px) {",
 			"\t$1",
 			"}",
 		]
 	},
 
-	"≥ 1281px": {
+	"≥ 1550px": {
 		"scope": "css,postcss",
 		"prefix": "media large",
 		"body": [
 			"/* large */",
-			"@media screen and (min-width: 1281px) {",
+			"@media screen and (min-width: 1550px) {",
 			"\t$1",
 			"}",
 		]

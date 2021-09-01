@@ -4,19 +4,25 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "shopify switch human-dev",
+      "label": "shopify switch 4knines-sandbox",
       "type": "shell",
-      "command": "shopify switch --store=human-dev.myshopify.com",
+      "command": "shopify switch --store=4knines-sandbox.myshopify.com",
       "presentation": {
         "close": true,
         "reveal": "never",
       },
-      // "runOptions": {
-      //   "runOn": "folderOpen"
-      // },
       "problemMatcher": []
     },
-
+    {
+      "label": "shopify switch 4knines",
+      "type": "shell",
+      "command": "shopify switch --store=4knines.myshopify.com",
+      "presentation": {
+        "close": true,
+        "reveal": "never",
+      },
+      "problemMatcher": []
+    },
     {
       "label": "minify current JS file",
       "type": "shell",
