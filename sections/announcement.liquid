@@ -1,0 +1,61 @@
+{%- if section.settings.enabled -%}
+  {%- if section.settings.link -%}
+    <a href="{{ section.settings.link }}"><p>{{ section.settings.content }}</p></a>
+  {%- else -%}
+    <p>{{ section.settings.content }}</p>
+  {%- endif -%}
+{%- endif -%}
+
+{% stylesheet %}
+  #shopify-section-announcement {
+    padding-block: 0.5rem;
+    background-color: var(--accent-2);
+    color: #fff;
+    text-align: center;
+  }
+
+  #shopify-section-announcement a {
+    display: inline-block;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  #shopify-section-announcement a:hover,
+  #shopify-section-announcement a:hover * {
+    text-decoration: underline;
+  }
+
+  /* tablet */
+  @media screen and (max-width: 768px) {
+    #shopify-section-announcement {
+      font-size: 12px;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Announcement",
+  "tag": "aside",
+  "class": "side-padding",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enabled",
+      "label": "Show announcement",
+      "default": false
+    },
+    {
+      "type": "html",
+      "id": "content",
+      "label": "Content"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link",
+      "info": "Optional"
+    }
+  ]
+}
+{% endschema %}

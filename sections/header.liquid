@@ -1,41 +1,55 @@
-<a href="{{ routes.root_url }}" class="link-underline">
+<a href="{{ routes.root_url }}" class="header-logo">
   {%- if settings.logo -%}
-    <img {% render 'srcset', image: settings.logo, width: 100 %} alt="{{ settings.logo.alt | default: shop.name }}">
+    <img {% render 'srcset', image: settings.logo, width: 300 %} alt="{{ settings.logo.alt | default: shop.name }}">
   {%- else -%}
     {{- shop.name -}}
   {%- endif -%}
 </a>
 
-{%- if shop.customer_accounts_enabled -%}
-  {%- if customer -%}
-    <a href="{{ routes.account_url }}" class="link">Account</a>
-  {%- else -%}
-    <a href="{{ routes.account_login_url }}" class="link">Login</a>
+<div class="header-search">
+ {% render 'search-form' %}
+</div>
 
-    {%- if shop.customer_accounts_optional -%}
-      {{ ' / ' }}
-      <a href="{{ routes.account_register_url }}" class="link">Register</a>
+<div class="header-actions">
+  <a href="tel:{{ shop.phone }}" class="link">Tel</a>
+
+  {%- if shop.customer_accounts_enabled -%}
+    {%- if customer -%}
+      <a href="{{ routes.account_url }}" class="link">Account</a>
+    {%- else -%}
+      <a href="{{ routes.account_login_url }}" class="link">Login</a>
+
+      {%- if shop.customer_accounts_optional -%}
+        {{ ' / ' }}
+        <a href="{{ routes.account_register_url }}" class="link">Register</a>
+      {%- endif -%}
     {%- endif -%}
   {%- endif -%}
-{%- endif -%}
 
-<a href="{{ routes.cart_url }}" class="link">
-  Cart ({{ cart.item_count }})
-</a>
+  <a href="{{ routes.cart_url }}" class="link">
+    Cart ({{ cart.item_count }})
+  </a>
+</div>
+
+<div class="header-trigger tablet">
+  trigger
+</div>
 
 {%- if section.settings.navigation.links != blank -%}
-  <ul>
-    {%- for link in section.settings.navigation.links -%}
-      <li>
-        <a href="{{ link.url }}" class="link">{{ link.title }}</a>
-      </li>
-    {%- endfor -%}
-  </ul>
+  <div class="header-menu">
+    <ul>
+      {%- for link in section.settings.navigation.links -%}
+        <li>
+          <a href="{{ link.url }}" class="link">{{ link.title }}</a>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
 {%- endif -%}
 
 {%- if section.settings.sticky -%}
   <style>
-    .header { position: sticky; top: 0; }
+    #shopify-section-header { position: sticky; top: 0; }
   </style>
 {%- endif -%}
 
@@ -43,7 +57,6 @@
 {
   "name": "Header",
   "tag": "header",
-  "class": "header",
   "settings": [
     {
       "type": "checkbox",

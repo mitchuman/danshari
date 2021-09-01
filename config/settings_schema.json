@@ -24,6 +24,12 @@
       },
       {
         "type": "color",
+        "id": "bg_dark",
+        "label": "Background color (dark)",
+        "default": "#ddd"
+      },
+      {
+        "type": "color",
         "id": "border",
         "label": "Border color",
         "default": "#bbb"
