@@ -1,12 +1,12 @@
 # _Danshari_
 
- A blank slate theme for Shopify 2.0
+A blank slate theme for Shopify 2.0
 
 > **_Danshari / <ruby>断捨離<rt>だんしゃり</rt></ruby>_**<br>
 > _n._ Decluttering, clearing out past accumulation, minimalism.
 
 ## Demo
-- [Live demo](https://human-dev.myshopify.com/)
+- [Live demo](https://4knines-sandbox.myshopify.com)
 - CSS utility classes demo (`sections/demo-css.liquid`)
 - Richtext demo (`sections/css-richtext.liquid`)
 
@@ -33,8 +33,8 @@ VS Code snippets (defined in `.vscode/danshari.code-snippets`) included for impr
 | `media tablet-and-up` | ≥ 429px |
 | `media tablet` | ≤ 768px |
 | `media desktop-and-up` | ≥ 769px |
-| `media desktop` | ≤ 1280px |
-| `media large` | ≥ 1281px |
+| `media desktop` | ≤ 1549px |
+| `media large` | ≥ 1550px |
 
 ## `srcset` snippet
 Use the following snippet to automatically generate `srcset`, `src`, `width` and `height` attributes for `<img>` tags.

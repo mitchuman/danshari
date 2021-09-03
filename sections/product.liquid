@@ -1,25 +1,30 @@
 {{ 'section-product.css' | asset_url | stylesheet_tag }}
 
-<h1 class="h1">{{ product.title }}</h1>
+<!-- TODO: add image carousel + zoom + 360 -->
+<div class="section-product-img">
+  {%- unless product.images == empty -%}
+    <figure>
+      {%- for image in product.images -%}
+        <img
+          {% render 'srcset', image: image, width: 1200 %}
+          alt="{{ image.alt | default: product.title | escape }}"
+          loading="{%- if forloop.first -%}eager{%- else -%}lazy{%- endif -%}"
+        />
+      {%- endfor -%}
+    </figure>
+  {%- endunless -%}
+</div>
 
-{%- if product.description -%}
-  <div>{{ product.description }}</div>
-{%- endif -%}
-
-{% render 'price', product: product %}
-{% render 'product-form', product: product %}
-
-{%- unless product.images == empty -%}
-  <figure>
-    {%- for image in product.images -%}
-      <img
-        {% render 'srcset', image: image, width: 100 %}
-        alt="{{ image.alt | default: product.title | escape }}"
-        loading="{%- if forloop.first -%}eager{%- else -%}lazy{%- endif -%}"
-      />
-    {%- endfor -%}
-  </figure>
-{%- endunless -%}
+<div class="section-product-txt">
+  <div class="sticky">
+    <h1 class="h1">{{ product.title }}</h1>
+    {%- if product.description -%}
+      <div>{{ product.description }}</div>
+    {%- endif -%}
+    {% render 'price', product: product %}
+    {% render 'product-form', product: product %}
+  </div>
+</div>
 
 {% schema %}
 {
