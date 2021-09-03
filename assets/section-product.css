@@ -1,11 +1,1 @@
-.section-product {
-  display: grid;
-  gap: 2rem 4rem;
-}
-
-/* desktop-and-up */
-@media screen and (min-width: 769px) {
-  .section-product {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+.section-product {}

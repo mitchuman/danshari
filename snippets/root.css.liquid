@@ -8,7 +8,7 @@
   --text-light:  {{ settings.text | color_lighten: 70 }};
 
   --bg:       {{ settings.bg }};
-  --bg-dark:  {{ settings.bg_dark }};
+  --bg-dark:  {{ settings.bg | color_darken: 20 }};
   --bg-light: {{ settings.bg | color_lighten: 10 }};
 
   --border:       {{ settings.border }};
@@ -18,14 +18,6 @@
   --accent-1:       {{ settings.accent_1 }};
   --accent-1-alpha:  {{ settings.accent_1 | color_modify: 'alpha', 0.5 }};
   --accent-1-dark:  {{ settings.accent_1 | color_darken: 10 }};
-
-  --accent-2:       {{ settings.accent_2 }};
-  --accent-2-alpha:  {{ settings.accent_2 | color_modify: 'alpha', 0.5 }};
-  --accent-2-dark:  {{ settings.accent_2 | color_darken: 10 }};
-
-  --accent-3:       {{ settings.accent_3 }};
-  --accent-3-alpha:  {{ settings.accent_3 | color_modify: 'alpha', 0.5 }};
-  --accent-3-dark:  {{ settings.accent_3 | color_darken: 10 }};
 
   --error:        {{ settings.error }};
 

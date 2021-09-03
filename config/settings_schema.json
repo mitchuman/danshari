@@ -24,12 +24,6 @@
       },
       {
         "type": "color",
-        "id": "bg_dark",
-        "label": "Background color (dark)",
-        "default": "#ddd"
-      },
-      {
-        "type": "color",
         "id": "border",
         "label": "Border color",
         "default": "#bbb"
@@ -42,18 +36,6 @@
         "type": "color",
         "id": "accent_1",
         "label": "Accent 1",
-        "default": "#95bf47"
-      },
-      {
-        "type": "color",
-        "id": "accent_2",
-        "label": "Accent 2",
-        "default": "#95bf47"
-      },
-      {
-        "type": "color",
-        "id": "accent_3",
-        "label": "Accent 3",
         "default": "#95bf47"
       },
       {

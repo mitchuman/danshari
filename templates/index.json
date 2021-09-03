@@ -1,10 +1,18 @@
 {
   "sections": {
+    "index_default": {
+      "type": "index-default"
+    },
     "demo_css": {
       "type": "demo-css"
+    },
+    "richtext_demo": {
+      "type": "demo-richtext"
     }
   },
   "order": [
-    "demo_css"
+    "index_default",
+    "demo_css",
+    "richtext_demo"
   ]
 }
