@@ -45,11 +45,11 @@ Example usage:
 ```liquid
 <img
   {% render 'srcset', image: section.settings.image, width: 1000 %}
-  alt="..." loading="false"
+  alt="..." loading="lazy"
 />
 ```
 
 | Props | Description |
 | - | - |
-| `image` | Shopify image object. **Required** |
+| `image` | Shopify image object. Required. |
 | `width`? | Max width of the image to display. |
