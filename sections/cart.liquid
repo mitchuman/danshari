@@ -1,5 +1,3 @@
-{{ 'section-cart.css' | asset_url | stylesheet_tag }}
-
 <h1 class="h1">Cart</h1>
 
 {%- unless cart == empty -%}
@@ -40,6 +38,10 @@
 {%- else -%}
   <p>Cart is empty</p>
 {%- endunless -%}
+
+{% stylesheet %}
+
+{% endstylesheet %}
 
 {% schema %}
 {
