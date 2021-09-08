@@ -22,7 +22,9 @@ Configured in `config/settings_schema.json` and defined as CSS custom properties
   - [Predictive Search](https://shopify.dev/api/ajax/reference/predictive-search) feature enabled by default
 
 ## Default Styles
-Danshari is a blank, minimally styled theme. However, **login/register and account related pages are applied default styles**. Styles are defined in `assets/customers.css` and can be modified.
+Danshari is a blank, minimally styled theme. However, **the following pages are applied default styles**:
+- Login, Register and Account related pages (/account)
+- Cart page (/cart)
 
 ## Media Queries
 VS Code snippets (defined in `.vscode/danshari.code-snippets`) included for improved developer experience.
