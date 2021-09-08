@@ -253,3 +253,31 @@ img {
   list-style-type: decimal;
   padding-left: 2em;
 }
+
+.richtext table {
+  width: 100%;
+  border: 1px solid var(--border);
+  text-align: center;
+}
+
+.richtext thead { border-bottom: 1px solid var(--border); }
+.richtext tfoot { border-top: 1px solid var(--border); }
+
+.richtext :is(th, td) {
+  vertical-align: middle;
+  padding: var(--button-padding-lg);
+}
+
+.richtext th {
+  color: var(--text-dark);
+  text-transform: uppercase;
+}
+
+.richtext td {
+  padding-block: 0.25em;
+}
+
+.richtext tfoot tr:first-child td { padding-top: 1rem; }
+.richtext tfoot tr:last-child td { padding-bottom: 1rem; }
+
+.richtext tfoot td[colspan] { text-align: right; }

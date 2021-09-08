@@ -11,18 +11,20 @@
     <input class="input" name="quantity" value="1" type="number" min="1" max="10" size="2" />
   </label>
 
-  <select name="id" class="input">
-    {%- for variant in product.variants -%}
-      <option
-        value="{{ variant.id }}"
-        {% if variant == product.selected_or_first_available_variant -%}
-          selected
-        {%- endif %}
-      >
-        {{ variant.title }} ({{ variant.price | money }})
-      </option>
-    {%- endfor -%}
-  </select>
+  {%- unless product.has_only_default_variant -%}
+    <select name="id" class="input">
+      {%- for variant in product.variants -%}
+        <option
+          value="{{ variant.id }}"
+          {% if variant == product.selected_or_first_available_variant -%}
+            selected
+          {%- endif %}
+        >
+          {{ variant.title }} ({{ variant.price | money }})
+        </option>
+      {%- endfor -%}
+    </select>
+  {%- endunless -%}
 
   <div>
     {%- if available -%}

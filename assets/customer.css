@@ -13,47 +13,11 @@
   gap: 0.5rem;
 }
 
-.col-2 + .col-2 {
-  margin-top: 1rem;
-}
+.col-2 + .col-2 { margin-top: 1rem; }
 
-.col-2 .input {
-  width: 100%;
-}
+.col-2 .input { width: 100%; }
 
 .colspan { grid-column: 1 / -1; }
-
-/* orders */
-
-.order-table {
-  width: 100%;
-  border: 1px solid var(--border);
-  text-align: center;
-}
-
-.order-table thead { border-bottom: 1px solid var(--border); }
-.order-table tfoot { border-top: 1px solid var(--border); }
-
-.order-table :is(th, td) {
-  vertical-align: middle;
-  padding: var(--button-padding-lg);
-}
-
-.order-table th {
-  color: var(--text-dark);
-  text-transform: uppercase;
-}
-
-.order-total td {
-  padding-block: 0.25em;
-}
-
-.order-total tr:first-child td { padding-top: 1rem; }
-.order-total tr:last-child td { padding-bottom: 1rem; }
-
-.order-total td[colspan] {
-  text-align: right;
-}
 
 /* addresses */
 

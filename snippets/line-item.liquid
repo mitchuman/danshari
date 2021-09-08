@@ -2,29 +2,43 @@
   line_item
 {%- endcomment -%}
 
-<a href="{{ line_item.url }}" class="link">{{ line_item.title }}</a>
+<tr>
+  <td>
+    <a href="{{ line_item.url }}" class="link">{{ line_item.title }}</a>
+    {%- unless line_item.product.has_only_default_variant -%}
+      <div>{{ line_item.variant.title }}</div>
+    {%- endunless -%}
+  </td>
 
-<span>
-  {%- if line_item.original_price != line_item.final_price -%}
-    {{ line_item.final_price | money }}
-    <s>{{ line_item.original_price | money }}</s>
-  {%- else -%}
-    {{ line_item.original_price | money }}
-  {%- endif -%}
-</span>
+  <td>
+    <span>
+      {%- if line_item.original_price > line_item.final_price -%}
+        <s>{{ line_item.original_price | money }}</s><br>
+      {%- else -%}
+        {{ line_item.final_price | money }}
+      {%- endif -%}
+    </span>
+  </td>
 
-<label for="qty-{{ line_item.index }}">
-  Quantity:
+  <td>
+    <label>
+      <input
+        class="input text-center"
+        name="updates[]"
+        value="{{ line_item.quantity }}"
+        type="number"
+        min="0"
+        size="2"
+      />
+    </label>
+    <a href="{{ line_item.url_to_remove }}" class="link-underline">Remove</a>
+  </td>
 
-  <input
-    id="qty-{{ line_item.index }}"
-    class="input"
-    name="updates[]"
-    value="{{ line_item.quantity }}"
-    type="number"
-    min="0"
-    size="2"
-  />
-</label>
-
-<a href="{{ line_item.url_to_remove }}" class="link-underline">Remove</a>
+  <td>
+    {%- if line_item.original_line_price > line_item.final_line_price -%}
+      <s>{{ line_item.original_line_price | money }}</s><br>
+    {%- else -%}
+      {{ line_item.final_line_price | money }}
+    {%- endif -%}
+  </td>
+</tr>

@@ -17,7 +17,7 @@
     {%- endif -%}
 
     <div style="overflow-x: auto;">
-      <table class="order-table">
+      <table>
         <thead>
           <tr>
             <th>Product</th>
@@ -35,7 +35,7 @@
               <td>{{ line_item.price | money }}</td>
               <td>{{ line_item.quantity }}</td>
               <td>
-                {%- if line_item.original_line_price != line_item.final_line_price -%}
+                {%- if line_item.original_line_price > line_item.final_line_price -%}
                   <s>{{ line_item.original_line_price | money }}</s><br>
                 {%- endif -%}
                 {{ line_item.final_line_price | money }}
@@ -44,7 +44,7 @@
             <script>console.log({{ line_item | json }})</script>
           {%- endfor -%}
         </tbody>
-        <tfoot class="order-total">
+        <tfoot>
           <tr>
             <td colspan="4">Subtotal</td>
             <td>{{ order.line_items_subtotal_price | money }}</td>

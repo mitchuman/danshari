@@ -4,11 +4,11 @@
 
 <div>
 {%- if product.available -%}
-  {{ product.price | money }}
-
   {%- if product.compare_at_price > product.price -%}
-    <s>{{ product.compare_at_price | money }}</s>
+    <s>{{ product.compare_at_price | money }}</s><br>
   {%- endif -%}
+
+  {{ product.price | money }}
 
 {%- else -%}
   Unavailable

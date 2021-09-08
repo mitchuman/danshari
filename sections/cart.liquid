@@ -2,51 +2,71 @@
 
 {%- unless cart == empty -%}
   <section>
-    <form action="{{ routes.cart_url }}" method="post" id="cart">
-      <ul>
-        {%- for line_item in cart.items -%}
-          <li>
-            {% render 'line-item', line_item: line_item %}
-          </li>
-        {%- endfor -%}
-      </ul>
+    <form action="{{ routes.cart_url }}" method="post" id="cart" class="richtext" style="overflow-x: auto;">
+      <table class="cart-table">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          {%- liquid
+            for line_item in cart.items
+              render 'line-item', line_item: line_item
+            endfor
+          -%}
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3">Subtotal</td>
+            <td><b>{{ cart.total_price | money }}</b></td>
+          </tr>
+          {%- for discount in cart.cart_level_discount_applications -%}
+            <tr>
+              <td colspan="3">{{ discount.title }}</td>
+              <td>(-{{ discount.total_allocated_amount | money }})</td>
+            </tr>
+          {%- endfor -%}
+          <tr>
+            <td colspan="4">
+              <small>
+                {%- if cart.taxes_included and shop.shipping_policy.body != blank -%}
+                  Tax included. <a href="{{ shop.shipping_policy.url }}">Shipping</a> calculated at checkout
+                {%- elsif cart.taxes_included -%}
+                  Tax included and shipping calculated at checkout
+                {%- elsif shop.shipping_policy.body != blank -%}
+                  Taxes and <a href="{{ shop.shipping_policy.url }}">shipping</a> calculated at checkout
+                {%- else -%}
+                  Taxes and shipping calculated at checkout
+                {%- endif -%}
+              </small>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="4">
+              <button class="action-alt" form="cart">Update</button>
+              <button class="action" form="cart" name="checkout" type="submit">Checkout</button>
+            </td>
+          </tr>
+          {% if additional_checkout_buttons %}
+            <tr><td>{{ content_for_additional_checkout_buttons }}</td></tr>
+          {% endif %}
+        </tfoot>
+      </table>
     </form>
   </section>
 
-  <section>
-    {%- unless cart.cart_level_discount_applications == empty -%}
-      <h2 class="h2">Discounts</h2>
-      <ul>
-        {%- for discount in cart.cart_level_discount_applications -%}
-          <li>{{ discount.title }} (-{{ discount.total_allocated_amount | money }})</li>
-        {%- endfor -%}
-      </ul>
-    {%- endunless -%}
-
-    <h2 class="h2">Total</h2>
-    <p>{{ cart.total_price | money }}</p>
-
-    <p>
-      <button class="action-alt" form="cart">Update</button>
-      <button class="action" form="cart" name="checkout" type="submit">Checkout</button>
-    </p>
-
-    {% if additional_checkout_buttons %}
-      <div>{{ content_for_additional_checkout_buttons }}</div>
-    {% endif %}
-  </section>
 {%- else -%}
-  <p>Cart is empty</p>
+  <p class="text-light">Cart is empty</p>
 {%- endunless -%}
-
-{% stylesheet %}
-
-{% endstylesheet %}
 
 {% schema %}
 {
   "name": "Cart line items",
-  "class": "section-cart container section-padding side-padding",
+  "class": "section-cart container section-padding side-padding richtext",
   "settings": [
 
   ]
