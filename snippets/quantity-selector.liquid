@@ -1,0 +1,25 @@
+{%- comment -%}
+  label?
+  id?
+  name
+  value?
+{%- endcomment -%}
+
+<label for="qty{{ id }}" class="qty-selector">
+  {% if label %}
+    <div>{{ label }}</label>
+  {% endif %}
+
+  <div class="qty-inputs">
+    <button class="qty-inc unset" data-inc="-1">-</button>
+    <input
+      class="qty-value unset"
+      id="qty{{ id }}" name="{{ name }}"
+      type="number"
+      value="{{ value | default: 1 }}"
+      min="1"
+      size="3"
+    />
+    <button class="qty-inc unset" data-inc="1">+</button>
+  </div>
+</div>

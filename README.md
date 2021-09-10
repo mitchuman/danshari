@@ -37,7 +37,9 @@ VS Code snippets (defined in `.vscode/danshari.code-snippets`) included for impr
 | `media desktop` | ≤ 1280px |
 | `media large` | ≥ 1281px |
 
-## `srcset` snippet
+## Snippets
+
+### `srcset`
 Use the following snippet to automatically generate `srcset`, `src`, `width` and `height` attributes for `<img>` tags.
 
 Example usage:
@@ -52,3 +54,13 @@ Example usage:
 | - | - |
 | `image` | Shopify image object. Required. |
 | `width`? | Max width of the image to display. |
+
+### `quantity-selector`
+Use the following snippet to render a product quantity selector.
+
+| Props | Description |
+| - | - |
+| `label`? | Show a text label above the inputs. |
+| `id`? | `id` attribute for the input. (Default: "qty") |
+| `name` | `name` attribute for the input. Required. |
+| `value`? | Initial value. (Default: 1) |

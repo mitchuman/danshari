@@ -4,8 +4,7 @@
   <div>{{ product.description }}</div>
 {%- endif -%}
 
-{% render 'price', product: product %}
-{% render 'product-form', product: product %}
+{% render 'product-form' with product %}
 
 {%- unless product.images == empty -%}
   <figure>

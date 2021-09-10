@@ -1,6 +1,4 @@
-.search-form {
-  position: relative;
-}
+.search-form { position: relative; }
 
 .search-suggestions {
   position: absolute;
@@ -14,9 +12,7 @@
   overflow-y: auto;
 }
 
-.search-suggestions:empty {
-  display: none;
-}
+.search-suggestions:empty { display: none; }
 
 /* group */
 

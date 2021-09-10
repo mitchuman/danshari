@@ -1,5 +1,6 @@
 {%- comment -%}
   line_item
+  index
 {%- endcomment -%}
 
 <tr>
@@ -21,15 +22,11 @@
   </td>
 
   <td>
-    <label>
-      <input
-        class="input text-center"
-        name="updates[]"
-        value="{{ line_item.quantity }}"
-        type="number"
-        min="0"
-        size="2"
-      />
+    {% render 'quantity-selector'
+      id: index
+      name: "updates[]"
+      value: line_item.quantity
+    %}
     </label>
     <a href="{{ line_item.url_to_remove }}" class="link-underline">Remove</a>
   </td>

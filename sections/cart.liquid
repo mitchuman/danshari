@@ -15,7 +15,7 @@
         <tbody>
           {%- liquid
             for line_item in cart.items
-              render 'line-item', line_item: line_item
+              render 'line-item', line_item: line_item, index: forloop.index
             endfor
           -%}
         </tbody>

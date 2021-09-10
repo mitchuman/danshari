@@ -36,7 +36,7 @@ img {
   scroll-margin-top: var(--header-height);
 }
 
-.appearance-reset {
+.unset {
   -webkit-appearance: none;
   appearance: none;
   all: unset;
@@ -205,6 +205,42 @@ img {
   background-color: var(--bg);
   color: var(--text-light);
   border-color: inherit;
+}
+
+/* quantity selector */
+
+.qty-selector {
+  display: inline-block;
+}
+
+.qty-inputs {
+  display: grid;
+  max-width: -webkit-max-content;
+  max-width: max-content;
+  grid-template-columns: 1fr auto 1fr;
+  border: 1px solid var(--border-light);
+}
+
+.qty-inputs:focus-within {
+  border-color: var(--border);
+  box-shadow: var(--outline);
+}
+
+.qty-inc {
+  cursor: pointer;
+  padding: var(--button-padding);
+  font-family: monospace;
+}
+
+.qty-inc:hover {
+  color: var(--accent-1);
+}
+
+.qty-value {
+  -moz-appearance: textfield;
+  padding: var(--button-padding);
+  padding-inline: 0;
+  text-align: center;
 }
 
 /* utils */

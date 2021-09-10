@@ -2,15 +2,16 @@
   product
 {%- endcomment -%}
 
-{%- liquid
-  assign available = product.selected_or_first_available_variant.available
--%}
+{%- assign available = product.selected_or_first_available_variant.available -%}
+
+<div>
+  {%- if product.compare_at_price > product.price -%}
+    <s>{{ product.compare_at_price | money }}</s><br>
+  {%- endif -%}
+  {{ product.price | money }}
+</div>
 
 {% form 'product', product %}
-  <label>
-    <input class="input" name="quantity" value="1" type="number" min="1" max="10" size="2" />
-  </label>
-
   {%- unless product.has_only_default_variant -%}
     <select name="id" class="input">
       {%- for variant in product.variants -%}
@@ -24,7 +25,11 @@
         </option>
       {%- endfor -%}
     </select>
+  {%- else -%}
+    <input name="id" value="{{ product.selected_or_first_available_variant.id }}" type="hidden" />
   {%- endunless -%}
+
+  {% render 'quantity-selector', name: 'quantity' %}
 
   <div>
     {%- if available -%}
