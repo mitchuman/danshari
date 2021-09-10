@@ -60,7 +60,7 @@ Use the following snippet to render a product quantity selector.
 
 | Props | Description |
 | - | - |
-| `label`? | Show a text label above the inputs. |
-| `id`? | `id` attribute for the input. (Default: "qty") |
 | `name` | `name` attribute for the input. Required. |
+| `id`? | `id` attribute for the input. (Default: "qty") |
 | `value`? | Initial value. (Default: 1) |
+| `label`? | Show a text label above the inputs. |
