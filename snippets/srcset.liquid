@@ -11,7 +11,7 @@
 
 {%- capture srcset -%}
   {%- if width >= 50 -%}{{ image | img_url: '50x' }} 50w{%- endif -%}
-  {%- if width >= 100 -%}{{ image | img_url: '100x' }} 100w{%- endif -%}
+  {%- if width >= 100 -%},{{ image | img_url: '100x' }} 100w{%- endif -%}
   {%- if width >= 200 -%},{{ image | img_url: '200x' }} 200w{%- endif -%}
   {%- if width >= 300 -%},{{ image | img_url: '300x' }} 300w{%- endif -%}
   {%- if width >= 400 -%},{{ image | img_url: '400x' }} 400w{%- endif -%}
