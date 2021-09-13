@@ -1,3 +1,5 @@
+(function(){
+
 /* set var(--header-height) */
 let root = document.documentElement
 let headerHeight = document.querySelector('#shopify-section-header').offsetHeight
@@ -18,3 +20,5 @@ for (let qty_selector of qty_selectors) {
     })
   }
 }
+
+})()

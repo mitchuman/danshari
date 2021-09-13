@@ -17,9 +17,8 @@
       {%- for variant in product.variants -%}
         <option
           value="{{ variant.id }}"
-          {% if variant == product.selected_or_first_available_variant -%}
-            selected
-          {%- endif %}
+          {% if variant == product.selected_or_first_available_variant -%}selected{%- endif %}
+          {% unless variant.available %}disabled{% endunless %}
         >
           {{ variant.title }} ({{ variant.price | money }})
         </option>

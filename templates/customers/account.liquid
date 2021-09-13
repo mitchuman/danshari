@@ -1,12 +1,12 @@
 {{ 'customer.css' | asset_url | stylesheet_tag }}
 
-<div class="container side-padding">
-  <header class="section-padding richtext">
+<div class="container padding-x">
+  <header class="padding-y richtext">
     <h1 class="h1">Welcome, {{ customer.first_name }}</h1>
     <a href="{{ routes.account_logout_url }}" class="link-underline">Logout</a>
   </header>
 
-  <section class="section-padding richtext">
+  <section class="padding-y richtext">
     <h2 class="h2">Order history</h2>
 
     {%- paginate customer.orders by 10 -%}
@@ -57,7 +57,7 @@
     {%- endpaginate -%}
   </section>
 
-  <section class="section-padding richtext">
+  <section class="padding-y richtext">
     <h2 class="h2">Addresses</h2>
 
     {% if customer.default_address %}

@@ -4,7 +4,7 @@
   <div>{{ product.description }}</div>
 {%- endif -%}
 
-{% render 'product-form' with product %}
+{% render 'product-form' %}
 
 {%- unless product.images == empty -%}
   <figure>
@@ -22,7 +22,7 @@
 {
   "name": "Product",
   "tag": "article",
-  "class": "section-product container section-padding side-padding",
+  "class": "section-product container padding-y padding-x",
   "settings": [
     {
       "type": "checkbox",

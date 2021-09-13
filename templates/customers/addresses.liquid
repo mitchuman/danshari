@@ -1,12 +1,12 @@
 {{ 'customer.css' | asset_url | stylesheet_tag }}
 
-<div class="container side-padding">
-  <header class="section-padding richtext">
+<div class="container padding-x">
+  <header class="padding-y richtext">
     <h1 class="h1">Addresses</h1>
     <a href="{{ routes.account_url }}" class="link">Back to Account</a>
   </header>
 
-  <ul class="address-list section-padding">
+  <ul class="address-list padding-y">
     {%- for address in customer.addresses -%}
       <li class="address-item" data-address-id="{{ address.id }}">
         {% form 'customer_address', address %}
@@ -34,7 +34,7 @@
     {%- endfor -%}
   </ul>
 
-  <div class="container-half section-padding text-center">
+  <div class="container-half padding-y text-center">
     {% form 'customer_address', customer.new_address %}
       <h2 class="h3">Add new address</h2>
 
