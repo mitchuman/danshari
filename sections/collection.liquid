@@ -1,5 +1,11 @@
 <h1 class="h1">{{ collection.title }}</h1>
 
+{%- unless collection.filters == empty -%}
+  {%- for filter in collection.filters -%}
+
+  {%- endfor -%}
+{%- endunless -%}
+
 <ul>
   {%- for product in collection.products -%}
     <li>

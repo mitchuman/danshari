@@ -1,28 +1,49 @@
 {%- comment -%}
   image
   width?
+  asset?
 {%- endcomment -%}
 
 {%- liquid
   assign width = width | default: image.width
   assign height = width | divided_by: image.aspect_ratio | floor
   assign src = width | append: 'x'
+
+  assign sizes = '50,100,200,300,400,500,600,750,900,1200,1500,2000' | split: ','
 -%}
 
 {%- capture srcset -%}
-  {%- if width >= 50 -%}{{ image | img_url: '50x' }} 50w{%- endif -%}
-  {%- if width >= 100 -%},{{ image | img_url: '100x' }} 100w{%- endif -%}
-  {%- if width >= 200 -%},{{ image | img_url: '200x' }} 200w{%- endif -%}
-  {%- if width >= 300 -%},{{ image | img_url: '300x' }} 300w{%- endif -%}
-  {%- if width >= 400 -%},{{ image | img_url: '400x' }} 400w{%- endif -%}
-  {%- if width >= 500 -%},{{ image | img_url: '500x' }} 500w{%- endif -%}
-  {%- if width >= 600 -%},{{ image | img_url: '600x' }} 600w{%- endif -%}
-  {%- if width >= 750 -%},{{ image | img_url: '750x' }} 750w{%- endif -%}
-  {%- if width >= 900 -%},{{ image | img_url: '900x' }} 900w{%- endif -%}
-  {%- if width >= 1200 -%},{{ image | img_url: '1200x' }} 1200w{%- endif -%}
-  {%- if width >= 1500 -%},{{ image | img_url: '1500x' }} 1500w{%- endif -%}
+  {%- for size in sizes -%}
+    {%- liquid
+      assign size_int = size | times: 1
+      assign img_url = size | append: 'x'
+    -%}
+
+    {%- if width >= size_int -%}
+      {%- unless forloop.first -%},{%- endunless -%}
+
+      {%- if asset -%}
+        {%- unless forloop.last -%}
+          {{ image | asset_img_url: img_url }} {{ size }}w
+        {%- else -%}
+          {{ image | asset_img_url: 'master' }} {{ width }}w
+        {%- endunless -%}
+
+      {%- else -%}
+        {%- unless forloop.last -%}
+          {{ image | img_url: img_url }} {{ size }}w
+        {%- else -%}
+          {{ image | img_url: 'master' }} {{ width }}w
+        {%- endunless -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
 {%- endcapture -%}
 
 srcset="{{ srcset }}"
-src="{{ image | img_url: src }}"
+{% if asset -%}
+  src="{{ image | asset_img_url: src }}"
+{% else -%}
+  src="{{ image | img_url: src }}"
+{%- endif %}
 width="{{ width }}" height="{{ height }}"
