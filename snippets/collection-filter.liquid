@@ -1,0 +1,103 @@
+{%- assign total_active_filters = 0 -%}
+
+{%- unless collection.filters == empty -%}
+  <form>
+    {%- for filter in collection.filters -%}
+      {%- assign total_active_filters = total_active_filters | plus: filter.active_values.size -%}
+
+      <details>
+        <summary>
+          {{ filter.label }}
+          {%- if filter.active_values.size > 0 -%}
+            ({{ filter.active_values.size }})
+          {%- endif -%}
+        </summary>
+
+        <div>
+          {%- case filter.type -%}
+            {%- when 'list' -%}
+              {{ filter.active_values.size }} selected
+
+              <ul>
+                {%- for value in filter.values -%}
+                  <li>
+                    <label>
+                      <input
+                        name="{{ value.param_name }}"
+                        value="{{ value.value }}"
+                        {% if value.active %}checked{% endif %}
+                        {% if value.count == 0 and value.active == false %}disabled{% endif %}
+                        type="checkbox"
+                      />
+                      {{ value.label }} ({{ value.count }})
+                    </label>
+                  </li>
+                {%- endfor -%}
+              </ul>
+
+            {%- when 'price_range' -%}
+              <label>
+                {{ cart.currency.symbol }}
+                <input
+                  name="{{ filter.min_value.param_name }}"
+                  {% if filter.min_value.value %}
+                    value="{{ filter.min_value.value | money_without_currency | replace: ',', '' }}"
+                  {% endif %}
+                  type="number"
+                  size="4"
+                  placeholder="0"
+                  min="0"
+                  max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                />
+              </label>
+              to
+              <label>
+                {{ cart.currency.symbol }}
+                <input
+                  name="{{ filter.max_value.param_name }}"
+                  {% if filter.max_value.value %}
+                    value="{{ filter.max_value.value | money_without_currency | replace: ',', '' }}"
+                  {% endif %}
+                  type="number"
+                  size="4"
+                  placeholder="0"
+                  min="0"
+                  max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                />
+              </label>
+          {%- endcase -%}
+
+          <button class="button">Apply</button>
+          {%- if filter.active_values.size > 0 -%}
+            <a href="{{ filter.url_to_remove }}" class="button">Clear</a>
+          {%- endif -%}
+        </div>
+      </details>
+    {%- endfor -%}
+
+    {%- if total_active_filters > 0 -%}
+      <div>
+        Filters:
+        <a href="{{ collection.url }}" class="button">Clear all</a>
+        {%- for filter in collection.filters -%}
+          {%- case filter.type -%}
+            {%- when 'price_range' -%}
+              {%- if filter.min_value.value != nil or filter.max_value.value != nil -%}
+                <a href="{{ filter.url_to_remove }}" class="button">
+                  ✕
+                  {{ filter.min_value.value | default: 0 | money }} - {{ filter.max_value.value | default: filter.range_max | money }}
+                </a>
+              {%- endif -%}
+
+            {%- else -%}
+              {%- for value in filter.active_values -%}
+                <a href="{{ value.url_to_remove }}" class="button">
+                  ✕ {{ value.label }}
+                </a>
+              {%- endfor -%}
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </form>
+{%- endunless -%}

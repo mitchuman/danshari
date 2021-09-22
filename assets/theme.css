@@ -57,6 +57,7 @@ img {
   margin-inline: auto;
 }
 
+.padding { padding: var(--padding-y) var(--padding-x); }
 .padding-y { padding-block: var(--padding-y); }
 .padding-x { padding-inline: var(--padding-x); }
 
