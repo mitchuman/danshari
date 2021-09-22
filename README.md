@@ -40,7 +40,7 @@ VS Code snippets (defined in `.vscode/danshari.code-snippets`) included for impr
 ## Snippets
 
 ### `srcset`
-Use the following snippet to automatically generate `srcset`, `src`, `width` and `height` attributes for `<img>` tags.
+Automatically generates `srcset`, `src`, `width` and `height` attributes for `<img>` tags.
 
 Example usage:
 ```liquid
@@ -56,7 +56,7 @@ Example usage:
 | `width`? | Max width of the image to display. |
 
 ### `quantity-selector`
-Use the following snippet to render a product quantity selector.
+Renders a product quantity selector.
 
 | Props | Description |
 | - | - |
