@@ -1,6 +1,6 @@
 {{ 'customer.css' | asset_url | stylesheet_tag }}
 
-<section class="container-half padding-y padding-x richtext text-center">
+<section class="container-half padding richtext text-center">
   <h1 class="h1">Activate account</h2>
 
   {% form 'activate_customer_password' %}
@@ -16,9 +16,9 @@
       </label>
     </fieldset>
 
-    <div class="col-2">
+    <p class="col-2">
       <button name="decline" class="action-alt">Decline invitation</button>
       <button class="action">Activate account</button>
-    </div>
+    </p>
   {% endform %}
 </section>

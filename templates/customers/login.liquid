@@ -1,6 +1,6 @@
 {{ 'customer.css' | asset_url | stylesheet_tag }}
 
-<div class="container-half padding-y padding-x text-center">
+<div class="container-half padding text-center">
   <section id="forgot" class="richtext">
     <h2 class="h1">Forgot your password?</h2>
 
@@ -16,9 +16,9 @@
       </fieldset>
     {% endform %}
 
-    <div>
+    <p>
       <a href="#login" class="link">Cancel</a>
-    </div>
+    </p>
   </section>
 
   <section id="login" class="richtext">
@@ -45,9 +45,9 @@
       </fieldset>
     {% endform %}
 
-    <div>
+    <p>
       <a href="{{ routes.account_register_url }}" class="link">Create an account</a>
-    </div>
+    </p>
   </section>
 
   {%- if shop.checkout.guest_login -%}

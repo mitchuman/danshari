@@ -1,6 +1,6 @@
 {{ 'customer.css' | asset_url | stylesheet_tag }}
 
-<section class="container-half padding-y padding-x richtext text-center">
+<section class="container-half padding richtext text-center">
   <h1 class="h1">Register</h2>
 
   {% form 'create_customer' %}
@@ -27,7 +27,7 @@
     </fieldset>
   {% endform %}
 
-  <div>
+  <p>
     <a href="{{ routes.account_login_url }}" class="link">Already have an account?</a>
-  </div>
+  </p>
 </section>

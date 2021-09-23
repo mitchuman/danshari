@@ -12,23 +12,23 @@
         {% form 'customer_address', address %}
           {% render 'address-inputs', address: address %}
 
-          <div class="col-2">
+          <p class="col-2">
             <a href="#" class="action-alt">Cancel</a>
             <button class="action">Update</button>
-          </div>
+          </p>
         {% endform %}
 
         <div class="hide-on-target">
           <address>{{ address | format_address }}</address>
 
-          <div class="edit-delete">
+          <p class="edit-delete">
             <a href="#address_form_{{ address.id }}" class="link-underline">Edit</a>
 
             <form class="delete-address" method="post" action="/account/addresses/{{ address.id }}">
               <input name="_method" value="delete" type="hidden">
               <button onclick="return confirmDelete()" class="link-underline unset">Delete</button>
             </form>
-          </div>
+          </p>
         </div>
       </li>
     {%- endfor -%}
@@ -40,10 +40,10 @@
 
       {% render 'address-inputs', address: form %}
 
-      <div class="col-2">
+      <p class="col-2">
         <a href="#" class="action-alt">Cancel</a>
         <button class="action">Add</button>
-      </div>
+      </p>
     {% endform %}
 
     <a href="#address_form_new" class="action hide-on-target">Add new address</a>

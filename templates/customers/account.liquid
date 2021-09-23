@@ -64,8 +64,8 @@
       <address>{{ customer.default_address | format_address }}</address>
     {% endif %}
 
-    <div>
+    <p>
       <a href="{{ routes.account_addresses_url }}" class="link">Manage addresses ({{ customer.addresses.size }})</a>
-    </div>
+    </p>
   </section>
 </div>
