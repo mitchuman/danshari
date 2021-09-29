@@ -22,8 +22,8 @@ Configured in `config/settings_schema.json` and defined as CSS custom properties
 
 ## Default Styles
 Danshari is a minimally styled theme. However, the following pages are applied default styles:
-- Login, Register and Account related pages (/account)
-- Cart page (/cart)
+- Login, Register and Account related pages ([/account](https://human-dev.myshopify.com/account))
+- Cart page ([/cart](https://human-dev.myshopify.com/cart))
 
 ## Media Queries
 VS Code snippets (defined in `.vscode/danshari.code-snippets`) included for improved developer experience.
