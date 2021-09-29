@@ -1,4 +1,4 @@
-<a href="{{ routes.root_url }}" class="link-underline">
+<a href="{{ routes.root_url }}" class="link-underline accent-1">
   {%- if settings.logo -%}
     <img {% render 'srcset', image: settings.logo, width: 100 %} alt="{{ settings.logo.alt | default: shop.name }}">
   {%- else -%}
@@ -8,18 +8,18 @@
 
 {%- if shop.customer_accounts_enabled -%}
   {%- if customer -%}
-    <a href="{{ routes.account_url }}" class="link">Account</a>
+    <a href="{{ routes.account_url }}" class="link accent-1">Account</a>
   {%- else -%}
-    <a href="{{ routes.account_login_url }}" class="link">Login</a>
+    <a href="{{ routes.account_login_url }}" class="link accent-1">Login</a>
 
     {%- if shop.customer_accounts_optional -%}
       {{ ' / ' }}
-      <a href="{{ routes.account_register_url }}" class="link">Register</a>
+      <a href="{{ routes.account_register_url }}" class="link accent-1">Register</a>
     {%- endif -%}
   {%- endif -%}
 {%- endif -%}
 
-<a href="{{ routes.cart_url }}" class="link">
+<a href="{{ routes.cart_url }}" class="link accent-1">
   Cart ({{ cart.item_count }})
 </a>
 
@@ -27,7 +27,7 @@
   <ul>
     {%- for link in section.settings.navigation.links -%}
       <li>
-        <a href="{{ link.url }}" class="link">{{ link.title }}</a>
+        <a href="{{ link.url }}" class="link accent-1">{{ link.title }}</a>
       </li>
     {%- endfor -%}
   </ul>

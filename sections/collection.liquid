@@ -1,6 +1,8 @@
 <h1 class="h1">{{ collection.title }}</h1>
 
-{% render 'collection-filter' %}
+{%- if show_collection_filter -%}
+  {% render 'collection-filter' %}
+{%- endif -%}
 
 <ul>
   {%- for product in collection.products -%}
@@ -16,7 +18,12 @@
   "tag": "article",
   "class": "section-collection container padding",
   "settings": [
-
+    {
+      "type": "checkbox",
+      "id": "show_collection_filter",
+      "label": "Show collection filter",
+      "default": true
+    }
   ]
 }
 {% endschema %}

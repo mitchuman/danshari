@@ -10,7 +10,8 @@
 <p>
   <span class="text-dark">.text-dark</span>
   <span class="text-light">.text-light</span>
-  <span class="text-accent">.text-accent</span>
+  <span class="text-accent-1">.text-accent-1</span>
+  <span class="text-accent-2">.text-accent-2</span>
   <span class="text-error">.text-error</span>
 </p>
 <p class="text-center">.text-center</p>
@@ -20,21 +21,34 @@
 <div class="container bordered">.container</div>
 <div class="container-sm bordered">.container-sm</div>
 <div class="container-half bordered">.container-half</div>
-<div class="padding-y bordered">.padding-y</div>
+<div class="padding bordered">.padding</div>
 <div class="padding-x bordered">.padding-x</div>
+<div class="padding-y bordered">.padding-y</div>
 <br>
 <p>
   <a href="#" class="link">.link</a>
   <a href="#" class="link-underline">.link-underline</a>
+  <a href="#" class="link accent-1">.link.accent-1</a>
+  <a href="#" class="link accent-2">.link.accent-2</a>
 </p>
 <p>
-  <span class="button">.button</span>
-  <span class="action">.action</span>
-  <span class="action-alt">.action-alt</span>
+  <button class="button">.button</button>
+  <button class="button" disabled>.button[disabled]</button>
 </p>
-<p><span class="action lg">.action.lg</span></p>
-<p><span class="action full">.action.full</span></p>
-<p><input class="input" type="email" placeholder=".input" /></p>
+<p>
+  <button class="action">.action</button>
+  <button class="action-alt">.action-alt</button>
+  <button class="action accent-2">.action.accent-2</button>
+  <button class="action-alt accent-2">.action-alt.accent-2</button>
+  <button class="action lg">.action.lg</button>
+</p>
+<p><button class="action full">.action.full</button></p>
+<p>
+  <input class="input" type="email" placeholder=".input[type=email]" />
+  <select class="input">
+    <option default selected disabled>select.input</option>
+  </select>
+</p>
 
 {% style %}
   .section-css-demo > * + * {

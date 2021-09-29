@@ -2,7 +2,7 @@
   {
     "name": "theme_info",
     "theme_name": "Danshari",
-    "theme_version": "0.5.1",
+    "theme_version": "0.6.0",
     "theme_author": "mitchuman",
     "theme_documentation_url": "https:\/\/github.com\/mitchuman\/danshari",
     "theme_support_url": "https:\/\/github.com\/mitchuman\/danshari"
@@ -37,6 +37,12 @@
         "id": "accent_1",
         "label": "Accent 1",
         "default": "#95bf47"
+      },
+      {
+        "type": "color",
+        "id": "accent_2",
+        "label": "Accent 2",
+        "default": "#f63"
       },
       {
         "type": "color",

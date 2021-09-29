@@ -10,7 +10,7 @@
       {%- case result.object_type -%}
         {%- else -%}
           <li>
-            <a href="{{ result.url }}" class="link">
+            <a href="{{ result.url }}" class="link accent-1">
               {{ result.title | highlight: search.terms }}
               ({{ result.object_type | capitalize }})
             </a>
