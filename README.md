@@ -5,7 +5,7 @@ A blank slate theme for Shopify 2.0
 > _n._ Decluttering, clearing out past accumulation, minimalism.
 
 ## Demo
-- [Live demo](https://human-dev.myshopify.com/)
+- [Live demo](https://human-dev.myshopify.com/) (Password: `tacos`)
 - CSS utility classes demo (`sections/demo-css.liquid`)
 - Richtext demo (`sections/css-richtext.liquid`)
 
