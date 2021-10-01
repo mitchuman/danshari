@@ -31,6 +31,11 @@
 
   <main>
     {{ content_for_layout }}
+
+    {%- if request.page_type == 'index' -%}
+      {% render 'demo-css' %}
+      {% render 'demo-richtext' %}
+    {%- endif -%}
   </main>
 
   {% section 'newsletter' %}
