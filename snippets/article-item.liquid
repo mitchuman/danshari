@@ -1,0 +1,29 @@
+{%- comment -%}
+  article
+{%- endcomment -%}
+
+<article class="article-item">
+  <a href="{{ article.url }}" class="article-item-link paragraph">
+    <figure class="article-item-img">
+      {%- if article.image -%}
+        <img
+          {% render 'srcset', image: article.image, width: 600 %}
+          alt="{{ article.image.alt | default: article.title }}"
+          loading="lazy"
+        />
+      {%- else -%}
+        {{ 'image' | placeholder_svg_tag: 'article-item-img-placeholder bg' }}
+      {%- endif -%}
+    </figure>
+
+    <h2>{{ article.title }}</h2>
+
+    {%- if article.tags.size > 0 -%}
+      <ul class="article-tag-list line-clamp">
+        {%- for tag in article.tags -%}
+          <li>{{ tag }}</li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+  </a>
+</article>

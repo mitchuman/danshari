@@ -1,22 +1,26 @@
 <h1 class="h1">{{ blog.title }}</h1>
 
 {%- unless blog.articles == empty -%}
-  <ul>
-    {%- for article in blog.articles -%}
-      <li>
-        <a href="{{ article.url }}" class="link accent-1">{{ article.title }}</a>
-      </li>
-    {%- endfor -%}
-  </ul>
+  <section class="article-list">
+    {% render 'article-item' for blog.articles as article %}
+  </section>
 {%- else -%}
   <p>No posts</p>
 {%- endunless -%}
+
+{% stylesheet %}
+  .article-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+{% endstylesheet %}
 
 {% schema %}
 {
   "name": "Blog",
   "tag": "section",
-  "class": "section-blog container padding",
+  "class": "container padding paragraph",
   "settings": [
 
   ]

@@ -1,26 +1,92 @@
-<h1 class="h1">Search</h1>
+<header class="padding-y paragraph">
+  <h1 class="h1">Search</h1>
 
-{%- if search.performed %}
-  <p>{{ search.results_count }} result{% if search.results_count > 1 %}s{% endif %} found for "{{ search.terms }}"</p>
-{%- endif -%}
+  {% render 'search-form' %}
+
+  {%- if search.performed %}
+    <p>{{ search.results_count }} result{% if search.results_count > 1 %}s{% endif %} found for "{{ search.terms }}"</p>
+  {%- endif -%}
+</header>
 
 {%- if search.performed -%}
-  <ul>
-    {%- for result in search.results -%}
-      {%- case result.object_type -%}
-        {%- else -%}
+  {%- liquid
+    assign results_products = search.results | where: 'object_type', 'product'
+    assign results_collections = search.results | where: 'object_type', 'collection'
+    assign results_articles = search.results | where: 'object_type', 'article'
+    assign results_pages = search.results | where: 'object_type', 'page'
+  -%}
+
+  {%- if results_products.size > 0 -%}
+    <section class="padding-y paragraph">
+      <h2 class="h2">Products</h2>
+      <ul class="results-products">
+        {%- for result in results_products -%}
+          <li>{% render 'product-item', product: result %}</li>
+        {%- endfor -%}
+      </ul>
+    </section>
+  {%- endif -%}
+
+  {%- if results_collections.size > 0 -%}
+    <section class="padding-y richtext">
+      <h2 class="h2">Collections</h2>
+      <ul>
+        {%- for result in results_collections -%}
           <li>
-            <a href="{{ result.url }}" class="link accent-1">
+            <a href="{{ result.url }}" class="link accent-2">
               {{ result.title | highlight: search.terms }}
-              ({{ result.object_type | capitalize }})
             </a>
           </li>
-      {%- endcase -%}
-    {%- endfor -%}
-  </ul>
+        {%- endfor -%}
+      </ul>
+    </section>
+  {%- endif -%}
+
+  {%- if results_articles.size > 0 -%}
+    <section class="padding-y richtext">
+      <h2 class="h2">Articles</h2>
+      <div class="results-articles">
+        {% render 'article-item' for results_articles as article %}
+      </div>
+    </section>
+  {%- endif -%}
+
+  {%- if results_pages.size > 0 -%}
+    <section class="padding-y richtext">
+      <h2 class="h2">Pages</h2>
+      <ul>
+        {%- for result in results_pages -%}
+          <li>
+            <a href="{{ result.url }}" class="link accent-2">
+              {{ result.title | highlight: search.terms }}
+            </a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </section>
+  {%- endif -%}
 {%- endif -%}
 
-{% render 'search-form' %}
+<style>
+  .section-search section { border-top: 1px solid var(--border-light); }
+
+  .results-products {
+    display: grid;
+    grid-template-columns: repeat(var(--col, 2), 1fr);
+    gap: 2rem 1.5rem;
+  }
+
+  .results-articles {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem 0;
+  }
+
+  /* desktop-and-up */
+  @media screen and (min-width: 769px) {
+    .results-products { --col: 4; }
+  }
+</style>
 
 {% schema %}
 {
