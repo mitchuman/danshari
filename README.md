@@ -25,6 +25,7 @@ Danshari is a minimally styled theme. However, the following pages are applied d
 - Login, Register and Account related pages ([/account](https://human-dev.myshopify.com/account))
 - Cart page ([/cart](https://human-dev.myshopify.com/cart))
 - Blog page & Articles
+- Search results page
 
 ## Media Queries
 VS Code snippets (defined in `.vscode/danshari.code-snippets`) included for improved developer experience.
