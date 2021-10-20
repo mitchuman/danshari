@@ -26,7 +26,6 @@
   padding-block: 1rem;
   border-bottom: 1px solid var(--border-light);
   background-color: #fff;
-  color: var(--text-light);
   text-transform: uppercase;
 }
 
@@ -47,7 +46,7 @@
 }
 
 .suggestion-item-url:hover .suggestion-item-title {
-  color: var(--accent-1);
+  color: var(--accent1);
 }
 
 .suggestion-item-img {

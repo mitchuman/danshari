@@ -2,6 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    accent-color: var(--accent1);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-body;
+  }
+
+  summary {
+    cursor: pointer;
+  }
+
+  svg {
+    fill: currentColor;
+  }
+
+  [disabled] {
+    cursor: not-allowed;
+    filter: grayscale(1) brightness(0.9);
+  }
+
+  ::selection {
+    background-color: var(--accent1-alpha);
+  }
+
+  :target {
+    scroll-margin-top: var(--header-height);
+  }
+}
+
 @layer utilities {
   .unset {
     all: unset;

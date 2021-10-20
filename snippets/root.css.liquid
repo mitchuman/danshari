@@ -6,8 +6,6 @@
   --font-heading: {{ settings.font_heading.family }}, {{ settings.font_heading.fallback_families }};
   --font-body: {{ settings.font_body.family }}, {{ settings.font_body.fallback_families }};
 
-  --text: {{ settings.text }};
-
   --bg:       {{ settings.bg }};
   --bg-dark:  {{ settings.bg | color_darken: 20 }};
   --bg-light: {{ settings.bg | color_lighten: 10 }};
@@ -16,20 +14,16 @@
   --border-dark:  {{ settings.border | color_darken: 20 }};
   --border-light: {{ settings.border | color_lighten: 15 }};
 
-  --accent-1:       {{ settings.accent_1 }};
-  --accent-1-alpha: {{ settings.accent_1 | color_modify: 'alpha', 0.5 }};
-  --accent-1-dark:  {{ settings.accent_1 | color_darken: 10 }};
+  --accent1:       {{ settings.accent_1 }};
+  --accent1-dark:  {{ settings.accent_1 | color_darken: 10 }};
 
-  --accent-2:       {{ settings.accent_2 }};
-  --accent-2-alpha: {{ settings.accent_2 | color_modify: 'alpha', 0.5 }};
-  --accent-2-dark:  {{ settings.accent_2 | color_darken: 10 }};
+  --accent2:       {{ settings.accent_2 }};
+  --accent2-dark:  {{ settings.accent_2 | color_darken: 10 }};
 
   --button-padding: 0.5em 1em;
   --button-padding-lg: 1em 1.5em;
 
   --header-height: 0;
-
-  --outline: 0 0 0 2px var(--accent-1-alpha);
 
   --t: 0.2s ease-in-out;
 }

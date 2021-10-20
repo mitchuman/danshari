@@ -28,7 +28,7 @@
 
 .address-list:empty::before {
   content: 'No addresses';
-  color: var(--text-light);
+  opacity: 0.6;
 }
 
 .address-item {
@@ -46,7 +46,7 @@
   box-shadow:
     -0.5ch 0 0 #fff,
     0.5ch 0 0 #fff;
-  color: var(--text-light);
+  color: darkgray;
 }
 
 .address-item * {

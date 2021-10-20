@@ -5,7 +5,7 @@
 
 <tr>
   <td>
-    <a href="{{ line_item.url }}" class="link accent-1">{{ line_item.product.title }}</a>
+    <a href="{{ line_item.url }}" class="link accent1">{{ line_item.product.title }}</a>
     {%- unless line_item.product.has_only_default_variant -%}
       <div>{{ line_item.variant.title }}</div>
     {%- endunless -%}

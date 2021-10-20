@@ -33,7 +33,7 @@
       <ul>
         {%- for result in results_collections -%}
           <li>
-            <a href="{{ result.url }}" class="link accent-2">
+            <a href="{{ result.url }}" class="link accent2">
               {{ result.title | highlight: search.terms }}
             </a>
           </li>
@@ -57,7 +57,7 @@
       <ul>
         {%- for result in results_pages -%}
           <li>
-            <a href="{{ result.url }}" class="link accent-2">
+            <a href="{{ result.url }}" class="link accent2">
               {{ result.title | highlight: search.terms }}
             </a>
           </li>
