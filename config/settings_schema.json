@@ -11,6 +11,26 @@
     "name": "Colors",
     "settings": [
       {
+        "type": "header",
+        "content": "Accent colors"
+      },
+      {
+        "type": "color",
+        "id": "primary_color",
+        "label": "Primary",
+        "default": "#f63"
+      },
+      {
+        "type": "color",
+        "id": "secondary_color",
+        "label": "Secondary",
+        "default": "#95bf47"
+      },
+      {
+        "type": "header",
+        "content": "Supplemental colors"
+      },
+      {
         "type": "color",
         "id": "bg",
         "label": "Background color",
@@ -21,28 +41,6 @@
         "id": "border",
         "label": "Border color",
         "default": "#bbb"
-      },
-      {
-        "type": "header",
-        "content": "Accent colors"
-      },
-      {
-        "type": "color",
-        "id": "primary_color",
-        "label": "Primary",
-        "default": "#95bf47"
-      },
-      {
-        "type": "color",
-        "id": "secondary_color",
-        "label": "Secondary",
-        "default": "#f63"
-      },
-      {
-        "type": "color",
-        "id": "error",
-        "label": "Error",
-        "default": "#f00"
       }
     ]
   },

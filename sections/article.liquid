@@ -1,5 +1,5 @@
 {%- if article.image -%}
-  <figure class="max-w-screen-lg mx-auto">
+  <figure class="page-width">
     <img
       {% render 'srcset', image: article.image, width: 1000 %}
       alt="{{ article.image.alt | default: article.title }}"
@@ -8,7 +8,7 @@
   </figure>
 {%- endif -%}
 
-<div class="max-w-screen-md mx-auto py-16 px-4 paragraph">
+<div class="page-width-sm py-16 px-4 paragraph">
   <h1 class="text-5xl">{{ article.title }}</h1>
 
   <div class="richtext">

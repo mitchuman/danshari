@@ -1,6 +1,6 @@
 {{ 'customer.css' | asset_url | stylesheet_tag }}
 
-<div class="max-w-screen-lg mx-auto px-4">
+<div class="page-width px-4">
   <header class="py-8 richtext">
     <h1 class="text-5xl">Addresses</h1>
     <a href="{{ routes.account_url }}" class="link accent1">Back to Account</a>
@@ -34,7 +34,7 @@
     {%- endfor -%}
   </ul>
 
-  <div class="max-w-screen-sm mx-auto py-8 text-center">
+  <div class="page-width-half py-8 text-center">
     {% form 'customer_address', customer.new_address %}
       <h2 class="text-xl">Add new address</h2>
 
