@@ -1,13 +1,15 @@
 (function(){
+  let $ = document.querySelector.bind(document),
+    $$ = document.querySelectorAll.bind(document)
 
 /* set var(--header-height) */
 let root = document.documentElement
-let headerHeight = document.querySelector('#shopify-section-header').offsetHeight
+let headerHeight = $('#shopify-section-header').offsetHeight
 
 root.style.setProperty('--header-height', `${ headerHeight }px`)
 
 /* quantity selector */
-let qty_selectors = document.querySelectorAll('.qty-selector')
+let qty_selectors = $$('.qty-selector')
 for (let qty_selector of qty_selectors) {
   let qty_incs = qty_selector.querySelectorAll('.qty-inc')
   let qty_value = qty_selector.querySelector('.qty-value')
