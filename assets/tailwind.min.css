@@ -598,6 +598,13 @@ video {
 *, ::before, ::after {
   --tw-border-opacity: 1;
   border-color: rgba(229, 231, 235, var(--tw-border-opacity));
+  --tw-ring-inset: var(--tw-empty,/*!*/ /*!*/);
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgba(59, 130, 246, 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
   --tw-blur: var(--tw-empty,/*!*/ /*!*/);
   --tw-brightness: var(--tw-empty,/*!*/ /*!*/);
   --tw-contrast: var(--tw-empty,/*!*/ /*!*/);
@@ -662,14 +669,246 @@ svg {
   max-width: 500px;
 }
 
+/* links, actions, buttons */
+
+.primary {
+  --accent: var(--primary-color);
+  --accent-dark: var(--primary-color-dark);
+}
+
+.secondary {
+  --accent: var(--secondary-color);
+  --accent-dark: var(--secondary-color-dark);
+}
+
+.link {
+  color: var(--accent, inherit);
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.link:active {
+  text-decoration-thickness: 2px;
+}
+
+.link-underline {
+  color: var(--accent, inherit);
+  text-decoration: underline;
+}
+
+.link-underline:hover {
+  text-decoration-thickness: 2px;
+}
+
+:is(.link, .link-underline):active {
+  color: var(--accent-dark);
+}
+
+.action,
+  .action-alt,
+  .button {
+  border: 1px solid;
+  display: inline-block;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  --tw-bg-opacity: 1;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.action:focus, .action-alt:focus, .button:focus {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
+.action {
+  border-color: var(--accent, var(--primary-color));
+  background-color: var(--accent, var(--primary-color));
+  color: #fff;
+}
+
+.action:hover {
+  border-color: var(--accent-dark, var(--primary-color-dark));
+  background-color: var(--accent-dark, var(--primary-color-dark));
+}
+
+.action-alt {
+  color: var(--accent, var(--primary-color));
+  border-color: currentColor;
+}
+
+.action-alt:hover {
+  color: var(--accent-dark, var(--primary-color-dark));
+}
+
+:is(.action, .action-alt).lg {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+:is(.action, .action-alt).full {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.button {
+  --tw-border-opacity: 1;
+  border-color: rgba(209, 213, 219, var(--tw-border-opacity));
+}
+
+.button:hover {
+  --tw-border-opacity: 1;
+  border-color: rgba(156, 163, 175, var(--tw-border-opacity));
+}
+
+.button:focus {
+  --tw-border-opacity: 1;
+  border-color: rgba(156, 163, 175, var(--tw-border-opacity));
+}
+
+/* inputs */
+
+.input {
+  box-sizing: border-box;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(209, 213, 219, var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.input:hover {
+  --tw-border-opacity: 1;
+  border-color: rgba(156, 163, 175, var(--tw-border-opacity));
+}
+
+.input:focus {
+  --tw-border-opacity: 1;
+  border-color: rgba(156, 163, 175, var(--tw-border-opacity));
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
+.input:invalid:not([value=""]) {
+  --tw-border-opacity: 1;
+  border-color: rgba(239, 68, 68, var(--tw-border-opacity));
+}
+
+/* paragraph, richtext */
+
+:is(.paragraph, .richtext) > * + * {
+  margin-top: 1em;
+}
+
+.richtext > :is(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--font-heading);
+}
+
+.richtext ul {
+  list-style-type: disc;
+  padding-left: 2em;
+}
+
+.richtext ol {
+  list-style-type: decimal;
+  padding-left: 2em;
+}
+
+.richtext a {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.richtext a:hover {
+  text-decoration-thickness: 2px;
+}
+
+.richtext a:active {
+  color: var(--primary-color-dark);
+}
+
+.richtext blockquote {
+  border-left-width: 4px;
+  --tw-border-opacity: 1;
+  border-color: rgba(209, 213, 219, var(--tw-border-opacity));
+  padding-left: 1em;
+}
+
+.richtext table {
+  width: 100%;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(156, 163, 175, var(--tw-border-opacity));
+  text-align: center;
+}
+
+.richtext thead {
+  border-width: 1px;
+  border-bottom-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(156, 163, 175, var(--tw-border-opacity));
+}
+
+.richtext tfoot {
+  border-width: 1px;
+  border-top-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(156, 163, 175, var(--tw-border-opacity));
+}
+
+.richtext th {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  vertical-align: middle;
+  text-transform: uppercase;
+  --tw-text-opacity: 1;
+  color: rgba(156, 163, 175, var(--tw-text-opacity));
+}
+
+.richtext td {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  vertical-align: middle;
+}
+
+.richtext tfoot tr:first-child td {
+  padding-top: 1rem;
+}
+
+.richtext tfoot tr:last-child td {
+  padding-bottom: 1rem;
+}
+
+.richtext tfoot td[colspan] {
+  text-align: right;
+}
+
 .sticky {
   position: -webkit-sticky;
   position: sticky;
-}
-
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .table {
@@ -678,10 +917,6 @@ svg {
 
 .hidden {
   display: none;
-}
-
-.border {
-  border-width: 1px;
 }
 
 .py-8 {

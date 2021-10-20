@@ -38,19 +38,19 @@
       {%- if paginate.pages > 1 and paginate.parts.size > 0 -%}
         <nav>
           {%- if paginate.previous -%}
-            <a href="{{ paginate.previous.url }}" class="link accent1">Prev</a>
+            <a href="{{ paginate.previous.url }}" class="link primary">Prev</a>
           {%- endif -%}
 
           {%- for part in pageinate.parts -%}
             {%- if part.is_link -%}
-              <a href="{{ part.url }}" class="link accent1">{{ part.title }}</a>
+              <a href="{{ part.url }}" class="link primary">{{ part.title }}</a>
             {%- else -%}
               <span>{{ part.title }}</span>
             {%- endif -%}
           {%- endfor -%}
 
           {%- if paginate.next -%}
-            <a href="{{ paginate.next.url }}" class="link accent1">Next</a>
+            <a href="{{ paginate.next.url }}" class="link primary">Next</a>
           {%- endif -%}
         </nav>
       {%- endif -%}
@@ -65,7 +65,7 @@
     {% endif %}
 
     <p>
-      <a href="{{ routes.account_addresses_url }}" class="link accent1">Manage addresses ({{ customer.addresses.size }})</a>
+      <a href="{{ routes.account_addresses_url }}" class="link primary">Manage addresses ({{ customer.addresses.size }})</a>
     </p>
   </section>
 </div>

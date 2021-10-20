@@ -6,7 +6,7 @@ A blank slate theme for Shopify 2.0 with Tailwind CSS
 
 ## Demo
 - [Live demo](https://human-dev.myshopify.com/) (Password: `tacos`)
-- CSS utility classes demo (`sections/demo-css.liquid`)
+- Tailwind components demo (`sections/demo-css.liquid`)
 - Richtext demo (`sections/css-richtext.liquid`)
 
 ## Global Settings
@@ -18,11 +18,6 @@ Configured in `config/settings_schema.json` and defined as CSS custom properties
   - Logos & Favicon
   - [Predictive Search](https://shopify.dev/api/ajax/reference/predictive-search) feature enabled by default
 
-## Tailwind CSS
-Run Yarn scripts to watch/build Tailwind CSS
-- Watch: `yarn css:watch`
-- Build: `yarn css:build`
-
 ## Default Styles
 Danshari is a minimally styled theme. However, the following pages are applied default styles:
 - Login, Register and Account related pages ([/account](https://human-dev.myshopify.com/account))
@@ -30,17 +25,22 @@ Danshari is a minimally styled theme. However, the following pages are applied d
 - Blog page & Articles
 - Search results page
 
+## Tailwind CSS
+Run Yarn scripts to watch/build Tailwind CSS
+- Watch: `yarn css:watch`
+- Build: `yarn css:build`
+
 ## Media Queries
-VS Code snippets (defined in `.vscode/danshari.code-snippets`) included for improved developer experience.
+Use VS Code snippets (defined in `.vscode/danshari.code-snippets`) and Tailwind screen utilities.
 
 | Snippet | Breakpoint |
 | - | - |
 | `media mobile` | ≤ 428px |
-| `media tablet-and-up` | ≥ 429px |
+| `media mobile+` | ≥ 429px |
 | `media tablet` | ≤ 768px |
-| `media desktop-and-up` | ≥ 769px |
+| `media tablet+` | ≥ 769px |
 | `media desktop` | ≤ 1280px |
-| `media large` | ≥ 1281px |
+| `media desktop+` | ≥ 1281px |
 
 ## Snippets
 

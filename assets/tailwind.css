@@ -35,15 +35,97 @@
 }
 
 @layer components {
-  .page-width {
-    @apply max-w-[1000px] mx-auto;
+  .page-width { @apply max-w-[1000px] mx-auto; }
+  .page-width-sm { @apply max-w-[750px] mx-auto; }
+  .page-width-half { @apply max-w-[500px] mx-auto; }
+
+  /* links, actions, buttons */
+
+  .primary {
+    --accent: var(--primary-color);
+    --accent-dark: var(--primary-color-dark);
   }
-  .page-width-sm {
-    @apply max-w-[750px] mx-auto;
+  .secondary {
+    --accent: var(--secondary-color);
+    --accent-dark: var(--secondary-color-dark);
   }
-  .page-width-half {
-    @apply max-w-[500px] mx-auto;
+
+  .link {
+    color: var(--accent, inherit);
+    @apply no-underline hover:underline active:underline-thick;
   }
+
+  .link-underline {
+    color: var(--accent, inherit);
+    @apply underline hover:underline-thick;
+  }
+
+  :is(.link, .link-underline):active {
+    color: var(--accent-dark);
+  }
+
+  .action,
+  .action-alt,
+  .button {
+    border: 1px solid;
+    @apply appearance-none inline-block py-2 px-4 bg-white no-underline text-center focus:ring;
+  }
+
+  .action {
+    border-color: var(--accent, var(--primary-color));
+    background-color: var(--accent, var(--primary-color));
+    color: #fff;
+  }
+  .action:hover {
+    border-color: var(--accent-dark, var(--primary-color-dark));
+    background-color: var(--accent-dark, var(--primary-color-dark));
+  }
+
+  .action-alt {
+    color: var(--accent, var(--primary-color));
+    @apply border-current;
+  }
+  .action-alt:hover {
+    color: var(--accent-dark, var(--primary-color-dark));
+  }
+
+  :is(.action, .action-alt).lg { @apply py-4 px-6; }
+  :is(.action, .action-alt).full { @apply box-border w-full; }
+
+  .button { @apply border-gray-300 hover:border-gray-400 focus:border-gray-400; }
+
+  /* inputs */
+
+  .input {
+    @apply box-border py-1 px-2 outline-none bg-white border border-gray-300 hover:border-gray-400 focus:ring focus:border-gray-400;
+  }
+  .input:invalid:not([value=""]) { @apply border-red-500; }
+
+  /* paragraph, richtext */
+
+  :is(.paragraph, .richtext) > * + * { margin-top: 1em; }
+
+  .richtext > :is(h1,h2,h3,h4,h5,h6) { @apply font-heading; }
+
+  .richtext ul { @apply pl-[2em] list-disc; }
+  .richtext ol { @apply pl-[2em] list-decimal; }
+
+  .richtext a { @apply text-primary underline hover:underline-thick active:text-primary-dark; }
+
+  .richtext blockquote { @apply pl-[1em] border-l-4 border-gray-300; }
+
+  .richtext table { @apply w-full border border-gray-400 text-center; }
+
+  .richtext thead { @apply border border-b border-gray-400; }
+  .richtext tfoot { @apply border border-t border-gray-400; }
+
+  .richtext th { @apply align-middle py-4 px-6 text-gray-400 uppercase; }
+  .richtext td { @apply align-middle py-1 px-6; }
+
+  .richtext tfoot tr:first-child td { @apply pt-4; }
+  .richtext tfoot tr:last-child td { @apply pb-4; }
+
+  .richtext tfoot td[colspan] { @apply text-right; }
 }
 
 @layer utilities {
@@ -63,5 +145,9 @@
     -webkit-line-clamp: var(--line-clamp, 1);
     -webkit-box-orient: vertical;
     overflow: hidden;
+  }
+
+  .underline-thick {
+    text-decoration-thickness: 2px;
   }
 }
