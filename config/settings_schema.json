@@ -29,18 +29,6 @@
       {
         "type": "header",
         "content": "Supplemental colors"
-      },
-      {
-        "type": "color",
-        "id": "bg",
-        "label": "Background color",
-        "default": "#ddd"
-      },
-      {
-        "type": "color",
-        "id": "border",
-        "label": "Border color",
-        "default": "#bbb"
       }
     ]
   },

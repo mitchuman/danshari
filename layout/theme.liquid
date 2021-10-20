@@ -20,7 +20,7 @@
   <link rel="icon" href="{{ settings.favicon | img_url: '32x32' }}">
 
   {%- render 'root.css' %}
-  {{ 'tailwind.min.css' | asset_url | stylesheet_tag }}
+  {{ 'theme.min.css' | asset_url | stylesheet_tag }}
 
   {{ content_for_header }}
 </head>

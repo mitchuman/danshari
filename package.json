@@ -9,9 +9,9 @@
   "scripts": {
     "shopify:switch": "shopify switch --store=human-dev.myshopify.com",
     "dev": "yarn shopify:switch && shopify theme serve",
-    "dev:css": "tailwindcss -i assets/tailwind.css -o assets/tailwind.min.css --watch",
+    "dev:css": "tailwindcss -i assets/theme.css -o assets/theme.min.css --watch",
     "build": "yarn build:css && yarn build:js",
-    "build:css": "tailwindcss -i assets/tailwind.css -o assets/tailwind.min.css --postcss --minify",
+    "build:css": "tailwindcss -i assets/theme.css -o assets/theme.min.css --postcss --minify",
     "build:js": "rm assets/*.min.js && esbuild assets/*.js --outdir=assets --out-extension:.js=.min.js"
   },
   "devDependencies": {
