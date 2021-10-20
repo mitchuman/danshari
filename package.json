@@ -7,13 +7,16 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "yarn shopify:switch && shopify theme serve",
     "shopify:switch": "shopify switch --store=human-dev.myshopify.com",
-    "css:watch": "tailwindcss -i assets/tailwind.css -o assets/tailwind.min.css --watch",
-    "css:build": "tailwindcss -i assets/tailwind.css -o assets/tailwind.min.css --postcss --minify"
+    "dev": "yarn shopify:switch && shopify theme serve",
+    "dev:css": "tailwindcss -i assets/tailwind.css -o assets/tailwind.min.css --watch",
+    "build": "yarn build:css && yarn build:js",
+    "build:css": "tailwindcss -i assets/tailwind.css -o assets/tailwind.min.css --postcss --minify",
+    "build:js": "rm assets/*.min.js && esbuild assets/*.js --outdir=assets --out-extension:.js=.min.js"
   },
   "devDependencies": {
     "autoprefixer": "^10.3.7",
+    "esbuild": "^0.13.8",
     "postcss": "^8.3.9",
     "tailwindcss": "^2.2.17"
   }

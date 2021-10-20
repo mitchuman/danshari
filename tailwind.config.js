@@ -4,12 +4,12 @@ module.exports = {
   darkMode: false,
   theme: {
     screens: {
-      'mobile': {max: '640px'},
-      'mobile+': {min: '641px'},
-      'tablet': {max: '768px'},
-      'tablet+': {min: '769px'},
-      'desktop': {max: '1280px'},
-      'desktop+': {min: '1281px'},
+      'mobile': { max: '640px' },
+      'mobile+': { min: '641px' },
+      'tablet': { max: '768px' },
+      'tablet+': { min: '769px' },
+      'desktop': { max: '1280px' },
+      'desktop+': { min: '1281px' },
     },
     fontFamily: {
       'heading': 'var(--font-heading)',

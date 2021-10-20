@@ -7,7 +7,7 @@ A blank slate theme for Shopify 2.0 with Tailwind CSS
 ## Demo
 - [Live demo](https://human-dev.myshopify.com/) (Password: `tacos`)
 - Tailwind components demo (`sections/demo-css.liquid`)
-- Richtext demo (`sections/css-richtext.liquid`)
+- Richtext demo (`sections/demo-richtext.liquid`)
 
 ## Global Settings
 Configured in `config/settings_schema.json` and defined as CSS custom properties in `assets/root.css.liquid`.
@@ -24,11 +24,6 @@ Danshari is a minimally styled theme. However, the following pages are applied d
 - Cart page ([/cart](https://human-dev.myshopify.com/cart))
 - Blog page & Articles
 - Search results page
-
-## Tailwind CSS
-Run Yarn scripts to watch/build Tailwind CSS
-- Watch: `yarn css:watch`
-- Build: `yarn css:build`
 
 ## Media Queries
 Use VS Code snippets (defined in `.vscode/danshari.code-snippets`) and Tailwind screen utilities.
