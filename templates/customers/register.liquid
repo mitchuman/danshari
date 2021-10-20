@@ -1,29 +1,29 @@
 {{ 'customer.css' | asset_url | stylesheet_tag }}
 
 <section class="page-width-half py-8 px-4 richtext text-center">
-  <h1 class="text-5xl">Register</h2>
+  <h1 class="h1">Register</h2>
 
   {% form 'create_customer' %}
     {{ form_errors | default_errors }}
 
-    <fieldset class="col-2">
-      <label class="colspan">
+    <fieldset class="col-2 grid grid-cols-2">
+      <label class="col-span-full">
         <input class="input" name="customer[first_name]" value="" autocomplete="given-name" type="text" placeholder="First name" required />
       </label>
 
-      <label class="colspan">
+      <label class="col-span-full">
         <input class="input" name="customer[last_name]" value="" autocomplete="family-name" type="text" placeholder="Last name" required />
       </label>
 
-      <label class="colspan">
+      <label class="col-span-full">
         <input class="input" name="customer[email]" value="" autocomplete="email" type="email" placeholder="Email" required />
       </label>
 
-      <label class="colspan">
+      <label class="col-span-full">
         <input class="input" name="customer[password]" value="" autocomplete="new-password" type="password" placeholder="Password" required />
       </label>
 
-      <button class="action colspan">Register</button>
+      <button class="action col-span-full">Register</button>
     </fieldset>
   {% endform %}
 

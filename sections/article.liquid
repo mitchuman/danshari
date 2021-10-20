@@ -9,14 +9,14 @@
 {%- endif -%}
 
 <div class="page-width-sm py-16 px-4 paragraph">
-  <h1 class="text-5xl">{{ article.title }}</h1>
+  <h1 class="h1">{{ article.title }}</h1>
 
   <div class="richtext">
     {{ article.content
-      | replace: '<h1>', '<h1 class="text-5xl">'
-      | replace: '<h2>', '<h2 class="text-2xl">'
-      | replace: '<h3>', '<h3 class="text-xl">'
-      | replace: '<h4>', '<h4 class="text-xs">'
+      | replace: '<h1>', '<h1 class="h1">'
+      | replace: '<h2>', '<h2 class="h2">'
+      | replace: '<h3>', '<h3 class="h3">'
+      | replace: '<h4>', '<h4 class="h4">'
     }}
   </div>
 

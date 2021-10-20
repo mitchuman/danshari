@@ -2,17 +2,20 @@
 
 <div class="page-width px-4">
   <header class="py-8 richtext">
-    <h1 class="text-5xl">Addresses</h1>
+    <h1 class="h1">Addresses</h1>
     <a href="{{ routes.account_url }}" class="link primary">Back to Account</a>
   </header>
 
-  <ul class="address-list py-8">
+  <ul class="address-list grid gap-8 py-8">
     {%- for address in customer.addresses -%}
-      <li class="address-item" data-address-id="{{ address.id }}">
+      <li
+        class="address-item relative p-4 border border-gray-400 tablet+:grid-cols-2"
+        data-address-id="{{ address.id }}"
+      >
         {% form 'customer_address', address %}
           {% render 'address-inputs', address: address %}
 
-          <p class="col-2">
+          <p class="col-2 grid grid-cols-2">
             <a href="#" class="action-alt">Cancel</a>
             <button class="action">Update</button>
           </p>
@@ -21,10 +24,10 @@
         <div class="hide-on-target">
           <address>{{ address | format_address }}</address>
 
-          <p class="edit-delete">
+          <p class="flex flex-wrap gap-2 mt-2">
             <a href="#address_form_{{ address.id }}" class="link-underline">Edit</a>
 
-            <form class="delete-address" method="post" action="/account/addresses/{{ address.id }}">
+            <form class="inline-block" method="post" action="/account/addresses/{{ address.id }}">
               <input name="_method" value="delete" type="hidden">
               <button onclick="return confirmDelete()" class="link-underline unset">Delete</button>
             </form>
@@ -40,7 +43,7 @@
 
       {% render 'address-inputs', address: form %}
 
-      <p class="col-2">
+      <p class="col-2 grid grid-cols-2">
         <a href="#" class="action-alt">Cancel</a>
         <button class="action">Add</button>
       </p>

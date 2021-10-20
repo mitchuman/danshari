@@ -7,12 +7,12 @@
     {% form 'recover_customer_password' %}
       {{ form_errors | default_errors }}
 
-      <fieldset class="col-2">
-        <label class="colspan">
+      <fieldset class="col-2 grid grid-cols-2">
+        <label class="col-span-full">
           <input class="input" name="email" value="" autocomplete="email" type="email" placeholder="Email" required />
         </label>
 
-        <button class="action colspan">Retrieve password</button>
+        <button class="action col-span-full">Retrieve password</button>
       </fieldset>
     {% endform %}
 
@@ -22,17 +22,17 @@
   </section>
 
   <section id="login" class="richtext">
-    <h1 class="text-5xl">Login</h2>
+    <h1 class="h1">Login</h2>
 
     {% form 'customer_login', return_to: routes.root_url %}
       {{ form_errors | default_errors }}
 
-      <fieldset class="col-2">
-        <label class="colspan">
+      <fieldset class="col-2 grid grid-cols-2">
+        <label class="col-span-full">
           <input class="input" name="customer[email]" value="" autocomplete="email" type="email" placeholder="Email" required />
         </label>
 
-        <div class="colspan">
+        <div class="col-span-full">
           <label>
             <input class="input" name="customer[password]" value="" autocomplete="current-password" type="password" placeholder="Password" required />
           </label>
@@ -41,7 +41,7 @@
           </div>
         </div>
 
-        <button class="action colspan">Login</button>
+        <button class="action col-span-full">Login</button>
       </fieldset>
     {% endform %}
 

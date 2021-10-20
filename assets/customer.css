@@ -7,34 +7,15 @@
 
 /* inputs */
 
-.col-2 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.5rem;
-}
-
 .col-2 + .col-2 { margin-top: 1rem; }
 
 .col-2 .input { width: 100%; }
 
-.colspan { grid-column: 1 / -1; }
-
 /* addresses */
-
-.address-list {
-  display: grid;
-  gap: 2rem;
-}
 
 .address-list:empty::before {
   content: 'No addresses';
   opacity: 0.6;
-}
-
-.address-item {
-  position: relative;
-  padding: 1rem;
-  border: 1px solid var(--border);
 }
 
 .address-item:first-of-type::before {
@@ -51,28 +32,4 @@
 
 .address-item * {
   line-height: 1.3;
-}
-
-/* tablet+ */
-@media screen and (min-width: 769px) {
-  .address-list {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-.edit-delete {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 0.5rem;
-}
-
-.delete-address {
-  display: inline-block;
-}
-
-/* add new */
-
-#address_form_new h2 {
-  margin-bottom: 1rem;
 }

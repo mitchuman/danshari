@@ -2,7 +2,7 @@
   address
 {%- endcomment -%}
 
-<fieldest class="col-2">
+<fieldest class="col-2 grid grid-cols-2 gap-2">
   <label>
     <input class="input" name="address[first_name]" value="{{ address.first_name | default: customer.first_name }}" autocomplete="given-name" type="text" placeholder="First name" />
   </label>
@@ -11,15 +11,15 @@
     <input class="input" name="address[last_name]" value="{{ address.last_name | default: customer.last_name }}" autocomplete="family-name" type="text" placeholder="Last name" />
   </label>
 
-  <label class="colspan">
+  <label class="col-span-full">
     <input class="input" name="address[company]" value="{{ address.company }}" autocomplete="organization" type="text" placeholder="Company" />
   </label>
 
-  <label class="colspan">
+  <label class="col-span-full">
     <input class="input" name="address[address1]" value="{{ address.address1 }}" autocomplete="address-line1" type="text" placeholder="Address 1*" required />
   </label>
 
-  <label class="colspan">
+  <label class="col-span-full">
     <input class="input" name="address[address2]" value="{{ address.address2 }}" autocomplete="address-line2" type="text" placeholder="Address 2" />
   </label>
 
