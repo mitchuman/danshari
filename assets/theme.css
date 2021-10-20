@@ -105,7 +105,9 @@
   /* inputs */
 
   .input {
-    @apply box-border py-1 px-2 outline-none bg-white border border-gray-300 hover:border-gray-400 focus:ring focus:border-gray-400;
+    @apply
+      box-border py-1 px-2 outline-none bg-white border border-gray-300
+      hover:border-gray-400 focus:ring focus:border-gray-400;
   }
   .input:invalid:not([value=""]) { @apply border-red-500; }
 
