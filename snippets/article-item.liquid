@@ -2,8 +2,8 @@
   article
 {%- endcomment -%}
 
-<article class="article-item">
-  <a href="{{ article.url }}" class="article-item-link paragraph">
+<article>
+  <a href="{{ article.url }}" class="block no-underline paragraph">
     <figure class="article-item-img">
       {%- if article.image -%}
         <img
@@ -21,7 +21,7 @@
     {%- if article.tags.size > 0 -%}
       <ul class="article-tag-list line-clamp text-gray-400">
         {%- for tag in article.tags -%}
-          <li>{{ tag }}</li>
+          <li class="inline">{{ tag }}</li>
         {%- endfor -%}
       </ul>
     {%- endif -%}

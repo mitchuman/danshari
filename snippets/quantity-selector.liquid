@@ -5,13 +5,14 @@
   label?
 {%- endcomment -%}
 
-<label for="qty{{ id }}" class="qty-selector">
+<label for="qty{{ id }}" class="qty-selector inline-block">
   {% if label %}
     <div>{{ label }}</div>
   {% endif %}
 
   <div class="qty-inputs">
-    <button class="qty-inc unset" data-inc="-1">-</button>
+    <button class="qty-inc" data-inc="-1">-</button>
+
     <input
       class="qty-value unset"
       id="qty{{ id }}" name="{{ name }}"
@@ -20,6 +21,7 @@
       min="1"
       size="3"
     />
-    <button class="qty-inc unset" data-inc="1">+</button>
+
+    <button class="qty-inc" data-inc="1">+</button>
   </div>
 </label>

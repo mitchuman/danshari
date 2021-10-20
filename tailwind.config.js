@@ -14,6 +14,7 @@ module.exports = {
     fontFamily: {
       'heading': 'var(--font-heading)',
       'body': 'var(--font-body)',
+      'mono': 'monospace',
     },
     extend: {
       colors: {
