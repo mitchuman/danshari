@@ -20,7 +20,7 @@
   <link rel="icon" href="{{ settings.favicon | img_url: '32x32' }}">
 
   {%- render 'root.css' %}
-  {{ 'theme.build.css' | asset_url | stylesheet_tag }}
+  {{ 'theme.min.css' | asset_url | stylesheet_tag }}
 
   {{ content_for_header }}
 </head>
@@ -42,7 +42,7 @@
 
   {% render 'schema' %}
 
-  <script src="{{ 'theme.build.js' | asset_url }}" defer></script>
+  <script src="{{ 'theme.min.js' | asset_url }}" defer></script>
   {%- if settings.predictive_search_enabled -%}
     {% render 'predictive-search' %}
   {%- endif -%}

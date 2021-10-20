@@ -10,11 +10,11 @@
     "shopify:switch": "shopify switch --store=human-dev.myshopify.com",
     "start": "yarn shopify:switch && shopify theme serve",
     "dev": "run-p dev:*",
-    "dev:css": "tailwindcss -i assets/theme.css -o assets/theme.build.css --watch",
-    "dev:js": "esbuild src/js/*.js --outdir=assets --out-extension:.js=.build.js --watch",
+    "dev:css": "tailwindcss -i assets/theme.css -o assets/theme.min.css --watch",
+    "dev:js": "esbuild src/js/*.js --outdir=assets --out-extension:.js=.min.js --watch",
     "build": "run-s build:*",
-    "build:css": "tailwindcss -i assets/theme.css -o assets/theme.build.css --postcss --minify",
-    "build:js": "esbuild src/js/*.js --outdir=assets --out-extension:.js=.build.js --minify"
+    "build:css": "tailwindcss -i assets/theme.css -o assets/theme.min.css --postcss --minify",
+    "build:js": "esbuild src/js/*.js --outdir=assets --out-extension:.js=.min.js --minify"
   },
   "devDependencies": {
     "autoprefixer": "^10.3.7",
