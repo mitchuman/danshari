@@ -1,4 +1,4 @@
-<h1 class="h1">{{ collection.title }}</h1>
+<h1 class="text-5xl">{{ collection.title }}</h1>
 
 {%- if show_collection_filter -%}
   {% render 'collection-filter' %}
@@ -16,7 +16,7 @@
 {
   "name": "Collection",
   "tag": "article",
-  "class": "section-collection container padding",
+  "class": "section-collection max-w-screen-lg mx-auto py-8 px-4",
   "settings": [
     {
       "type": "checkbox",

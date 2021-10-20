@@ -4,12 +4,6 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "shopify switch human-dev",
-      "type": "shell",
-      "command": "shopify switch --store=human-dev.myshopify.com",
-      "problemMatcher": [],
-    },
-    {
       "label": "minify current JS file",
       "type": "shell",
       "command": "npx esbuild --minify ${relativeFile} --outfile=${relativeFileDirname}/${fileBasenameNoExtension}.min.js",

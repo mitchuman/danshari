@@ -1,5 +1,5 @@
 # _Danshari_
-A blank slate theme for Shopify 2.0
+A blank slate theme for Shopify 2.0 with Tailwind CSS
 
 > **_Danshari (<ruby>断捨離<rt>だんしゃり</rt></ruby>)_**<br>
 > _n._ Decluttering, clearing out past accumulation, minimalism.
@@ -14,11 +14,14 @@ Configured in `config/settings_schema.json` and defined as CSS custom properties
 
 - **Colors**
 - **Typography**
-- **Layout**
-  - Container widths and spacing
 - **Miscellaneous**
   - Logos & Favicon
   - [Predictive Search](https://shopify.dev/api/ajax/reference/predictive-search) feature enabled by default
+
+## Tailwind CSS
+Run Yarn scripts to watch/build Tailwind CSS
+- Watch: `yarn css:watch`
+- Build: `yarn css:build`
 
 ## Default Styles
 Danshari is a minimally styled theme. However, the following pages are applied default styles:

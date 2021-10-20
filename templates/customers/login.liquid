@@ -1,8 +1,8 @@
 {{ 'customer.css' | asset_url | stylesheet_tag }}
 
-<div class="container-half padding text-center">
+<div class="max-w-screen-sm mx-auto py-8 px-4 text-center">
   <section id="forgot" class="richtext">
-    <h2 class="h1">Forgot your password?</h2>
+    <h2 class="text-5xl">Forgot your password?</h2>
 
     {% form 'recover_customer_password' %}
       {{ form_errors | default_errors }}
@@ -22,7 +22,7 @@
   </section>
 
   <section id="login" class="richtext">
-    <h1 class="h1">Login</h2>
+    <h1 class="text-5xl">Login</h2>
 
     {% form 'customer_login', return_to: routes.root_url %}
       {{ form_errors | default_errors }}

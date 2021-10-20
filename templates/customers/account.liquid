@@ -1,13 +1,13 @@
 {{ 'customer.css' | asset_url | stylesheet_tag }}
 
-<div class="container padding-x">
-  <header class="padding-y richtext">
-    <h1 class="h1">Welcome, {{ customer.first_name }}</h1>
+<div class="max-w-screen-lg mx-auto px-4">
+  <header class="py-8 richtext">
+    <h1 class="text-5xl">Welcome, {{ customer.first_name }}</h1>
     <a href="{{ routes.account_logout_url }}" class="link-underline">Logout</a>
   </header>
 
-  <section class="padding-y richtext">
-    <h2 class="h2">Order history</h2>
+  <section class="py-8 richtext">
+    <h2 class="text-2xl">Order history</h2>
 
     {%- paginate customer.orders by 10 -%}
       <div style="overflow-x: auto;">
@@ -57,8 +57,8 @@
     {%- endpaginate -%}
   </section>
 
-  <section class="padding-y richtext">
-    <h2 class="h2">Addresses</h2>
+  <section class="py-8 richtext">
+    <h2 class="text-2xl">Addresses</h2>
 
     {% if customer.default_address %}
       <address>{{ customer.default_address | format_address }}</address>

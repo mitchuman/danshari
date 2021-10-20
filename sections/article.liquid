@@ -1,5 +1,5 @@
 {%- if article.image -%}
-  <figure class="container">
+  <figure class="max-w-screen-lg mx-auto">
     <img
       {% render 'srcset', image: article.image, width: 1000 %}
       alt="{{ article.image.alt | default: article.title }}"
@@ -8,17 +8,15 @@
   </figure>
 {%- endif -%}
 
-<div class="container-sm padding-lg paragraph">
-  <h1 class="h1">{{ article.title }}</h1>
+<div class="max-w-screen-md mx-auto py-16 px-4 paragraph">
+  <h1 class="text-5xl">{{ article.title }}</h1>
 
   <div class="richtext">
     {{ article.content
-      | replace: '<h1>', '<h1 class="h1">'
-      | replace: '<h2>', '<h2 class="h2">'
-      | replace: '<h3>', '<h3 class="h3">'
-      | replace: '<h4>', '<h4 class="h4">'
-      | replace: '<h5>', '<h5 class="h5">'
-      | replace: '<h6>', '<h6 class="h6">'
+      | replace: '<h1>', '<h1 class="text-5xl">'
+      | replace: '<h2>', '<h2 class="text-2xl">'
+      | replace: '<h3>', '<h3 class="text-xl">'
+      | replace: '<h4>', '<h4 class="text-xs">'
     }}
   </div>
 
@@ -41,7 +39,7 @@
 {
   "name": "Article",
   "tag": "article",
-  "class": "padding-y paragraph",
+  "class": "py-8 paragraph",
   "settings": [
 
   ]

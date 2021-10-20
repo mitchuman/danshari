@@ -70,50 +70,6 @@
     ]
   },
   {
-    "name": "Layout",
-    "settings": [
-      {
-        "type": "header",
-        "content": "Content width"
-      },
-      {
-        "type": "range",
-        "id": "container_width",
-        "min": 600,
-        "max": 1600,
-        "step": 50,
-        "unit": "px",
-        "label": "Default container",
-        "default": 1000
-      },
-      {
-        "type": "range",
-        "id": "container_sm_width",
-        "min": 400,
-        "max": 1600,
-        "step": 50,
-        "unit": "px",
-        "label": "Container (small)",
-        "default": 750
-      },
-      {
-        "type": "header",
-        "content": "Spacing"
-      },
-      {
-        "type": "range",
-        "id": "section_padding",
-        "min": 0.5,
-        "max": 6,
-        "step": 0.5,
-        "unit": "rem",
-        "label": "Section padding",
-        "default": 2,
-        "info": "Vertical spacing between blocks"
-      }
-    ]
-  },
-  {
     "name": "Miscellaneous",
     "settings": [
       {

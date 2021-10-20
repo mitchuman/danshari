@@ -1,16 +1,16 @@
 {{ 'customer.css' | asset_url | stylesheet_tag }}
 
-<div class="container padding-x">
-  <header class="padding-y richtext">
-    <h1 class="h1">Order details</h1>
+<div class="max-w-screen-lg mx-auto px-4">
+  <header class="py-8 richtext">
+    <h1 class="text-5xl">Order details</h1>
     <a href="{{ routes.account_url }}" class="link accent-1">Back to account</a>
   </header>
 
-  <section class="padding-y richtext">
-    <h2 class="h2">Order {{ order.name }}</h2>
+  <section class="py-8 richtext">
+    <h2 class="text-2xl">Order {{ order.name }}</h2>
     <p>Placed on {{ order.created_at | time_tag: format: 'date_at_time' }}</p>
     {%- if order.cancelled -%}
-      <p class="text-error">
+      <p class="text-red">
         Canceled on {{ order.cancelled_at | time_tag: format: 'date_at_time' }}<br>
         {{ order.cancel_reason }}
       </p>
@@ -75,10 +75,10 @@
       </table>
     </div>
 
-    <h2 class="h2">Billing address</h2>
+    <h2 class="text-2xl">Billing address</h2>
     <address>{{ order.billing_address | format_address }}</address>
 
-    <h2 class="h2">Shipping address</h2>
+    <h2 class="text-2xl">Shipping address</h2>
     <address>{{ order.shipping_address | format_address }}</address>
   </section>
 </div>

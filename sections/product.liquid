@@ -1,4 +1,4 @@
-<h1 class="h1">{{ product.title }}</h1>
+<h1 class="text-5xl">{{ product.title }}</h1>
 
 {%- if product.description -%}
   <div>{{ product.description }}</div>
@@ -22,7 +22,7 @@
 {
   "name": "Product",
   "tag": "article",
-  "class": "section-product container padding",
+  "class": "section-product max-w-screen-lg mx-auto py-8 px-4",
   "settings": [
     {
       "type": "checkbox",

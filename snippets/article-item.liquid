@@ -19,7 +19,7 @@
     <h2>{{ article.title }}</h2>
 
     {%- if article.tags.size > 0 -%}
-      <ul class="article-tag-list line-clamp">
+      <ul class="article-tag-list line-clamp text-gray-400">
         {%- for tag in article.tags -%}
           <li>{{ tag }}</li>
         {%- endfor -%}
