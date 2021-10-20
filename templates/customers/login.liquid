@@ -7,7 +7,7 @@
     {% form 'recover_customer_password' %}
       {{ form_errors | default_errors }}
 
-      <fieldset class="col-2 grid grid-cols-2">
+      <fieldset class="col-2 grid grid-cols-2 gap-2">
         <label class="col-span-full">
           <input class="input" name="email" value="" autocomplete="email" type="email" placeholder="Email" required />
         </label>
@@ -27,7 +27,7 @@
     {% form 'customer_login', return_to: routes.root_url %}
       {{ form_errors | default_errors }}
 
-      <fieldset class="col-2 grid grid-cols-2">
+      <fieldset class="col-2 grid grid-cols-2 gap-2">
         <label class="col-span-full">
           <input class="input" name="customer[email]" value="" autocomplete="email" type="email" placeholder="Email" required />
         </label>

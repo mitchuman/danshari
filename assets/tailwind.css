@@ -127,7 +127,7 @@
   .richtext thead { @apply border border-b border-gray-400; }
   .richtext tfoot { @apply border border-t border-gray-400; }
 
-  .richtext th { @apply align-middle py-4 px-6 text-gray-400 uppercase; }
+  .richtext th { @apply align-middle py-4 px-6 text-gray-300 uppercase; }
   .richtext td { @apply align-middle py-1 px-6; }
 
   .richtext tfoot tr:first-child td { @apply pt-4; }
@@ -137,11 +137,6 @@
 }
 
 @layer utilities {
-  .unset {
-    all: unset;
-    appearance: none;
-  }
-
   .no-scrollbar::-webkit-scrollbar { display: none; }
   .no-scrollbar {
     -ms-overflow-style: none;	/* IE and Edge */

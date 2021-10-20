@@ -6,7 +6,7 @@
   {% form 'activate_customer_password' %}
     {{ form_errors | default_errors }}
 
-    <fieldset class="col-2 grid grid-cols-2">
+    <fieldset class="col-2 grid grid-cols-2 gap-2">
       <label class="col-span-full">
         <input class="input" name="customer[password]" value="" autocomplete="new-password" type="password" placeholder="Password" required />
       </label>

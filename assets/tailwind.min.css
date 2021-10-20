@@ -909,7 +909,7 @@ svg {
   vertical-align: middle;
   text-transform: uppercase;
   --tw-text-opacity: 1;
-  color: rgba(156, 163, 175, var(--tw-text-opacity));
+  color: rgba(209, 213, 219, var(--tw-text-opacity));
 }
 
 .richtext td {
@@ -983,6 +983,10 @@ svg {
 
 .hidden {
   display: none;
+}
+
+.h-full {
+  height: 100%;
 }
 
 .grid-cols-2 {
@@ -1068,13 +1072,6 @@ svg {
 
 .filter {
   filter: var(--tw-filter);
-}
-
-.unset {
-  all: unset;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
 }
 
 .line-clamp {
