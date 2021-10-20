@@ -16,23 +16,23 @@
 	// 	"description": "Log output to console"
 	// }
 
-	"≤ 428px": {
+	"≤ 640px": {
 		"scope": "css,postcss",
 		"prefix": "media mobile",
 		"body": [
 			"/* mobile */",
-			"@media screen and (max-width: 428px) {",
+			"@media screen and (max-width: 640px) {",
 			"\t$1",
 			"}",
 		]
 	},
 
-	"≥ 429px": {
+	"≥ 641": {
 		"scope": "css,postcss",
-		"prefix": "media tablet-and-up",
+		"prefix": "media mobile+",
 		"body": [
-			"/* tablet-and-up */",
-			"@media screen and (min-width: 429px) {",
+			"/* mobile+ */",
+			"@media screen and (min-width: 641) {",
 			"\t$1",
 			"}",
 		]
@@ -51,9 +51,9 @@
 
 	"≥ 769px": {
 		"scope": "css,postcss",
-		"prefix": "media desktop-and-up",
+		"prefix": "media tablet+",
 		"body": [
-			"/* desktop-and-up */",
+			"/* tablet+ */",
 			"@media screen and (min-width: 769px) {",
 			"\t$1",
 			"}",
@@ -73,9 +73,9 @@
 
 	"≥ 1281px": {
 		"scope": "css,postcss",
-		"prefix": "media large",
+		"prefix": "media desktop+",
 		"body": [
-			"/* large */",
+			"/* desktop+ */",
 			"@media screen and (min-width: 1281px) {",
 			"\t$1",
 			"}",

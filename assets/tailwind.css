@@ -4,7 +4,7 @@
 
 @layer base {
   html {
-    accent-color: var(--accent1);
+    accent-color: var(--primary-color);
     scroll-behavior: smooth;
   }
 
@@ -26,7 +26,7 @@
   }
 
   ::selection {
-    background-color: var(--accent1-alpha);
+    background-color: var(--primary-color-alpha);
   }
 
   :target {

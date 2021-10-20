@@ -1,19 +1,13 @@
 /* colors */
 
-.text-accent1 { color: var(--accent1); }
-.text-accent2 { color: var(--accent2); }
-
-.bg { background-color: var(--bg); }
-.bg-dark { background-color: var(--bg-dark); }
-
 .accent1 {
-  --accent: var(--accent1);
-  --accent-dark: var(--accent1-dark);
+  --accent: var(--primary-color);
+  --accent-dark: var(--primary-color-dark);
 }
 .accent2 {
-  --accent: var(--accent2);
-  --accent-dark: var(--accent2-dark);
-  --outline: 0 0 0 2px var(--accent2-alpha);
+  --accent: var(--secondary-color);
+  --accent-dark: var(--secondary-color-dark);
+  --outline: 0 0 0 2px var(--secondary-color-alpha);
 }
 
 /* actions */
@@ -64,7 +58,7 @@
 }
 
 .button:hover { border-color: var(--border-dark); }
-.button:hover:focus { border-color: var(--accent1-dark); }
+.button:hover:focus { border-color: var(--primary-color-dark); }
 
 :is(.action, .action-alt).lg { padding: var(--button-padding-lg); }
 :is(.action, .action-alt).full {
@@ -73,23 +67,23 @@
 }
 
 .action {
-  border-color: var(--accent, var(--accent1));
-  background-color: var(--accent, var(--accent1));
+  border-color: var(--accent, var(--primary-color));
+  background-color: var(--accent, var(--primary-color));
   color: #fff;
 }
 
 .action:hover {
-  border-color: var(--accent-dark, var(--accent1-dark));
-  background-color: var(--accent-dark, var(--accent1-dark));
+  border-color: var(--accent-dark, var(--primary-color-dark));
+  background-color: var(--accent-dark, var(--primary-color-dark));
 }
 
 .action-alt {
   border-color: currentColor;
-  color: var(--accent, var(--accent1));
+  color: var(--accent, var(--primary-color));
 }
 
 .action-alt:hover {
-  color: var(--accent-dark, var(--accent1-dark));
+  color: var(--accent-dark, var(--primary-color-dark));
 }
 
 /* forms */
@@ -110,7 +104,7 @@
 }
 
 .input:focus {
-  border-color: var(--accent1-dark);
+  border-color: var(--primary-color-dark);
   box-shadow: var(--outline);
 }
 
@@ -147,7 +141,7 @@
 }
 
 .qty-inc:hover {
-  color: var(--accent1);
+  color: var(--primary-color);
 }
 
 .qty-value {
@@ -219,11 +213,11 @@
 }
 
 .richtext a {
-  color: var(--accent1);
+  color: var(--primary-color);
   text-decoration: underline;
 }
 .richtext a:hover { text-decoration-thickness: 2px; }
-.richtext a:active { color: var(--accent1-dark); }
+.richtext a:active { color: var(--primary-color-dark); }
 
 .richtext table {
   width: 100%;

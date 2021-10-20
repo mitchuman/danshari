@@ -611,7 +611,7 @@ video {
 }
 
 html {
-  accent-color: var(--accent1);
+  accent-color: var(--primary-color);
   scroll-behavior: smooth;
 }
 
@@ -633,11 +633,11 @@ svg {
 }
 
 ::-moz-selection {
-  background-color: var(--accent1-alpha);
+  background-color: var(--primary-color-alpha);
 }
 
 ::selection {
-  background-color: var(--accent1-alpha);
+  background-color: var(--primary-color-alpha);
 }
 
 :target {
@@ -662,18 +662,6 @@ svg {
   display: none;
 }
 
-.max-w-screen-lg {
-  max-width: 1024px;
-}
-
-.max-w-screen-md {
-  max-width: 768px;
-}
-
-.max-w-screen-sm {
-  max-width: 640px;
-}
-
 .border {
   border-width: 1px;
 }
@@ -695,10 +683,6 @@ svg {
 
 .text-center {
   text-align: center;
-}
-
-.font-heading {
-  font-family: var(--font-heading);
 }
 
 .text-5xl {

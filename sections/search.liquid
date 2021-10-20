@@ -67,7 +67,7 @@
   {%- endif -%}
 {%- endif -%}
 
-<style>
+{% stylesheet %}
   .section-search section { border-top: 1px solid var(--border-light); }
 
   .results-products {
@@ -82,11 +82,11 @@
     gap: 1rem 0;
   }
 
-  /* desktop-and-up */
+  /* tablet+ */
   @media screen and (min-width: 769px) {
     .results-products { --col: 4; }
   }
-</style>
+{% endstylesheet %}
 
 {% schema %}
 {

@@ -28,14 +28,14 @@
       },
       {
         "type": "color",
-        "id": "accent_1",
-        "label": "Accent 1",
+        "id": "primary_color",
+        "label": "Primary",
         "default": "#95bf47"
       },
       {
         "type": "color",
-        "id": "accent_2",
-        "label": "Accent 2",
+        "id": "secondary_color",
+        "label": "Secondary",
         "default": "#f63"
       },
       {

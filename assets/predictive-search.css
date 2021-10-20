@@ -46,7 +46,7 @@
 }
 
 .suggestion-item-url:hover .suggestion-item-title {
-  color: var(--accent1);
+  color: var(--primary-color);
 }
 
 .suggestion-item-img {
